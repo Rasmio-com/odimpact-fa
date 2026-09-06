@@ -1,0 +1,409 @@
+# -*- coding: utf-8 -*-
+"""تولید صفحه‌های ایستای سایت از روی data/cases.json"""
+import colorsys, html, json, os, re
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, 'site')
+DATA = json.load(open(os.path.join(ROOT, 'data', 'cases.json'), encoding='utf8'))
+CATS = DATA['categories']
+CASES = DATA['cases']
+BYCAT = {c['slug']: c for c in CATS}
+
+SITE = 'تأثیر داده‌ی باز'
+TAGLINE = 'سی‌وهفت مطالعه‌ی موردی از سراسر جهان درباره‌ی این‌که داده‌ی باز واقعاً چه چیزی را تغییر داده است'
+FA = '۰۱۲۳۴۵۶۷۸۹'
+
+e = html.escape
+def num(n): return str(n).translate(str.maketrans('0123456789', FA))
+
+ICON = {
+    'clock': '<path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/>',
+    'pin': '<path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>',
+    'pen': '<path d="M4 20h4l10-10a2.8 2.8 0 10-4-4L4 16v4z"/>',
+    'cal': '<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    'spark': '<path d="M12 3l1.9 5.4L19 10l-5.1 1.6L12 17l-1.9-5.4L5 10l5.1-1.6L12 3z"/>',
+    'doc': '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5"/>',
+    'arrow': '<path d="M19 12H5M11 6l-6 6 6 6"/>',
+    'arrowr': '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    'search': '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+    'grid': '<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
+}
+def ic(name, cls=''):
+    return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
+            f'stroke-linecap="round" stroke-linejoin="round"{f" class={cls}" if cls else ""}>{ICON[name]}</svg>')
+
+
+def page(body, *, title, desc, root, active='', extra_head='', cls=''):
+    y = num(1404)
+    nav_items = [('', 'خانه'), ('cases/', 'مطالعات موردی'), ('about/', 'درباره'), ]
+    links = ''.join(
+        f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in nav_items)
+    foot_cats = ''.join(
+        f'<li><a href="{root}cases/?cat={c["slug"]}">{c["title"]}</a></li>' for c in CATS)
+    return f"""<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(title)}</title>
+<meta name="description" content="{e(desc)}">
+<meta name="theme-color" content="#0C1024">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:site_name" content="{SITE}">
+<link rel="preload" href="{root}assets/fonts/YekanBakh-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{root}assets/fonts/YekanBakh-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{root}assets/css/style.css">
+<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
+<script>(function(){{try{{var t=localStorage.getItem('odi-theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');}}catch(e){{}}}})();</script>
+{extra_head}</head>
+<body{f' class="{cls}"' if cls else ''}>
+<header class="nav"><div class="wrap nav-in">
+  <a href="{root}" class="brand"><span class="mark"><span></span></span>{SITE}</a>
+  <nav class="nav-links">{links}</nav>
+  <div class="nav-tools">
+    <button class="icon-btn" data-theme-toggle aria-label="حالت تاریک">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M21 13a8.4 8.4 0 01-10-10 8.5 8.5 0 1010 10z"/></svg>
+    </button>
+    <button class="icon-btn burger" data-burger aria-label="فهرست" aria-expanded="false">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</div></header>
+{body}
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div>
+      <div class="brand"><span class="mark"><span></span></span>{SITE}</div>
+      <p>روایت فارسی پروژه‌ی «تأثیر داده‌ی باز» گاورلب دانشگاه نیویورک؛ مجموعه‌ای از مطالعات موردی که نشان می‌دهد آزادسازی داده‌های عمومی در عمل چه چیزی را عوض کرده است — و کجا شکست خورده است.</p>
+    </div>
+    <div><h4>ابعاد تأثیر</h4><ul>{foot_cats}</ul></div>
+    <div><h4>پیوندها</h4><ul>
+      <li><a href="{root}cases/">همه‌ی مطالعات موردی</a></li>
+      <li><a href="{root}about/">درباره‌ی این پروژه</a></li>
+      <li><a href="https://odimpact.org" rel="noopener" target="_blank">odimpact.org<span class="eng"> ↗</span></a></li>
+      <li><a href="https://thegovlab.org" rel="noopener" target="_blank">The GovLab<span class="eng"> ↗</span></a></li>
+    </ul></div>
+  </div>
+  <div class="f-bot">
+    <span>متن اصلی از گاورلب دانشگاه نیویورک · ترجمه‌ی فارسی</span>
+    <span>ساخته‌شده با قلم یکان بخ</span>
+  </div>
+</div></footer>
+<div class="lb"><img alt=""></div>
+<script src="{root}assets/js/app.js" defer></script>
+</body></html>"""
+
+
+def shade(hex_, dh=0, dl=0, ds=0):
+    """چرخش رنگ پایه در فضای HSL برای ساخت گونه‌های هم‌خانواده."""
+    r, g_, b = (int(hex_[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    hh, ll, ss = colorsys.rgb_to_hls(r, g_, b)
+    hh = (hh + dh / 360) % 1
+    ll = min(.93, max(.22, ll + dl / 100))
+    ss = min(1, max(.25, ss + ds / 100))
+    return '#%02X%02X%02X' % tuple(round(x * 255) for x in colorsys.hls_to_rgb(hh, ll, ss))
+
+
+def card(c, root):
+    cat = BYCAT[c['category']]
+    h = sum((i + 3) * ord(ch) for i, ch in enumerate(c['slug']))
+    ang, pat = 96 + (h % 9) * 12, h % 4
+    gx, gy = 22 + (h // 4 % 5) * 16, -24 + (h // 7 % 4) * 22
+    d1 = (h % 11) * 3.6 - 18
+    g1 = shade(cat['accent'], d1, (h // 3 % 5) * 3 - 6, (h // 5 % 4) * 5 - 8)
+    g2 = shade(cat['accent2'], d1 + ((h // 2 % 9) * 4 - 16), (h // 11 % 5) * 3 - 4)
+    keys = ' '.join([c['title'], c['subtitle'], c['title_en'], c['country'],
+                     cat['title'], c['year'], ' '.join(c['key_points'][:2])])
+    return f"""<article class="card rv" data-card="{c['category']}" data-k="{e(keys.lower())}"
+ style="--c1:{cat['accent']};--c2:{cat['accent2']};--g1:{g1};--g2:{g2};--ang:{ang}deg;--gx:{gx}%;--gy:{gy}%">
+  <div class="card-top" data-p="{pat}"><span class="yr">{c['year']}</span><span class="cn">{c['country']}</span></div>
+  <div class="card-body">
+    <h3>{e(c['title'])}</h3>
+    <p class="sub">{e(c['subtitle'])}</p>
+    <div class="meta">
+      <span class="tag">{cat['title']}</span>
+      <span class="rt">{ic('clock')}{num(c['read_minutes'])} دقیقه</span>
+    </div>
+  </div>
+  <a class="stretch" href="{root}cases/{c['slug']}/" aria-label="{e(c['title'])}"></a>
+</article>"""
+
+
+# ── خانه ──────────────────────────────────────────────────────────
+def build_home():
+    countries = len({c['country'] for c in CASES})
+    dims = ''.join(f"""<a class="dim rv" href="cases/?cat={c['slug']}" style="--c1:{c['accent']};--c2:{c['accent2']}">
+  <span class="ic"><svg viewBox="0 0 24 24"><path d="{c['icon']}"/></svg></span>
+  <h3>{c['title']}</h3>
+  <p>{e(c['desc'])}</p>
+  <span class="n">{num(sum(1 for x in CASES if x['category'] == c['slug']))} مطالعه‌ی موردی {ic('arrow')}</span>
+</a>""" for c in CATS)
+
+    featured = ['us-gps', 'sierra-leone-ebola', 'uruguay-a-tu-servicio',
+                'slovakia-open-contracting', 'nyc-business-atlas', 'eightmaps']
+    feat = ''.join(card(next(x for x in CASES if x['slug'] == s), '') for s in featured)
+
+    body = f"""<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow"><i></i>پروژه‌ی «تأثیر داده‌ی باز» گاورلب دانشگاه نیویورک — به فارسی</span>
+  <h1>داده‌ی باز <span class="grad">چه چیزی</span> را واقعاً تغییر داد؟</h1>
+  <p class="lead">{TAGLINE}. از نبرد با ابولا در سیرالئون تا اقتصاد میلیارد‌دلاری جی‌پی‌اس؛ روایت‌هایی مستند از موفقیت‌ها، شکست‌ها و درس‌هایی که ماند.</p>
+  <div class="hero-cta">
+    <a class="btn btn-p" href="cases/">{ic('grid')}کاوش در مطالعات موردی</a>
+    <a class="btn btn-g" href="#dims">چهار بُعد تأثیر</a>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="stats rv">
+  <div><b>{num(len(CASES))}</b><span>مطالعه‌ی موردی</span></div>
+  <div><b>{num(countries)}</b><span>کشور و قلمرو</span></div>
+  <div><b>{num(4)}</b><span>بُعد تأثیر</span></div>
+  <div><b>{num(round(sum(c['words'] for c in CASES) / 1000))} هزار</b><span>واژه‌ی فارسی</span></div>
+</div></div>
+
+<section id="dims"><div class="wrap">
+  <div class="sec-head rv">
+    <span class="sec-kicker">چارچوب تحلیلی</span>
+    <h2>داده‌ی باز از چهار مسیر اثر می‌گذارد</h2>
+    <p>گاورلب پس از بررسی ده‌ها ابتکار در سراسر جهان، تأثیر داده‌ی باز را در چهار بُعد دسته‌بندی کرد. هر مطالعه‌ی موردی ذیل یکی از این ابعاد قرار می‌گیرد.</p>
+  </div>
+  <div class="dims">{dims}</div>
+</div></section>
+
+<section style="background:var(--paper-2);border-block:1px solid var(--line)"><div class="wrap">
+  <div class="sec-head rv">
+    <span class="sec-kicker">پیشنهاد سردبیر</span>
+    <h2>از کجا شروع کنیم؟</h2>
+    <p>شش روایت که تصویری کامل از دامنه‌ی کار می‌دهند — از یک کالای عمومی جهانی تا نمونه‌ای که در آن داده‌ی باز به ابزار آزار تبدیل شد.</p>
+  </div>
+  <div class="grid">{feat}</div>
+  <div style="margin-top:34px;text-align:center">
+    <a class="btn btn-p" style="background:var(--ink);color:#fff;box-shadow:var(--shadow-m)" href="cases/">
+      دیدن همه‌ی {num(len(CASES))} مطالعه{ic('arrow')}</a>
+  </div>
+</div></section>
+</main>"""
+    write('index.html', page(body, title=f'{SITE} — {TAGLINE}', desc=TAGLINE, root='', active=''))
+
+
+# ── فهرست مطالعات ─────────────────────────────────────────────────
+def build_index():
+    chips = ('<button class="chip on" data-cat="all">همه '
+             f'<span class="cnt">{num(len(CASES))}</span></button>')
+    chips += ''.join(
+        f'<button class="chip" data-cat="{c["slug"]}" style="--cc:{c["accent"]}"><i></i>{c["title"]} '
+        f'<span class="cnt">{num(sum(1 for x in CASES if x["category"] == c["slug"]))}</span></button>'
+        for c in CATS)
+    cards = ''.join(card(c, '../') for c in CASES)
+    body = f"""<main>
+<section style="padding-bottom:34px"><div class="wrap">
+  <div class="sec-head" style="margin-bottom:30px">
+    <span class="sec-kicker">کتابخانه</span>
+    <h2>همه‌ی مطالعات موردی</h2>
+    <p>هم‌اکنون <b data-count>{num(len(CASES))}</b> روایت در دسترس است. بر اساس بُعد تأثیر فیلتر کنید یا نام کشور، سازمان و موضوع را جست‌وجو کنید.</p>
+  </div>
+  <div class="filters">
+    {chips}
+    <label class="search">
+      <input type="search" data-search placeholder="جست‌وجو در عنوان، کشور و موضوع…" aria-label="جست‌وجو">
+      {ic('search')}
+    </label>
+  </div>
+  <div class="grid" data-list>{cards}</div>
+  <div class="empty" data-empty style="display:none">
+    <b>چیزی پیدا نشد</b>واژه‌ی دیگری را امتحان کنید یا فیلتر را بردارید.
+  </div>
+</div></section>
+</main>"""
+    write('cases/index.html', page(body, title=f'مطالعات موردی — {SITE}',
+                                  desc='فهرست کامل مطالعات موردی تأثیر داده‌ی باز به زبان فارسی',
+                                  root='../', active='cases/'))
+
+
+# ── صفحه‌ی مطالعه ─────────────────────────────────────────────────
+def slugify_head(t, n):
+    return 'h-' + str(n)
+
+
+def build_case(c, prev, nxt):
+    cat = BYCAT[c['category']]
+    root = '../../'
+    parts, toc, hn = [], [], 0
+    for b in c['body']:
+        if b['type'] == 'h2':
+            hn += 1
+            hid = slugify_head(b['text'], hn)
+            toc.append(f'<a href="#{hid}">{e(b["text"])}</a>')
+            parts.append(f'<h2 id="{hid}">{e(b["text"])}</h2>')
+        elif b['type'] == 'h3':
+            parts.append(f'<h3>{e(b["text"])}</h3>')
+        elif b['type'] == 'p':
+            parts.append(f'<p>{e(b["text"])}</p>')
+        elif b['type'] == 'ul':
+            parts.append('<ul>' + ''.join(f'<li>{e(x)}</li>' for x in b['items']) + '</ul>')
+        elif b['type'] == 'caption':
+            parts.append(f'<figcaption style="text-align:right">{e(b["text"])}</figcaption>')
+        elif b['type'] == 'img':
+            cap = f'<figcaption>{e(b["caption"])}</figcaption>' if b.get('caption') else ''
+            parts.append(f'<figure><img src="{root}{b["src"]}" width="{b["w"]}" height="{b["h"]}" '
+                         f'alt="{e(b.get("caption", "شکل"))}" loading="lazy" decoding="async">{cap}</figure>')
+
+    summary = ''
+    if c['summary']:
+        ps = ''.join(f'<p>{e(s)}</p>' for s in c['summary'])
+        summary = f"""<div class="summary rv">
+  <span class="t">{ic('spark')}خلاصه‌ی مطلب</span>{ps}</div>"""
+
+    keys = ''
+    if c['key_points']:
+        li = ''.join(f'<li>{e(k)}</li>' for k in c['key_points'])
+        keys = f"""<div class="keys rv"><div class="t">{ic('spark')}نکات کلیدی</div><ol>{li}</ol></div>"""
+
+    meta = [f'<span>{ic("pin")}{e(c["country"])}</span>']
+    if c['authors']:
+        meta.append(f'<span>{ic("pen")}<span class="eng">{e(c["authors"])}</span></span>')
+    if c['date']:
+        meta.append(f'<span>{ic("cal")}{e(c["date"])}</span>')
+    meta.append(f'<span>{ic("clock")}{num(c["read_minutes"])} دقیقه مطالعه</span>')
+
+    tocbox = ''
+    if len(toc) > 1:
+        tocbox = f'<aside class="toc"><div class="t">در این مطلب</div>{"".join(toc)}</aside>'
+
+    npv = ''
+    if prev:
+        npv += (f'<a class="np p" href="{root}cases/{prev["slug"]}/">'
+                f'<span class="l">{ic("arrowr")}قبلی</span><b>{e(prev["title"])}</b></a>')
+    if nxt:
+        npv += (f'<a class="np n" href="{root}cases/{nxt["slug"]}/">'
+                f'<span class="l">بعدی{ic("arrow")}</span><b>{e(nxt["title"])}</b></a>')
+
+    mapart = (f'<img class="case-map" src="{root}{c["map"]}" alt="" aria-hidden="true">'
+              if c.get('map') else '')
+
+    ld = json.dumps({
+        "@context": "https://schema.org", "@type": "Article",
+        "headline": c['title'], "inLanguage": "fa",
+        "about": c['title_en'], "articleSection": cat['title'],
+        "author": [{"@type": "Person", "name": a.strip()} for a in
+                   re.split(r'[,،]| و ', c['authors']) if a.strip()][:6] or
+                  [{"@type": "Organization", "name": "The GovLab"}],
+        "description": (c['summary'][0][:200] if c['summary'] else c['subtitle']),
+    }, ensure_ascii=False)
+
+    body = f"""<div class="progress" style="--c1:{cat['accent']};--c2:{cat['accent2']}"></div>
+<main style="--c1:{cat['accent']};--c2:{cat['accent2']}">
+<section class="case-hero"><div class="wrap">
+  {mapart}
+  <div class="crumb">
+    <a href="{root}">خانه</a>{ic('arrow')}
+    <a href="{root}cases/">مطالعات موردی</a>{ic('arrow')}
+    <a href="{root}cases/?cat={cat['slug']}">{cat['title']}</a>
+  </div>
+  <h1>{e(c['title'])}</h1>
+  <p class="sub">{e(c['subtitle'])}</p>
+  <p class="en"><span class="eng">{e(c['title_en'])}</span></p>
+  <div class="case-meta">{''.join(meta)}</div>
+</div></section>
+
+<div class="wrap"><div class="layout">
+  <article class="article">
+    {summary}
+    {keys}
+    {''.join(parts)}
+  </article>
+  {tocbox}
+</div>
+<div class="nextprev">{npv}</div>
+</div>
+</main>"""
+    desc = (c['summary'][0][:170] if c['summary'] else c['subtitle'])
+    write(f'cases/{c["slug"]}/index.html',
+          page(body, title=f'{c["title"]} — {SITE}', desc=desc, root=root, active='cases/',
+               extra_head=f'<script type="application/ld+json">{ld}</script>\n'))
+
+
+# ── درباره ────────────────────────────────────────────────────────
+def build_about():
+    rows = ''.join(f"""<tr><td style="font-weight:700;color:{c['accent']}">{c['title']}</td>
+      <td><span class="eng">{c['title_en']}</span></td>
+      <td>{num(sum(1 for x in CASES if x['category'] == c['slug']))}</td></tr>""" for c in CATS)
+    body = f"""<main>
+<section class="case-hero" style="--c1:#6C5CE7;--c2:#0EA5A5;padding:66px 0"><div class="wrap">
+  <div class="crumb"><a href="../">خانه</a>{ic('arrow')}<span>درباره</span></div>
+  <h1>درباره‌ی این پروژه</h1>
+  <p class="sub">چرا مستندسازی تأثیر داده‌ی باز اهمیت دارد و این سایت دقیقاً چیست.</p>
+</div></section>
+<div class="wrap"><article class="article" style="padding:56px 0 90px;--c1:#6C5CE7;--c2:#A78BFA">
+  <p class="lede">سال‌هاست درباره‌ی وعده‌های داده‌ی باز حرف زده می‌شود؛ اما شواهد تجربی درباره‌ی این‌که آزادسازی داده‌های عمومی دقیقاً <em>چه چیزی</em> را تغییر می‌دهد، پراکنده و کم بوده است.</p>
+  <p>پروژه‌ی <span class="eng">Open Data’s Impact</span> در <span class="eng">GovLab</span> دانشگاه نیویورک، با حمایت بنیاد اُمیدیار، به همین پرسش پاسخ می‌دهد: مجموعه‌ای از مطالعات موردی مستند از سراسر جهان که هر کدام یک ابتکار داده‌ی باز را از آغاز تا پیامدهایش دنبال می‌کنند — شامل جایی که کار نکرده است.</p>
+  <h2>این سایت چیست</h2>
+  <p>این سایت روایت فارسیِ آن مجموعه است: {num(len(CASES))} مطالعه‌ی موردی ترجمه‌شده، بازچینی‌شده برای خواندن روی وب، همراه با شکل‌ها و نمودارهای اصلی. متن‌ها راست‌چین و با قلم یکان بخ صفحه‌آرایی شده‌اند تا خواندن روان باشد.</p>
+  <h2>چهار بُعد تأثیر</h2>
+  <p>گاورلب تأثیر داده‌ی باز را در چهار بُعد دسته‌بندی می‌کند. توزیع مطالعات این مجموعه چنین است:</p>
+  <div style="overflow-x:auto;margin:1.6em 0">
+  <table style="width:100%;border-collapse:collapse;font-size:16.5px">
+    <thead><tr style="border-bottom:2px solid var(--line)">
+      <th style="text-align:right;padding:12px 8px">بُعد</th>
+      <th style="text-align:right;padding:12px 8px">عنوان اصلی</th>
+      <th style="text-align:right;padding:12px 8px">تعداد</th></tr></thead>
+    <tbody>{rows}</tbody>
+  </table></div>
+  <h2>روش کار</h2>
+  <p>هر مطالعه‌ی موردی از فایل اصلی ترجمه‌شده استخراج و به‌صورت خودکار به ساختار وب تبدیل شده است: خلاصه‌ی مطلب، نکات کلیدی، بخش‌بندی موضوعی و شکل‌ها. کد این تبدیل و کد تولید سایت هر دو در همین مخزن در دسترس‌اند.</p>
+  <h2>حق مؤلف</h2>
+  <p>متن اصلی مطالعات موردی متعلق به <span class="eng">The GovLab</span> در دانشگاه نیویورک است و روی <a href="https://odimpact.org" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">odimpact.org</a> منتشر شده. این سایت صرفاً روایت فارسی و غیرتجاری آن است.</p>
+</article></div>
+</main>"""
+    write('about/index.html', page(body, title=f'درباره — {SITE}',
+                                   desc='درباره‌ی پروژه‌ی تأثیر داده‌ی باز و این روایت فارسی',
+                                   root='../', active='about/'))
+
+
+def build_404():
+    body = """<main><section class="hero" style="min-height:64vh;display:grid;place-items:center"><div class="wrap" style="text-align:center">
+  <h1 style="max-width:none">صفحه‌ای که دنبالش بودید پیدا نشد</h1>
+  <p class="lead" style="margin-inline:auto">شاید نشانی تغییر کرده باشد. از فهرست مطالعات موردی شروع کنید.</p>
+  <div class="hero-cta" style="justify-content:center"><a class="btn btn-p" href="/">بازگشت به خانه</a></div>
+</div></section></main>"""
+    write('404.html', page(body, title=f'پیدا نشد — {SITE}', desc='صفحه پیدا نشد', root='/'))
+
+
+def build_extras():
+    write('assets/favicon.svg', """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#6C5CE7"/><stop offset=".42" stop-color="#0EA5A5"/>
+<stop offset=".74" stop-color="#E8850C"/><stop offset="1" stop-color="#E11D62"/></linearGradient></defs>
+<rect width="64" height="64" rx="18" fill="url(#g)"/>
+<circle cx="32" cy="32" r="10" fill="#fff"/></svg>""")
+    write('.nojekyll', '')
+    write('robots.txt', 'User-agent: *\nAllow: /\n')
+    urls = ['', 'cases/', 'about/'] + [f'cases/{c["slug"]}/' for c in CASES]
+    sm = '\n'.join(f'  <url><loc>{u}</loc></url>' for u in urls)
+    write('sitemap.txt', '\n'.join(urls))
+
+
+def write(rel, content):
+    p = os.path.join(OUT, rel)
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, 'w', encoding='utf8') as f:
+        f.write(content)
+
+
+def main():
+    build_home()
+    build_index()
+    order = [c for cat in CATS for c in CASES if c['category'] == cat['slug']]
+    for i, c in enumerate(order):
+        build_case(c, order[i - 1] if i else None, order[i + 1] if i + 1 < len(order) else None)
+    build_about()
+    build_404()
+    build_extras()
+    print(f'ساخته شد: {len(order) + 4} صفحه')
+
+
+if __name__ == '__main__':
+    main()
