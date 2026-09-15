@@ -1,5 +1,7 @@
 
 cases/
+laws/
+library/
 about/
 cases/slovakia-open-contracting/
 cases/burundi-open-rbf/
@@ -38,3 +40,12 @@ cases/kenya-open-duka/
 cases/kenya-gottovote/
 cases/mexico-mejora-tu-escuela/
 cases/tanzania-open-education/
+reports/open-data-charter/
+reports/open-budget-data/
+reports/open-contracting-data/
+reports/od-report-1/
+reports/od-report-2/
+reports/od-report-3/
+reports/national-data-portals/
+reports/critique-national-portal/
+reports/open-data-ecosystems/

@@ -116,13 +116,14 @@ button{font:inherit;color:inherit}
 .btn svg{width:17px;height:17px}
 
 /* ── نوار آمار ────────────────────────────────────────────── */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--r-l);overflow:hidden;margin-top:-52px;position:relative;z-index:5;
   box-shadow:var(--shadow-l)}
 .stats>div{background:var(--paper-2);padding:26px 22px;text-align:center}
-.stats b{display:block;font-size:clamp(30px,4.4vw,44px);font-weight:900;letter-spacing:-1px;line-height:1.2;
+.stats b{display:block;font-size:clamp(26px,3.4vw,38px);font-weight:900;letter-spacing:-1px;line-height:1.2;
   background:linear-gradient(140deg,var(--text),var(--text-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .stats span{display:block;font-size:14.5px;color:var(--text-3);font-weight:600;margin-top:4px}
+@media(max-width:980px){.stats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.stats{grid-template-columns:1fr 1fr;margin-top:-40px}}
 
 /* ── بخش‌ها ───────────────────────────────────────────────── */
@@ -254,6 +255,39 @@ section{padding:clamp(64px,9vw,110px) 0}
 .article figcaption{font-size:14.5px;color:var(--text-3);margin-top:12px;text-align:center;line-height:1.8}
 .article .lede{font-size:20.5px;line-height:2.05;color:var(--text-2);font-weight:300}
 
+.article h4{font-size:clamp(17px,2vw,19px);font-weight:700;line-height:1.7;
+  margin:1.7em 0 .4em;color:var(--text-2)}
+
+/* جدول درون متن — در موبایل داخل قاب خودش افقی اسکرول می‌شود */
+.layout>*,.article{min-width:0}
+.tbl{margin:2.2em 0;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-m);
+  background:var(--paper-2);-webkit-overflow-scrolling:touch}
+.tbl table{border-collapse:collapse;width:100%;min-width:max-content;font-size:15px;line-height:1.85}
+.tbl th,.tbl td{padding:11px 15px;text-align:right;vertical-align:top;
+  border-bottom:1px solid var(--line-2);max-width:42ch}
+.tbl thead th{background:color-mix(in srgb,var(--c1) 9%,var(--paper-2));
+  color:var(--c1);font-weight:800;font-size:14px;white-space:nowrap;
+  border-bottom:2px solid color-mix(in srgb,var(--c1) 30%,var(--line));position:sticky;top:0}
+.tbl tbody tr:nth-child(even){background:color-mix(in srgb,var(--line-2) 55%,transparent)}
+.tbl tbody tr:last-child td{border-bottom:0}
+
+/* جعبه‌ی کنارمتن */
+.article .callout{margin:2.2em 0;padding:22px 26px;border-radius:var(--r-m);
+  border-inline-start:4px solid var(--c1);
+  background:color-mix(in srgb,var(--c1) 6%,var(--paper-2));
+  border-block:1px solid var(--line-2);border-inline-end:1px solid var(--line-2)}
+.article .callout p{margin-bottom:.8em;font-size:16.5px;color:var(--text-2)}
+.article .callout>:last-child{margin-bottom:0}
+
+/* منبع و حق نشرِ پای گزارش */
+.srcbox{margin:3em 0 0;padding:20px 24px;border-radius:var(--r-m);border:1px dashed var(--line);
+  background:var(--paper-2)}
+.srcbox b{display:block;font-size:12.5px;font-weight:800;letter-spacing:1.3px;
+  color:var(--text-3);margin-bottom:8px}
+.srcbox p{margin:0;font-size:15px;line-height:1.95;color:var(--text-2);text-align:right}
+.srcbox a{color:var(--c1);font-weight:600}
+
+
 .summary{position:relative;padding:30px 32px;border-radius:var(--r-l);margin-bottom:36px;
   background:linear-gradient(150deg,color-mix(in srgb,var(--c1) 8%,var(--paper-2)),var(--paper-2));
   border:1px solid color-mix(in srgb,var(--c1) 22%,var(--line))}
@@ -312,6 +346,57 @@ footer ul a:hover{color:#fff}
   html{scroll-behavior:auto}
 }
 
+
+/* ── قوانین ایران ─────────────────────────────────────────── */
+.note{margin-top:34px;font-size:14px;line-height:1.95;color:var(--text-3);
+  border-inline-start:3px solid var(--line);padding-inline-start:14px;max-width:80ch}
+.laws{display:flex;flex-direction:column;gap:14px}
+.law{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-m);
+  padding:20px 22px;transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.law:hover{border-color:color-mix(in srgb,var(--c1) 38%,var(--line));box-shadow:var(--shadow-s)}
+.law-head{display:flex;gap:16px;align-items:flex-start}
+.law-no{flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;
+  font-size:14px;font-weight:800;color:var(--c1);
+  background:color-mix(in srgb,var(--c1) 11%,transparent)}
+.law h3{margin:0 0 6px;font-size:17.5px;font-weight:700;line-height:1.75;letter-spacing:-.2px}
+.law-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--text-3)}
+.law-meta span{display:inline-flex;align-items:center;gap:6px}
+.law-meta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.9}
+.law details{margin:14px 0 0 0;padding-inline-start:52px}
+.law summary{cursor:pointer;font-size:13.5px;font-weight:700;color:var(--c1);
+  list-style:none;display:inline-flex;align-items:center;gap:7px;width:max-content}
+.law summary::-webkit-details-marker{display:none}
+.law summary::before{content:'';width:0;height:0;border-block:4px solid transparent;
+  border-inline-end:6px solid currentColor;transition:transform .2s var(--ease)}
+.law details[open] summary::before{transform:rotate(-90deg)}
+.law details p{margin:12px 0 0;font-size:15.5px;line-height:2.05;color:var(--text-2);
+  text-align:justify;padding-inline-start:10px;
+  border-inline-start:2px solid color-mix(in srgb,var(--c1) 25%,var(--line))}
+
+/* ── کتابخانه‌ی منابع ─────────────────────────────────────── */
+.refs{display:flex;flex-direction:column;gap:2px}
+.ref{display:flex;gap:16px;align-items:flex-start;padding:15px 16px;border-radius:var(--r-s);
+  border-bottom:1px solid var(--line-2);transition:background .2s var(--ease)}
+.ref:hover{background:var(--paper-2)}
+.ref .yr{flex:none;width:52px;font-size:13.5px;font-weight:700;color:var(--text-3);
+  padding-top:3px;font-variant-numeric:tabular-nums}
+.ref>div{flex:1;min-width:0}
+.ref h3{margin:0 0 4px;font-size:16px;font-weight:600;line-height:1.75}
+.ref.fa h3{font-weight:700}
+.ref:not(.fa) h3{direction:ltr;text-align:left;unicode-bidi:isolate}
+.ref-meta{font-size:13.5px;color:var(--text-3);line-height:1.8}
+.ref:not(.fa) .ref-meta{direction:ltr;text-align:left;unicode-bidi:isolate}
+.ref-meta i{font-style:normal;opacity:.85}
+.ref .go{flex:none;align-self:center;font-size:13px;font-weight:700;color:var(--c1);
+  white-space:nowrap;padding:6px 12px;border-radius:99px;
+  border:1px solid color-mix(in srgb,var(--c1) 28%,var(--line))}
+.ref .go:hover{background:color-mix(in srgb,var(--c1) 10%,transparent)}
+
+/* کارت گزارش از کارت مطالعه متمایز می‌شود */
+.card[data-kind="report"] .card-top .cn{font-size:15px;font-weight:700;letter-spacing:.4px;
+  padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);bottom:16px}
+
 /* ── ریزتنظیم‌های موبایل ─────────────────────────────────── */
 @media(max-width:640px){
   body{font-size:16.5px}
@@ -325,4 +410,13 @@ footer ul a:hover{color:#fff}
   .case-meta span{font-size:13.5px;padding:7px 13px}
   .stats>div{padding:20px 12px}
   .np b{font-size:16px}
+  .law{padding:16px 15px}
+  .law details{padding-inline-start:0}
+  .law-no{width:30px;height:30px;border-radius:9px;font-size:13px}
+  .ref{display:grid;grid-template-columns:42px 1fr;gap:2px 12px;align-items:start;padding:14px 10px}
+  .ref .yr{width:auto;padding-top:2px}
+  .ref>div{grid-column:2}
+  .ref .go{grid-column:2;justify-self:start;margin-top:8px}
+  .tbl table{font-size:14px}
+  .tbl th,.tbl td{padding:9px 12px;max-width:30ch}
 }
