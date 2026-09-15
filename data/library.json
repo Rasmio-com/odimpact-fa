@@ -770,6 +770,21 @@
    "folder": ""
   },
   {
+   "title": "A Framework for Analyzing How Governments Open Their Data- Institution, Technology, and Process Aspects Influencing Decision Making",
+   "authors": [
+    "Yakhchali"
+   ],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 9,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
    "title": "A socio-technical model for OGD research model",
    "authors": [
     "Administrator"
@@ -1077,7 +1092,7 @@
    "folder": ""
   },
   {
-   "title": "Determinants of user acceptance and use of open government data (OGD)_ An empirical investigation in Bangladesh",
+   "title": "Determinants of user acceptance and use of open government data (OGD) An empirical investigation in Bangladesh",
    "authors": [
     "Md Shamim Talukder"
    ],
@@ -1413,6 +1428,19 @@
    "doi": "",
    "url": "",
    "pages": 298,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open data for AI",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 64,
    "lang": "en",
    "group": "general",
    "folder": ""
@@ -1891,21 +1919,6 @@
    "folder": ""
   },
   {
-   "title": "Virkar_et_al_2018.pdf",
-   "authors": [
-    "Yakhchali"
-   ],
-   "year": "2017",
-   "venue": "",
-   "kind": "",
-   "doi": "",
-   "url": "",
-   "pages": 9,
-   "lang": "en",
-   "group": "general",
-   "folder": ""
-  },
-  {
    "title": "Viscous Open Data: The Roles of Intermediaries in an Open Data Ecosystem",
    "authors": [],
    "year": "2016",
@@ -1944,19 +1957,6 @@
    "doi": "",
    "url": "",
    "pages": 390,
-   "lang": "en",
-   "group": "general",
-   "folder": ""
-  },
-  {
-   "title": "‌open data for AI",
-   "authors": [],
-   "year": "",
-   "venue": "",
-   "kind": "",
-   "doi": "",
-   "url": "",
-   "pages": 64,
    "lang": "en",
    "group": "general",
    "folder": ""
@@ -2100,21 +2100,6 @@
    "folder": "To Read"
   },
   {
-   "title": "Borgman_FinalFormat_9-25-18_ForPublication",
-   "authors": [
-    "Christine Borgman"
-   ],
-   "year": "2018",
-   "venue": "",
-   "kind": "",
-   "doi": "",
-   "url": "",
-   "pages": 48,
-   "lang": "en",
-   "group": "toread",
-   "folder": "To Read"
-  },
-  {
    "title": "Choosing and Engaging with CGD The Guide",
    "authors": [],
    "year": "",
@@ -2227,6 +2212,21 @@
    "doi": "",
    "url": "",
    "pages": 4,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Open Data Gray Data and stewardship",
+   "authors": [
+    "Christine Borgman"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 48,
    "lang": "en",
    "group": "toread",
    "folder": "To Read"

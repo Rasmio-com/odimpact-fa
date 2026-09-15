@@ -45,7 +45,8 @@ BOOKS = {
 JUNK = re.compile(r'^(untitled.*|microsoft (word|powerpoint).*|powerpoint '
                   r'presentation|document\d*|world bank document|print|slide \d|'
                   r'[\d\s.\-_]+|.{0,8})$|\.(indd|hwp|docx?|pptx?|qxd|tex)\b'
-                  r'|proceedings template|author guidelines|^\d{4,}_', re.I)
+                  r'|proceedings template|author guidelines|^\d{4,}_'
+                  r'|\.pdf\b|^\S*_\S*_\S*$', re.I)
 FA = re.compile(r'[؀-ۿ]')
 
 
@@ -85,7 +86,7 @@ def from_pdf(path):
     md = doc.metadata or {}
     t = (md.get('title') or '').strip()
     if t and not JUNK.search(t):
-        out['title'] = re.sub(r'\s+', ' ', t)
+        out['title'] = re.sub(r'\s+', ' ', t.replace('_', ' '))
     a = (md.get('author') or '').strip()
     if a and not JUNK.search(a) and len(a) < 120:
         out['authors'] = [x.strip() for x in re.split(r'[;,]| and ', a) if x.strip()][:6]
@@ -106,7 +107,8 @@ def title_from_name(name):
     t = re.sub(r'^\d{1,2}[-–.]\s*', '', t)          # شماره‌ی فصل
     t = re.sub(r'^\d{4}\s*[-–]\s*', '', t)          # سالِ پیشوندِ نام فایل
     t = re.sub(r'[_]+', ' ', t)
-    return re.sub(r'\s+', ' ', t).strip()
+    t = re.sub(r'\s+', ' ', t).strip()
+    return t.strip('\u200c \t_-–.،')
 
 
 def group_of(rel):
@@ -143,7 +145,7 @@ def main():
             # نام فایل‌های فارسی را خود کاربر معنادار گذاشته؛ به فراداده ارجح است
             if FA.search(fn):
                 meta['title'] = title_from_name(fn)
-            meta.setdefault('title', title_from_name(fn))
+            meta['title'] = meta.get('title', '').strip('\u200c \t_-–.،') or title_from_name(fn)
             if fn in WHOLE:
                 meta['title'], meta['kind'] = WHOLE[fn], 'کتاب'
             g = group_of(rel)
