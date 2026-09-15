@@ -1,0 +1,2331 @@
+{
+ "groups": [
+  {
+   "slug": "books",
+   "title": "کتاب‌ها و فصل‌های کتاب"
+  },
+  {
+   "slug": "business",
+   "title": "کسب‌وکار و کارآفرینی با داده‌ی باز"
+  },
+  {
+   "slug": "demand",
+   "title": "تقاضای داده"
+  },
+  {
+   "slug": "sdg",
+   "title": "داده و توسعه‌ی پایدار"
+  },
+  {
+   "slug": "iran",
+   "title": "ایران"
+  },
+  {
+   "slug": "toread",
+   "title": "خواندنی‌های پیشِ رو"
+  },
+  {
+   "slug": "fa",
+   "title": "منابع فارسی"
+  },
+  {
+   "slug": "general",
+   "title": "عمومی"
+  }
+ ],
+ "items": [
+  {
+   "title": "2050: The Story of Urbidata",
+   "authors": [
+    "Ploeger, Hendrik",
+    "van Loenen, Bastiaan"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_14",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_14",
+   "pages": 20,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Assessing Open Data",
+   "authors": [
+    "Vancauwenberghe, Glenn"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_8",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_8",
+   "pages": 24,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Funding Open Data",
+   "authors": [
+    "Welle Donker, Frederika"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_4",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_4",
+   "pages": 24,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Governance of Open Data Initiatives",
+   "authors": [
+    "Vancauwenberghe, Glenn",
+    "Crompvoets, Joep"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_5",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_5",
+   "pages": 22,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "One Data Indonesia to Support the Implementation of Open Data in Indonesia",
+   "authors": [
+    "Indrajit, Agung"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_13",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_13",
+   "pages": 21,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Open Data Directives and Policies",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_3",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_3",
+   "pages": 24,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Open Data Evaluation Models: Theory and Practice",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_8",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_8",
+   "pages": 36,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Open Data in China",
+   "authors": [
+    "Xue, Mei"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_12",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_12",
+   "pages": 14,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Open Data in the United Kingdom",
+   "authors": [
+    "Vancauwenberghe, Glenn",
+    "Fawcett, Jamie"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_10",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_10",
+   "pages": 20,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Open Data Infrastructures",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_6",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_6",
+   "pages": 19,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Open Data Interoperability",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_5",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_5",
+   "pages": 19,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Open Data Value and Business Models",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_7",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_7",
+   "pages": 22,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Open Government Data: Areas and Directions for Research",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_9",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_9",
+   "pages": 22,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Organizational Issues: How to Open Up Government Data?",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_4",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_4",
+   "pages": 17,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Technological Aspects of (Linked) Open Data",
+   "authors": [
+    "Ronzhin, Stanislav",
+    "Folmer, Erwin",
+    "Lemmens, Rob"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_9",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_9",
+   "pages": 21,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "The Development of Open Data in The Netherlands",
+   "authors": [
+    "van Loenen, Bastiaan"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_11",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_11",
+   "pages": 18,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "The European Right to Data Protection in Relation to Open Data",
+   "authors": [
+    "Dalla Corte, Lorenzo"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_7",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_7",
+   "pages": 22,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "The Multiple Life Cycles of Open Data Creation and Use",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_2",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_2",
+   "pages": 21,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "The Open Data Landscape",
+   "authors": [
+    "Charalabidis, Yannis",
+    "Zuiderwijk, Anneke",
+    "Alexopoulos, Charalampos",
+    "Janssen, Marijn",
+    "Lampoltshammer, Thomas",
+    "Ferro, Enrico"
+   ],
+   "year": "2018",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-3-319-90850-2_1",
+   "url": "http://dx.doi.org/10.1007/978-3-319-90850-2_1",
+   "pages": 9,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "The World of Open Data",
+   "authors": [],
+   "year": "",
+   "venue": "The World of Open Data (Springer)",
+   "kind": "کتاب",
+   "doi": "",
+   "url": "",
+   "pages": 242,
+   "lang": "en",
+   "group": "books",
+   "folder": "The World of Open Data"
+  },
+  {
+   "title": "Towards a User-Oriented Open Data Strategy",
+   "authors": [
+    "van Loenen, Bastiaan"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_3",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_3",
+   "pages": 21,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Towards Open Data Across the Pond",
+   "authors": [
+    "Dalla Corte, Lorenzo"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_2",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_2",
+   "pages": 22,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Understanding Open Data Regulation: An Analysis of the Licensing Landscape",
+   "authors": [
+    "Giannopoulou, Alexandra"
+   ],
+   "year": "2018",
+   "venue": "Open Data Exposed (Springer)",
+   "kind": "فصل کتاب",
+   "doi": "10.1007/978-94-6265-261-3_6",
+   "url": "http://dx.doi.org/10.1007/978-94-6265-261-3_6",
+   "pages": 25,
+   "lang": "en",
+   "group": "books",
+   "folder": "Open Data Exposed"
+  },
+  {
+   "title": "Bringing Digital Innovation Strategies and Entrepreneurship: The Business Model Canvas in Open Data Ecosystem and Startups",
+   "authors": [
+    "Maria Kamariotou",
+    "Fotis Kitsios"
+   ],
+   "year": "2022",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 14,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Business Models for open data",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 32,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Creating Value through Open Data",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 112,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Data entrepreneurship- successful business models with open data",
+   "authors": [],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 15,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Entrepreneurship Through Open Data: An Opportunity for Sustainable Development",
+   "authors": [
+    "Diego Corrales-Garay",
+    "Eva-María Mora-Valentín",
+    "Marta Ortiz-de-Urbina-Criado"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 25,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "How to find potential business ideas using Open Data",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 28,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Paper Title (use style: paper title)",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 11,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "The Use Case Observatory",
+   "authors": [
+    "JAVIER JIMENEZ BLANCO"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 85,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "Towards open data based business",
+   "authors": [],
+   "year": "2014",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 12,
+   "lang": "en",
+   "group": "business",
+   "folder": "بیزینس با داده باز"
+  },
+  {
+   "title": "OD Demand- open-data-demand-methodology",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 1,
+   "lang": "en",
+   "group": "demand",
+   "folder": "Data Demand"
+  },
+  {
+   "title": "OD Demand- open-data-demand-templates",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "demand",
+   "folder": "Data Demand"
+  },
+  {
+   "title": "OD Demand- Toward an open data demand assessment and segmentation methodology",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 52,
+   "lang": "en",
+   "group": "demand",
+   "folder": "Data Demand"
+  },
+  {
+   "title": "ارزیابی روزنامه رسمی",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 44,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "آمار اتحادیه اروپا",
+   "authors": [
+    "mohammadhosein-pc"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 4,
+   "lang": "fa",
+   "group": "fa",
+   "folder": "ارائه داده باز اندیشکده"
+  },
+  {
+   "title": "راهبری پروژه‌های عرضه API",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 36,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "راهنمای دولت باز 2023 OGP",
+   "authors": [
+    "Christina Socci"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 125,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "سازمان همکاری دولت باز",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "سایتهای تحقیقات بازار خارجی",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 15,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "مدل تمایل به اقتباس خط مشی دولت باز در ایران",
+   "authors": [],
+   "year": "1397",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 35,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "مرکز بررسی‌ها- داده باز",
+   "authors": [
+    "Soleymani"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 3,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "معرفی برخی داده‌های عمومی",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 27,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "معرفی برخی داده‌های عمومی- دقیقه",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 27,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "مفهوم داده باز و نقش آن در تحول نظام اداری",
+   "authors": [
+    "ashoogh.r"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "پایان نامه ارشد خانم صابری",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 188,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "گزارش نظارتی ماده 20 foia- مرکز پژوهشها",
+   "authors": [],
+   "year": "1401",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 28,
+   "lang": "fa",
+   "group": "fa",
+   "folder": ""
+  },
+  {
+   "title": "A socio-technical model for OGD research model",
+   "authors": [
+    "Administrator"
+   ],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 28,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "A System of Innovation to Activate Practices on Open Data: The Open4Citizens Project",
+   "authors": [
+    "Nicola Morelli"
+   ],
+   "year": "2009",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 11,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "A Systematic Literature Review of Open Government Data Research: Challenges, Opportunities and Gaps",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 6,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "A systematic review of open government data initiatives",
+   "authors": [
+    "Attard, Judie",
+    "Orlandi, Fabrizio",
+    "Scerri, Simon",
+    "Auer, Sören"
+   ],
+   "year": "2015",
+   "venue": "Government Information Quarterly",
+   "kind": "مقاله",
+   "doi": "10.1016/j.giq.2015.07.006",
+   "url": "http://dx.doi.org/10.1016/j.giq.2015.07.006",
+   "pages": 20,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Advancing Sustainability Together CGD Report 0",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 77,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "ANZSOG-report",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 118,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Approaching an optimizing open linked government data portal",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 5,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Bannerman-Orasch-Privacy-and-Smart-Cities-A-Canadian-Survey-v1-2019",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 14,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Behavioral factors influencing the opening of government data",
+   "authors": [],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 6,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Beyond Open vs. Closed: Balancing Individual Privacy and Public Accountability in Data Sharing",
+   "authors": [
+    "Meg Young",
+    "Luke Rodriguez",
+    "Emily Keller",
+    "Feiyang Sun",
+    "Boyang Sa",
+    "Jan Whittington"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Building data responsibility into humanitarian action",
+   "authors": [],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Causal mechanisms and institutionalisation of open government data in Kenya",
+   "authors": [
+    "Paul W. Mungai"
+   ],
+   "year": "2011",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Changing civil servants’ behaviour concerning the opening of governmental data: evaluating the effect of a game by comparing civil servants’ intentions before and after a game intervention",
+   "authors": [
+    "Fernando Kleiman",
+    "Marijn Janssen",
+    "Sebastiaan Meijer",
+    "Sylvia JT Jansen"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 22,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Child and Family Advocate Open Data Brief",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 15,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "CITIZEN PERCEPTION OF OPEN DATA AND INNOVATION IN",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Citizens' Trust in Open Government Data",
+   "authors": [
+    "Arie Purwanto",
+    "Anneke Zuiderwijk",
+    "Marijn Janssen"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 9,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Citizens’ Perception about M-Government Services Results from an Exploratory",
+   "authors": [
+    "mfwhajanssen"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Click to insert title title",
+   "authors": [
+    "Radu",
+    "Cosmina"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 113,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "co creating e-government services",
+   "authors": [
+    "Joep Crompvoets"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Comprative Study of Open Government Data law toward data governanace legal frameworks",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Data Combination for Problem-solving A Case of an Open Data Exchange Platform",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Determinants of user acceptance and use of open government data (OGD)_ An empirical investigation in Bangladesh",
+   "authors": [
+    "Md Shamim Talukder"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "eGOV- CEDEM- 2019",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 274,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "ENHANCED ACCESS TO DATA: RECONCILING RISKS AND BENEFITS OF DATA RE-USE",
+   "authors": [
+    "REIMSBACH-KOUNATZE Christian"
+   ],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 12,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "EU Data Protection Rules and U.S. Implications",
+   "authors": [
+    "Rachel F. Fefer",
+    "Kristin Archick"
+   ],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 2,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "FOI law UK",
+   "authors": [],
+   "year": "2003",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Framework for Open Government Data platforms",
+   "authors": [
+    "EIBL",
+    "Gregor",
+    "Brigitte Lutz"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "G20-Anti-Corruption-Open-Data-Principles",
+   "authors": [],
+   "year": "2014",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 8,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "g20-oecd-compendium",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 68,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "HMRC Open Data Strategy",
+   "authors": [],
+   "year": "2012",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 32,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Introduction to the city circular program",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 156,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Ireland Open Data 2020 Strategy",
+   "authors": [],
+   "year": "2022",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 32,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "LNCS 7443 - Issues and Guiding Principles for Opening Governmental Judicial Research Data",
+   "authors": [
+    "Anneke Zuiderwijk",
+    "Marijn Janssen",
+    "Ronald Meijer",
+    "Sunil Choenni",
+    "Yannis Charalabidis",
+    "Keith Jeffery"
+   ],
+   "year": "2012",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 12,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Managing factors that affect utilizations of open government data",
+   "authors": [
+    "david.hellgren@hotmail.com"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 127,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Metamodel to support decision-making from open government data",
+   "authors": [
+    "Luz Andrea Rodríguez Rojas"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Motivation Perspectives on Opening up Municipality Data: Does Municipality Size Matter?",
+   "authors": [
+    "Anneke Zuiderwijk",
+    "Cécile Volten",
+    "Maarten Kroesen",
+    "Mark Gill"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 26,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "OCP Strategy 2015",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 72,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "OCP-strategy-19digital",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 60,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "OCP2019 AnnualReport web",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 24,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "OD Best Practices in europe",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 21,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "ODB-leadersEdition-Report",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 28,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "ODC 2020-2021 strategy #final #shared",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Contracting Partnership Strategy 2015 2018",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 72,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Data Drug Report Webinar",
+   "authors": [
+    "Microsoft Office User"
+   ],
+   "year": "2024",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 57,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Data Exposed",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 298,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open data hackathons and game jams",
+   "authors": [],
+   "year": "2022",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open data inventory 2020 2021 summary",
+   "authors": [],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 12,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open data maturity report 2022- eu",
+   "authors": [
+    "Knippenberg",
+    "Laura van"
+   ],
+   "year": "2022",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 119,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Data Policy",
+   "authors": [
+    "City of Hamilton"
+   ],
+   "year": "2023",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Data Politics in Kazakhastan",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 30,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Data Strategy 2014-2016",
+   "authors": [
+    "Department for Business",
+    "Innovation",
+    "Skills"
+   ],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 30,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Open Government Data for Machine Learning Tax Recommendation",
+   "authors": [
+    "Teryn Cha"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 3,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open government data intermediaries",
+   "authors": [],
+   "year": "2015",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 133,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open-data-demand-methodology",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 1,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "open-gov-guide summary all-topics",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 442,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "OpenDataPrivacy",
+   "authors": [],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 111,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Professionalising the public procurement workforce- oecd",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 80,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Pushing Open Government Through Social Media",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Real Lives Real Stories Power Information",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 28,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Scottish Procurement: Open Contracting Strategy",
+   "authors": [
+    "The Scottish Government"
+   ],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 14,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Show me the Data! A Systematic Mapping on Open Government Data Visualization",
+   "authors": [
+    "André Eberhardt",
+    "Milene Selbach Silveira"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "SIGCHI Conference Paper Format",
+   "authors": [
+    "Anneke Zuiderwijk-van Eijk - TBM"
+   ],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Social Media, Open Platforms, and Democracy Transparency Enabler,",
+   "authors": [],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Springer MRW: [AU:, IDX:]",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 8,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "state-of-open-data",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 0,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "StateofOpenPolicyFullReport FINAL-1-1-1-1",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 83,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The European Single Access Point on data.europa.eu Harvesting guidelines",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 16,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The Politics of Open Government Data: Understanding Organizational Responses to Pressure for More Transparency",
+   "authors": [
+    "Erna Ruijer",
+    "Francoise Détienne",
+    "Michael Baker",
+    "Jonathan Groff",
+    "Albert J. Meijer"
+   ],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 15,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The Shutdown of Virtual Platforms, the Necessity of",
+   "authors": [],
+   "year": "2023",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 38,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The skeptics guide to open government",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 82,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The State of Open Data: Histories and Horizons",
+   "authors": [
+    "Tim Davies",
+    "Stephen B Walker",
+    "Mor Rubinstein",
+    "Fernando Perini"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 594,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The tools of citizen science an evaluation of map-based crowdsourcing platforms",
+   "authors": [
+    "Zach Lamoureux"
+   ],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "The Use Case Observatory‌- eu",
+   "authors": [
+    "JAVIER JIMENEZ BLANCO"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 85,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Toward an open data demand assessment",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 52,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Towards a Framework for Cloud Computing use by Governments: Leaders, Followers and Laggers",
+   "authors": [
+    "Luiz Pinheiro Junior",
+    "Maria Alexandra Cunha",
+    "Marijn Janssen",
+    "Ricardo Matheus"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 9,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "UnBGOLD: UnB government open linked data",
+   "authors": [
+    "Martins, Luiz C. B.",
+    "Victorino, Márcio C.",
+    "Holanda, Maristela",
+    "Ghinea, George",
+    "Grønli, Tor-Morten"
+   ],
+   "year": "2018",
+   "venue": "Proceedings of the 10th International Conference on Management of Digital EcoSystems  - MEDES '18",
+   "kind": "",
+   "doi": "10.1145/3281375.3281394",
+   "url": "http://dx.doi.org/10.1145/3281375.3281394",
+   "pages": 6,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "understanding the european data portal",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 6,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "US open data policy advances and recommendations",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 10,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Virkar_et_al_2018.pdf",
+   "authors": [
+    "Yakhchali"
+   ],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 9,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Viscous Open Data: The Roles of Intermediaries in an Open Data Ecosystem",
+   "authors": [],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 17,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "world bank support of open data",
+   "authors": [
+    "World Bank Group"
+   ],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 59,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "Zuiderwijk 2015 - Open data infrastructures",
+   "authors": [
+    "Anneke Zuiderwijk - van Eijk - TBM"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 390,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "‌open data for AI",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 64,
+   "lang": "en",
+   "group": "general",
+   "folder": ""
+  },
+  {
+   "title": "137-ارزیابیِ-کیفیت-پرتال‌های-داده-باز-در-سطح-ملّی-نهایی",
+   "authors": [],
+   "year": "1399",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 44,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "مرکز توانمندسازی- ارزیابی پورتال‌ داده‌ی باز"
+  },
+  {
+   "title": "bastare melli cataloge",
+   "authors": [
+    "Mohammadreza zeinedini"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 9,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "08- Data-Gov-Ir"
+  },
+  {
+   "title": "data-gov-ir- catalog phase1",
+   "authors": [
+    "Salarabedi"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 16,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "08- Data-Gov-Ir"
+  },
+  {
+   "title": "بروشور سامانه ملی داده باز",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 2,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "08- Data-Gov-Ir"
+  },
+  {
+   "title": "راهنمای سامانه داده باز",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 15,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "08- Data-Gov-Ir"
+  },
+  {
+   "title": "پاپورپوینت سامانه ملی داده باز",
+   "authors": [
+    "Farhad Laylavi"
+   ],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 13,
+   "lang": "fa",
+   "group": "iran",
+   "folder": "08- Data-Gov-Ir"
+  },
+  {
+   "title": "Cape Town Global Action Plan for Sustainable Development Data",
+   "authors": [],
+   "year": "2017",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 8,
+   "lang": "en",
+   "group": "sdg",
+   "folder": "Cape Town Global Action Plan"
+  },
+  {
+   "title": "Dubai Declaration on Cape Town Global Action Plan for Sustainable Development Data",
+   "authors": [
+    "Yandiswa Mpetsheni"
+   ],
+   "year": "2020",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 3,
+   "lang": "en",
+   "group": "sdg",
+   "folder": "Cape Town Global Action Plan"
+  },
+  {
+   "title": "A Systematic Literature Study to Unravel Transparency Enabled by Open Government Data The Window Theory",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 33,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Africa-data-revolution-report",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 111,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Borgman_FinalFormat_9-25-18_ForPublication",
+   "authors": [
+    "Christine Borgman"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 48,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Choosing and Engaging with CGD The Guide",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 46,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Counting On the world to Act",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 58,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Data Policy in the fourth industrial revolution",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 20,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "data-collaboratives-intro",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 24,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Data-Driven Government- The Role of Chief data officers",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 81,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Developing a Trusted data ecosystem to support Singapores Daigital Economy",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 7,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Future+of+Open+Data+-+Final",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 16,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "LEVERAGING PRIVATE DATA FOR PUBLIC GOOD",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 57,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Open data business models and value disciplines",
+   "authors": [],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 4,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "open data maturity report 2019",
+   "authors": [],
+   "year": "2019",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 83,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Open Data: A New Challenge",
+   "authors": [
+    "Jean-Louis Monino",
+    "Soraya Sedkaoui"
+   ],
+   "year": "2016",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 20,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "Social Dynamics of Open Data.indb",
+   "authors": [],
+   "year": "",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 207,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "The economic value of data: discussion paper",
+   "authors": [
+    "HM Treasury"
+   ],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 23,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "THE IMPACT OF OPEN DATA IN THE UK: COMPLEX, UNPREDICTABLE, AND POLITICAL",
+   "authors": [],
+   "year": "2015",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 18,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "The state of open data- abstract",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 24,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  },
+  {
+   "title": "UN Principles on Personal Data Protection & Privacy. FINAL (1) (1)",
+   "authors": [],
+   "year": "2018",
+   "venue": "",
+   "kind": "",
+   "doi": "",
+   "url": "",
+   "pages": 2,
+   "lang": "en",
+   "group": "toread",
+   "folder": "To Read"
+  }
+ ]
+}
