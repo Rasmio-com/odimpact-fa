@@ -4666,7 +4666,7 @@
    "body": [
     {
      "type": "h2",
-     "text": "چکیده (Abstract)"
+     "text": "چکیده"
     },
     {
      "type": "p",
@@ -4722,7 +4722,7 @@
     },
     {
      "type": "h2",
-     "text": "واژگان کلیدی (Keywords)"
+     "text": "واژگان کلیدی"
     },
     {
      "type": "p",
@@ -4730,7 +4730,7 @@
     },
     {
      "type": "h2",
-     "text": "مقدّمه (Introduction)"
+     "text": "مقدّمه"
     },
     {
      "type": "p",
@@ -4810,7 +4810,7 @@
     },
     {
      "type": "h2",
-     "text": "روش پژوهش (Research Approach)"
+     "text": "روش پژوهش"
     },
     {
      "type": "p",
@@ -4830,7 +4830,7 @@
     },
     {
      "type": "h3",
-     "text": "مرور ادبیات (Literature review)"
+     "text": "مرور ادبیات"
     },
     {
      "type": "p",
@@ -4858,7 +4858,7 @@
     },
     {
      "type": "h3",
-     "text": "سناریو (Scenario)"
+     "text": "سناریو"
     },
     {
      "type": "p",
@@ -4970,7 +4970,7 @@
     },
     {
      "type": "h2",
-     "text": "پیشینه ادبیات (Literature background)"
+     "text": "پیشینه ادبیات"
     },
     {
      "type": "p",
@@ -4982,7 +4982,7 @@
     },
     {
      "type": "h3",
-     "text": "اکوسیستم‌ها (Ecosystems)"
+     "text": "اکوسیستم‌ها"
     },
     {
      "type": "p",
@@ -5114,7 +5114,7 @@
     },
     {
      "type": "h3",
-     "text": "اکوسیستم‌های حکمرانی باز (Open government ecosystems)"
+     "text": "اکوسیستم‌های حکمرانی باز"
     },
     {
      "type": "p",
@@ -5222,7 +5222,7 @@
     },
     {
      "type": "h3",
-     "text": "اکوسیستم‌های داده‌باز (Open data ecosystems)"
+     "text": "اکوسیستم‌های داده‌باز"
     },
     {
      "type": "p",
@@ -5338,7 +5338,7 @@
     },
     {
      "type": "h3",
-     "text": "خلاصه مبحث (Summary)"
+     "text": "خلاصه مبحث"
     },
     {
      "type": "p",
@@ -5382,7 +5382,7 @@
     },
     {
      "type": "h2",
-     "text": "خلاصه کلی از انتشار و استفاده از داده‌باز (Generic scenario of open data publication and use)"
+     "text": "خلاصه کلی از انتشار و استفاده از داده‌باز"
     },
     {
      "type": "p",
@@ -5546,7 +5546,7 @@
     },
     {
      "type": "h2",
-     "text": "یافته‌ها و تحلیل (Findings and discussion)"
+     "text": "یافته‌ها و تحلیل"
     },
     {
      "type": "p",
@@ -5770,7 +5770,7 @@
     },
     {
      "type": "h2",
-     "text": "نتایج (Conclusions)"
+     "text": "نتایج"
     },
     {
      "type": "p",
@@ -5882,7 +5882,7 @@
     },
     {
      "type": "h2",
-     "text": "سپاس‌گزاری (Acknowledgement)"
+     "text": "سپاس‌گزاری"
     },
     {
      "type": "p",

@@ -13,12 +13,10 @@
 
 </div>
 
-## What this is
+## در یک نگاه
 
-A static, right-to-left Persian website presenting 37 translated case studies from
-the GovLab’s *Open Data’s Impact* project, plus original Persian reports, an index of
-Iranian law on access to information, and a bibliography. Plain HTML/CSS/JS generated
-from structured JSON — no framework, no build step at deploy time.
+HTML و CSS و جاوااسکریپتِ ساده که از روی JSONِ ساختاریافته تولید می‌شود —
+بدون فریم‌ورک و بدون هیچ مرحله‌ی بیلدی هنگام انتشار.
 
 | | |
 |---|---|
@@ -33,12 +31,12 @@ from structured JSON — no framework, no build step at deploy time.
 
 ## ابعاد تأثیر
 
-| بُعد | Dimension | تعداد |
-|---|---|---|
-| بهبود حکمرانی | Improving Government | ۱۳ |
-| ایجاد فرصت | Creating Opportunity | ۹ |
-| حل مسائل عمومی | Solving Public Problems | ۸ |
-| توانمندسازی شهروندان | Empowering Citizens | ۷ |
+| بُعد | تعداد |
+|---|---|
+| بهبود حکمرانی | ۱۳ |
+| ایجاد فرصت | ۹ |
+| حل مسائل عمومی | ۸ |
+| توانمندسازی شهروندان | ۷ |
 
 ## ساختار مخزن
 
