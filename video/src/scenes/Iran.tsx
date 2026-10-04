@@ -113,22 +113,22 @@ export const Iran: React.FC = () => {
           const p = spring({ frame: f - at, fps, config: { damping: 15, mass: 0.7 } });
           return (
             <div key={k.label} style={{
-              display: 'flex', alignItems: 'center', gap: 26, padding: '22px 30px', borderRadius: 30,
+              display: 'flex', alignItems: 'center', gap: 20, padding: '22px 26px', borderRadius: 30,
               background: 'linear-gradient(160deg, rgba(14,18,40,.92), rgba(10,13,30,.82))',
               border: `1.5px solid ${alpha(k.c[1], 0.35)}`, boxShadow: `0 30px 70px -30px ${alpha(k.c[0], 0.8)}`,
               opacity: Math.min(1, p * 1.3), transform: `translate3d(${(1 - p) * 70}px, ${(1 - p) * 30}px, 0)`,
             }}>
-              <div style={{ width: 86, height: 86, borderRadius: 24, flex: 'none', display: 'grid', placeItems: 'center', background: alpha(k.c[0], 0.35) }}>
-                <Icon d={k.icon} size={46} color={k.c[1]} stroke={2} />
+              <div style={{ width: 76, height: 76, borderRadius: 22, flex: 'none', display: 'grid', placeItems: 'center', background: alpha(k.c[0], 0.35) }}>
+                <Icon d={k.icon} size={40} color={k.c[1]} stroke={2} />
               </div>
               <div>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
-                  <span style={{ fontSize: 78, fontWeight: 900, lineHeight: 1.1 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, whiteSpace: 'nowrap' }}>
+                  <span style={{ fontSize: 74, fontWeight: 900, lineHeight: 1.1 }}>
                     <CountUp to={k.n} start={at + 2} dur={36} />
                   </span>
-                  <span style={{ fontSize: 34, fontWeight: 800 }}>{k.label}</span>
+                  <span style={{ fontSize: 31, fontWeight: 800 }}>{k.label}</span>
                 </div>
-                <div style={{ fontSize: 26, fontWeight: 400, color: 'rgba(255,255,255,.6)' }}>{k.sub}</div>
+                <div style={{ fontSize: 25, fontWeight: 400, color: 'rgba(255,255,255,.6)', whiteSpace: 'nowrap' }}>{k.sub}</div>
               </div>
             </div>
           );
