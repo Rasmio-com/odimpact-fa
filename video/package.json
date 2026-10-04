@@ -1,0 +1,30 @@
+{
+  "name": "odimpact-fa-showreel",
+  "private": true,
+  "description": "ویدئوی معرفی «تأثیر داده‌ی باز» با Remotion و پلیر صفحه‌ی اول سایت",
+  "type": "module",
+  "scripts": {
+    "data": "node scripts/gen-data.mjs",
+    "build": "npm run data && node scripts/build-player.mjs",
+    "studio": "remotion studio src/index.ts",
+    "poster": "remotion still src/index.ts Showreel ../site/assets/img/showreel-poster.jpg --frame=262 --jpeg-quality=84 --scale=0.6667",
+    "render": "remotion render src/index.ts Showreel out/odimpact-fa-showreel.mp4 --codec=h264 --crf=20",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/player": "4.0.532",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.532",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "d3-geo": "3.1.1",
+    "esbuild": "0.25.11",
+    "topojson-client": "3.1.0",
+    "typescript": "5.9.3",
+    "world-atlas": "2.0.2"
+  }
+}

@@ -1,0 +1,519 @@
+{
+ "counts": {
+  "cases": 37,
+  "reports": 9,
+  "laws": 66,
+  "library": 158,
+  "countries": 25,
+  "dimensions": 4,
+  "words": 214413,
+  "figures": 104
+ },
+ "categories": [
+  {
+   "slug": "improving-government",
+   "title": "بهبود حکمرانی",
+   "titleEn": "Improving Government",
+   "tagline": "داده باز چگونه دولت‌ها را شفاف‌تر، پاسخگوتر و کارآمدتر می‌کند",
+   "accent": "#6C5CE7",
+   "accent2": "#A78BFA",
+   "icon": "M4 20h16M6 20V9m4 11V4m4 16v-7m4 7V7",
+   "count": 13,
+   "cases": [
+    {
+     "title": "قراردادها و تدارکات باز در اسلواکی",
+     "country": "اسلواکی"
+    },
+    {
+     "title": "RBF باز در بوروندی",
+     "country": "بوروندی"
+    },
+    {
+     "title": "اوپن‌کورپوریتس",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "دِی‌وُرک‌فوریو",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "کمک‌های باز در سوئد",
+     "country": "سوئد"
+    },
+    {
+     "title": "درگاه شفافیت بودجه‌ی برزیل",
+     "country": "برزیل"
+    },
+    {
+     "title": "توسعه‌ی باز کامبوج",
+     "country": "کامبوج"
+    },
+    {
+     "title": "شبکه‌ی خدمات عمومی باز",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "بازگردانی اطلاعات خیریه‌های کانادا (T3010)",
+     "country": "کانادا"
+    },
+    {
+     "title": "ای‌اس‌ام‌آی هند",
+     "country": "هند"
+    },
+    {
+     "title": "آی‌پارتیسیپیت اوگاندا",
+     "country": "اوگاندا"
+    },
+    {
+     "title": "دیده‌بانی انتخابات اندونزی",
+     "country": "اندونزی"
+    },
+    {
+     "title": "داده‌های آدرس باز دانمارک",
+     "country": "دانمارک"
+    }
+   ]
+  },
+  {
+   "slug": "solving-public-problems",
+   "title": "حل مسائل عمومی",
+   "titleEn": "Solving Public Problems",
+   "tagline": "داده باز در خط مقدم بحران‌ها، بیماری‌ها و بلایای طبیعی",
+   "accent": "#0EA5A5",
+   "accent2": "#5EEAD4",
+   "icon": "M12 3l9 5v8l-9 5-9-5V8l9-5zM12 12v9M3.5 7.5L12 12l8.5-4.5",
+   "count": 8,
+   "cases": [
+    {
+     "title": "نبرد با ابولا در سیرالئون",
+     "country": "سیرالئون"
+    },
+    {
+     "title": "نقشه‌ی خوشه‌های دنگی در سنگاپور",
+     "country": "سنگاپور"
+    },
+    {
+     "title": "کندی در برابر شهر زنسویل",
+     "country": "ایالات متحده"
+    },
+    {
+     "title": "امدادرسانی پس از زلزله‌ی نپال",
+     "country": "نپال"
+    },
+    {
+     "title": "ایت‌مپس",
+     "country": "ایالات متحده"
+    },
+    {
+     "title": "زلزله‌ی کرایست‌چرچ نیوزیلند",
+     "country": "نیوزیلند"
+    },
+    {
+     "title": "سیلیاک بریتانیا و برندبنک",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "پیش‌بینی شیوع دنگی در پاراگوئه",
+     "country": "پاراگوئه"
+    }
+   ]
+  },
+  {
+   "slug": "creating-opportunity",
+   "title": "ایجاد فرصت",
+   "titleEn": "Creating Opportunity",
+   "tagline": "ارزش اقتصادی که از آزادسازی داده‌های عمومی متولد می‌شود",
+   "accent": "#E8850C",
+   "accent2": "#FBBF24",
+   "icon": "M4 18l5-6 4 4 7-9M20 7h-5M20 7v5",
+   "count": 9,
+   "cases": [
+    {
+     "title": "اطلس کسب‌وکار شهر نیویورک",
+     "country": "ایالات متحده"
+    },
+    {
+     "title": "سازمان نقشه‌برداری بریتانیا",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "اَکلایمیت کلمبیا",
+     "country": "کلمبیا"
+    },
+    {
+     "title": "گردشگری اجتماع‌محور در جاماییکا",
+     "country": "جاماییکا"
+    },
+    {
+     "title": "سامانه‌ی جی‌پی‌اس آمریکا",
+     "country": "ایالات متحده"
+    },
+    {
+     "title": "سازمان ثبت زمین بریتانیا",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "ایسوکو در غنا",
+     "country": "غنا"
+    },
+    {
+     "title": "حمل‌ونقل لندن",
+     "country": "بریتانیا"
+    },
+    {
+     "title": "درگاه داده‌ی باز NOAA",
+     "country": "ایالات متحده"
+    }
+   ]
+  },
+  {
+   "slug": "empowering-citizens",
+   "title": "توانمندسازی شهروندان",
+   "titleEn": "Empowering Citizens",
+   "tagline": "داده در دست مردم؛ از انتخاب مدرسه تا انتخاب پزشک",
+   "accent": "#E11D62",
+   "accent2": "#FB7185",
+   "icon": "M12 12a4 4 0 100-8 4 4 0 000 8zM5 21a7 7 0 0114 0",
+   "count": 7,
+   "cases": [
+    {
+     "title": "داشبوردهای آموزش باز تانزانیا",
+     "country": "تانزانیا"
+    },
+    {
+     "title": "کد۴اس‌ای آفریقای جنوبی",
+     "country": "آفریقای جنوبی"
+    },
+    {
+     "title": "اروگوئه در خدمت شماست",
+     "country": "اروگوئه"
+    },
+    {
+     "title": "اوپن دوکا در کنیا",
+     "country": "کنیا"
+    },
+    {
+     "title": "باید رأی داد! کنیا",
+     "country": "کنیا"
+    },
+    {
+     "title": "مدرسه‌ات را بهتر کن، مکزیک",
+     "country": "مکزیک"
+    },
+    {
+     "title": "اطلاعات آموزشی باز در تانزانیا",
+     "country": "تانزانیا"
+    }
+   ]
+  }
+ ],
+ "cases": [
+  {
+   "slug": "slovakia-open-contracting",
+   "title": "قراردادها و تدارکات باز در اسلواکی",
+   "subtitle": "ایجاد اعتماد به دولت از راه داده‌ی باز",
+   "country": "اسلواکی",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "burundi-open-rbf",
+   "title": "RBF باز در بوروندی",
+   "subtitle": "شفاف‌سازی هزینه‌ها و عملکرد بخش سلامت",
+   "country": "بوروندی",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "opencorporates",
+   "title": "اوپن‌کورپوریتس",
+   "subtitle": "داده‌ی باز به‌مثابه یک قطعه‌ی کوچک از تصویر بزرگ",
+   "country": "بریتانیا",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "theyworkforyou",
+   "title": "دِی‌وُرک‌فوریو",
+   "subtitle": "نمای ژرف و جذاب از کار نمایندگان مجلس",
+   "country": "بریتانیا",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "sweden-open-aid",
+   "title": "کمک‌های باز در سوئد",
+   "subtitle": "افزایش شفافیت و پاسخگویی در همکاری‌های توسعه‌ای",
+   "country": "سوئد",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "brazil-transparency-portal",
+   "title": "درگاه شفافیت بودجه‌ی برزیل",
+   "subtitle": "شفاف‌سازی این‌که پول همگانی چگونه خرج می‌شود",
+   "country": "برزیل",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "cambodia-open-development",
+   "title": "توسعه‌ی باز کامبوج",
+   "subtitle": "باز کردن اطلاعات درباره‌ی تلاش‌های توسعه",
+   "country": "کامبوج",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "open-public-services-network",
+   "title": "شبکه‌ی خدمات عمومی باز",
+   "subtitle": "راهبردهای تازه برای بستن شکاف داده‌ها",
+   "country": "بریتانیا",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "canada-t3010",
+   "title": "بازگردانی اطلاعات خیریه‌های کانادا (T3010)",
+   "subtitle": "پاسخگویی خیریه‌ها از راه داده‌ی باز",
+   "country": "کانادا",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "india-esmi",
+   "title": "ای‌اس‌ام‌آی هند",
+   "subtitle": "جامعه‌ی مدنی داده‌ی دولت را به شیوه‌ای باز تکمیل می‌کند",
+   "country": "هند",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "uganda-iparticipate",
+   "title": "آی‌پارتیسیپیت اوگاندا",
+   "subtitle": "داده‌ی باز برای دستیابی به نتایج بهداشتی بهتر",
+   "country": "اوگاندا",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "indonesia-kawal-pemilu",
+   "title": "دیده‌بانی انتخابات اندونزی",
+   "subtitle": "انتخاباتی آزاد، عادلانه و باز",
+   "country": "اندونزی",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "denmark-address-data",
+   "title": "داده‌های آدرس باز دانمارک",
+   "subtitle": "تلفیق و آزادسازی داده‌های مکانی",
+   "country": "دانمارک",
+   "category": "improving-government",
+   "accent": "#6C5CE7"
+  },
+  {
+   "slug": "sierra-leone-ebola",
+   "title": "نبرد با ابولا در سیرالئون",
+   "subtitle": "اشتراک‌گذاری داده برای بهبود واکنش به بحران",
+   "country": "سیرالئون",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "singapore-dengue",
+   "title": "نقشه‌ی خوشه‌های دنگی در سنگاپور",
+   "subtitle": "داده‌ی باز در خدمت سلامت عمومی",
+   "country": "سنگاپور",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "us-kennedy-zanesville",
+   "title": "کندی در برابر شهر زنسویل",
+   "subtitle": "داده‌ی باز به‌عنوان مدرک در دادگاه",
+   "country": "ایالات متحده",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "nepal-disaster-relief",
+   "title": "امدادرسانی پس از زلزله‌ی نپال",
+   "subtitle": "داده‌ی باز برای بهبود واکنش به فاجعه",
+   "country": "نپال",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "eightmaps",
+   "title": "ایت‌مپس",
+   "subtitle": "پیامدهای منفی ناخواسته‌ی داده‌ی باز",
+   "country": "ایالات متحده",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "new-zealand-christchurch",
+   "title": "زلزله‌ی کرایست‌چرچ نیوزیلند",
+   "subtitle": "داده‌ی باز برای بهبود واکنش اضطراری",
+   "country": "نیوزیلند",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "coeliac-uk-brandbank",
+   "title": "سیلیاک بریتانیا و برندبنک",
+   "subtitle": "روایتی دیگر از داده‌ی باز",
+   "country": "بریتانیا",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "paraguay-dengue",
+   "title": "پیش‌بینی شیوع دنگی در پاراگوئه",
+   "subtitle": "مدل‌سازی اپیدمی با داده‌های باز",
+   "country": "پاراگوئه",
+   "category": "solving-public-problems",
+   "accent": "#0EA5A5"
+  },
+  {
+   "slug": "nyc-business-atlas",
+   "title": "اطلس کسب‌وکار شهر نیویورک",
+   "subtitle": "هموار کردن زمین بازی برای کسب‌وکارهای کوچک",
+   "country": "ایالات متحده",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "uk-ordnance-survey",
+   "title": "سازمان نقشه‌برداری بریتانیا",
+   "subtitle": "مجموعه‌ای از مدل‌های کسب‌وکار",
+   "country": "بریتانیا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "colombia-aclimate",
+   "title": "اَکلایمیت کلمبیا",
+   "subtitle": "داده‌ی باز برای بهبود تاب‌آوری کشاورزی",
+   "country": "کلمبیا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "jamaica-community-tourism",
+   "title": "گردشگری اجتماع‌محور در جاماییکا",
+   "subtitle": "وقتی نقشه‌ی باز، اقتصاد محلی را می‌سازد",
+   "country": "جاماییکا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "us-gps",
+   "title": "سامانه‌ی جی‌پی‌اس آمریکا",
+   "subtitle": "ساختن یک کالای عمومی جهانی",
+   "country": "ایالات متحده",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "uk-hm-land-registry",
+   "title": "سازمان ثبت زمین بریتانیا",
+   "subtitle": "صندوق‌های تجاری و دو آینده‌ی ممکن برای داده‌ی باز",
+   "country": "بریتانیا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "ghana-esoko",
+   "title": "ایسوکو در غنا",
+   "subtitle": "برابری اطلاعاتی برای کشاورزان خرده‌مالک",
+   "country": "غنا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "transport-for-london",
+   "title": "حمل‌ونقل لندن",
+   "subtitle": "آماده، حرکت!",
+   "country": "بریتانیا",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "us-noaa",
+   "title": "درگاه داده‌ی باز NOAA",
+   "subtitle": "زایش یک صنعت تازه از دل داده‌های هواشناسی",
+   "country": "ایالات متحده",
+   "category": "creating-opportunity",
+   "accent": "#E8850C"
+  },
+  {
+   "slug": "tanzania-education-dashboards",
+   "title": "داشبوردهای آموزش باز تانزانیا",
+   "subtitle": "سامانه‌های اطلاعاتی باز در آموزش‌وپرورش",
+   "country": "تانزانیا",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "south-africa-code4sa",
+   "title": "کد۴اس‌ای آفریقای جنوبی",
+   "subtitle": "داروی ارزان‌تر برای مصرف‌کننده",
+   "country": "آفریقای جنوبی",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "uruguay-a-tu-servicio",
+   "title": "اروگوئه در خدمت شماست",
+   "subtitle": "تصمیم‌های داده‌محور درباره‌ی مراقبت سلامت",
+   "country": "اروگوئه",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "kenya-open-duka",
+   "title": "اوپن دوکا در کنیا",
+   "subtitle": "داده‌ی باز برای شفافیت مبادلات",
+   "country": "کنیا",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "kenya-gottovote",
+   "title": "باید رأی داد! کنیا",
+   "subtitle": "بهبود مشارکت رأی‌دهندگان با داده‌ی باز",
+   "country": "کنیا",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "mexico-mejora-tu-escuela",
+   "title": "مدرسه‌ات را بهتر کن، مکزیک",
+   "subtitle": "تصمیم‌های داده‌محور درباره‌ی آموزش",
+   "country": "مکزیک",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  },
+  {
+   "slug": "tanzania-open-education",
+   "title": "اطلاعات آموزشی باز در تانزانیا",
+   "subtitle": "روایت دو سامانه‌ی اطلاعاتی",
+   "country": "تانزانیا",
+   "category": "empowering-citizens",
+   "accent": "#E11D62"
+  }
+ ],
+ "reports": [
+  "منشور بین‌المللی داده‌ی باز",
+  "داده‌ی بازِ بودجه",
+  "داده‌ی بازِ قرارداد",
+  "گزارش داده‌ی باز — شماره‌ی یکم",
+  "گزارش داده‌ی باز — شماره‌ی دوم",
+  "گزارش داده‌ی باز — شماره‌ی سوم",
+  "پورتال‌های ملی داده‌ی باز در دنیا",
+  "نقد به طرح پورتال ملی داده",
+  "نوآوری در داده‌ی باز: عناصر بنیادین اکوسیستم"
+ ]
+}

@@ -1,0 +1,50 @@
+{
+  "_note": "محتوای روایی دستی برای ویدئوی معرفی و صفحه‌ی اول. هر عدد از خلاصه یا نکات کلیدی همان مطالعه در cases.json آمده است.",
+  "stories": [
+    {
+      "slug": "us-gps",
+      "value": 96,
+      "suffix": "میلیارد دلار",
+      "caption": "زیان تخمینی اقتصاد، اگر جی‌پی‌اس روزی از کار بیفتد؛ سامانه‌ای نظامی که به کالای عمومی جهانی تبدیل شد."
+    },
+    {
+      "slug": "slovakia-open-contracting",
+      "prefix": "بیش از",
+      "value": 2,
+      "suffix": "میلیون قرارداد",
+      "caption": "قراردادهای دولتی که آنلاین منتشر شده‌اند؛ چون در اسلواکی قراردادی که منتشر نشود، اعتبار ندارد."
+    },
+    {
+      "slug": "indonesia-kawal-pemilu",
+      "value": 54,
+      "suffix": "دلار",
+      "caption": "بودجه‌ی کل سایتی که در دو روز ساخته شد؛ بیش از ۷۰۰ داوطلب برگه‌های شمارش آرا را دیجیتال کردند."
+    },
+    {
+      "slug": "us-kennedy-zanesville",
+      "value": 10.9,
+      "decimals": 1,
+      "suffix": "میلیون دلار",
+      "caption": "غرامتی که به ساکنان محروم از آب لوله‌کشی رسید؛ مدرک کلیدی دادگاه، نقشه‌ای از داده‌ی باز بود."
+    },
+    {
+      "slug": "kenya-gottovote",
+      "text": "هزینه‌ی صفر",
+      "caption": "نسخه‌ی اول سایتی که به رأی‌دهندگان کنیایی نشان داد برای ثبت‌نام کجا بروند؛ ساخته‌شده از داده‌ی کمیسیون انتخابات."
+    },
+    {
+      "slug": "eightmaps",
+      "text": "روی دیگر سکه",
+      "caption": "نام، محل تقریبی و کارفرمای حامیان مالی یک کارزار روی نقشه رفت؛ داده‌ی باز می‌تواند به حریم خصوصی هم آسیب بزند.",
+      "warn": true,
+      "accent": "#BE123C",
+      "accent2": "#FB7185"
+    }
+  ],
+  "dimensionPicks": {
+    "improving-government": ["slovakia-open-contracting", "brazil-transparency-portal", "indonesia-kawal-pemilu"],
+    "solving-public-problems": ["sierra-leone-ebola", "nepal-disaster-relief", "singapore-dengue"],
+    "creating-opportunity": ["us-gps", "us-noaa", "transport-for-london"],
+    "empowering-citizens": ["uruguay-a-tu-servicio", "south-africa-code4sa", "kenya-gottovote"]
+  }
+}
