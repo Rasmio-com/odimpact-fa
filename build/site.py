@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """تولید صفحه‌های ایستای سایت از روی data/cases.json"""
-import colorsys, html, json, os, re
+import colorsys, html, json, math, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'site')
@@ -24,6 +24,11 @@ TOPICS = load('reports.json')['topics']
 BYTOPIC = {t['slug']: t for t in TOPICS}
 LAWS = load('laws.json')
 LIB = load('library.json')
+# نقشه‌ی نقطه‌ای و جای کشورها؛ تولیدشده با video/scripts/gen-data.mjs
+WORLD = load('world.json')
+# روایت‌های عددی و نمونه‌های هر بُعد؛ همان محتوایی که ویدئوی معرفی نشان می‌دهد
+HL = load('highlights.json')
+BYSLUG = {c['slug']: c for c in CASES}
 
 REPORT_ACCENT, REPORT_ACCENT2 = '#0F766E', '#5EEAD4'
 
@@ -33,6 +38,9 @@ FA = '۰۱۲۳۴۵۶۷۸۹'
 
 e = html.escape
 def num(n): return str(n).translate(str.maketrans('0123456789', FA))
+def fa_num(n, decimals=0):
+    """عدد با جداکننده‌ی هزارگان (٬) و ممیز فارسی (٫)"""
+    return num(f'{n:,.{decimals}f}'.replace(',', '٬').replace('.', '٫'))
 
 ICON = {
     'clock': '<path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/>',
@@ -45,13 +53,17 @@ ICON = {
     'arrowr': '<path d="M5 12h14M13 6l6 6-6 6"/>',
     'search': '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
     'grid': '<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
+    'play': '<path d="M8 5.5v13a1 1 0 001.5.86l11-6.5a1 1 0 000-1.72l-11-6.5A1 1 0 008 5.5z" fill="currentColor" stroke="none"/>',
+    'law': '<path d="M4 8h16M6 8v12h12V8M9 12v5M15 12v5M12 3l8 5H4z"/>',
+    'book': '<path d="M4 5h6v14H4zM14 5h6v14h-6M4 9h6M14 9h6"/>',
+    'warn': '<path d="M12 3l10 18H2L12 3zM12 10v5M12 18h.01"/>',
 }
 def ic(name, cls=''):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
             f'stroke-linecap="round" stroke-linejoin="round"{f" class={cls}" if cls else ""}>{ICON[name]}</svg>')
 
 
-def page(body, *, title, desc, root, active='', extra_head='', cls=''):
+def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cls=''):
     y = num(1404)
     nav_items = [('', 'خانه'), ('cases/', 'مطالعات موردی'), ('laws/', 'قوانین ایران'),
                  ('library/', 'منابع'), ('about/', 'درباره'), ]
@@ -109,6 +121,7 @@ def page(body, *, title, desc, root, active='', extra_head='', cls=''):
       <li><a href="https://thegovlab.org" rel="noopener" target="_blank">The GovLab<span class="eng"> ↗</span></a></li>
     </ul></div>
   </div>
+  <div class="f-mark" aria-hidden="true">{SITE}</div>
   <div class="f-bot">
     <span>متن اصلی از گاورلب دانشگاه نیویورک · ترجمه‌ی فارسی</span>
     <span>ساخته‌شده با قلم یکان بخ</span>
@@ -116,7 +129,7 @@ def page(body, *, title, desc, root, active='', extra_head='', cls=''):
 </div></footer>
 <div class="lb"><img alt=""></div>
 <script src="{root}assets/js/app.js" defer></script>
-</body></html>"""
+{extra_foot}</body></html>"""
 
 
 def shade(hex_, dh=0, dl=0, ds=0):
@@ -168,88 +181,208 @@ def card(c, root, kind='case'):
 def build_home():
     countries = len({c['country'] for c in CASES})
     words_total = sum(c['words'] for c in CASES) + sum(r['words'] for r in REPORTS)
-    dims = ''.join(f"""<a class="dim rv" href="cases/?cat={c['slug']}" style="--c1:{c['accent']};--c2:{c['accent2']}">
-  <span class="ic"><svg viewBox="0 0 24 24"><path d="{c['icon']}"/></svg></span>
-  <h3>{c['title']}</h3>
-  <p>{e(c['desc'])}</p>
-  <span class="n">{num(sum(1 for x in CASES if x['category'] == c['slug']))} مطالعه‌ی موردی {ic('arrow')}</span>
-</a>""" for c in CATS)
+    ncat = {c['slug']: sum(1 for x in CASES if x['category'] == c['slug']) for c in CATS}
 
-    featured = ['us-gps', 'sierra-leone-ebola', 'uruguay-a-tu-servicio',
-                'slovakia-open-contracting', 'nyc-business-atlas', 'eightmaps']
-    feat = ''.join(card(next(x for x in CASES if x['slug'] == s), '') for s in featured)
+    # پلیر ویدئوی معرفی؛ پیش از بارگذاری جاوااسکریپت، پوستر دیده می‌شود
+    reel = """<div class="reel-wrap">
+    <div class="reel-glow" aria-hidden="true"></div>
+    <div class="reel" id="reel" data-reel role="region" aria-label="ویدئوی معرفی «تأثیر داده‌ی باز»">
+      <div class="reel-frame"><img class="reel-poster" src="assets/img/showreel-poster.jpg" width="1280" height="720"
+        alt="ویدئوی معرفی «تأثیر داده‌ی باز»" fetchpriority="high" decoding="async"></div>
+      <div class="reel-bar reel-bar-ph" aria-hidden="true"></div>
+    </div>
+  </div>"""
+
+    stats = [
+        (len(CASES), '', 'مطالعه‌ی موردی'),
+        (countries, '', 'کشور و قلمرو'),
+        (len(REPORTS), '', 'گزارش فارسی'),
+        (len(LAWS['laws']), '', 'مفاد قانونی ایران'),
+        (round(words_total / 1000), ' هزار', 'واژه‌ی فارسی'),
+    ]
+    stats_html = ''.join(
+        f'<div><b data-to="{n}" data-suffix="{suf}">{num(n)}{suf}</b><span>{label}</span></div>'
+        for n, suf, label in stats)
+
+    # نوار روان عنوان‌ها؛ هر ردیف دو بار تکرار می‌شود تا حلقه بی‌درز باشد
+    def chips(items, hidden=False):
+        attrs = ' aria-hidden="true" tabindex="-1"' if hidden else ''
+        return ''.join(
+            f'<a class="tk" href="cases/{c["slug"]}/" style="--c1:{BYCAT[c["category"]]["accent"]}"{attrs}>'
+            f'<i></i>{e(c["title"])}<span>{e(c["country"])}</span></a>' for c in items)
+    half = (len(CASES) + 1) // 2
+    rows = [CASES[:half], CASES[half:]]
+    ticker = ''.join(
+        f'<div class="ticker-row{" rev" if i else ""}"><div class="ticker-track">'
+        f'{chips(r)}{chips(r, hidden=True)}</div></div>' for i, r in enumerate(rows))
+
+    # نقشه‌ی کشورها؛ سنجاق‌ها روی نقشه‌ی نقطه‌ای، با فهرست مطالعات هر کشور
+    W, H = WORLD['width'], WORLD['height']
+    pins = []
+    for i, c in enumerate(WORLD['countries']):
+        x, y = c['x'] / W * 100, c['y'] / H * 100
+        n = len(c['cases'])
+        cols = [BYCAT[k['category']]['accent'] for k in c['cases']]
+        if n > 1:
+            step = 360 / n
+            ring = 'conic-gradient(' + ','.join(
+                f'{col} {j * step:.1f}deg {(j + 1) * step - 7:.1f}deg,transparent {(j + 1) * step - 7:.1f}deg {(j + 1) * step:.1f}deg'
+                for j, col in enumerate(cols)) + ')'
+        else:
+            ring = cols[0]
+        side = 'e' if x > 66 else 's' if x < 30 else 'c'
+        vert = 'down' if y < 36 else 'up'
+        lis = ''.join(
+            f'<li><a href="cases/{k["slug"]}/"><i style="background:{BYCAT[k["category"]]["accent"]}"></i>'
+            f'{e(k["title"])}</a></li>' for k in c['cases'])
+        lab = c['label']
+        pins.append(f"""<div class="pin{' multi' if n > 1 else ''}" style="left:{x:.2f}%;top:{y:.2f}%;--pc:{cols[0]};--ring:{ring};--n:{n};--d:{(i % 7) * .4:.1f}s" data-side="{side}" data-v="{vert}">
+  <button type="button" class="pin-dot" aria-expanded="false" aria-label="{e(c['name'])}: {num(n)} مطالعه‌ی موردی"><span></span></button>
+  <span class="pin-lab" data-dir="{lab['dir']}" style="--dx:{lab['dx'] * .6:.0f}px;--dy:{lab['dy'] * .6:.0f}px" aria-hidden="true">{e(c['name'])}</span>
+  <div class="pin-pop"><div class="pin-card"><b>{e(c['name'])}</b><small>{num(n)} مطالعه‌ی موردی</small><ul>{lis}</ul></div></div>
+</div>""")
+    legend = ''.join(f'<span><i style="background:{c["accent"]}"></i>{c["title"]}</span>' for c in CATS)
+
+    # چهار بُعد با سه نمونه از هر کدام
+    def dim_card(c):
+        lis = ''.join(
+            f'<li><a href="cases/{s}/">{e(BYSLUG[s]["title"])}</a><span>{e(BYSLUG[s]["country"])}</span></li>'
+            for s in HL['dimensionPicks'][c['slug']])
+        n = ncat[c['slug']]
+        return f"""<article class="dx rv" data-spot style="--c1:{c['accent']};--c2:{c['accent2']}">
+  <div class="dx-head">
+    <span class="ic"><svg viewBox="0 0 24 24"><path d="{c['icon']}"/></svg></span>
+    <span class="dx-n" data-to="{n}">{num(n)}</span>
+  </div>
+  <h3>{c['title']}</h3>
+  <p class="dx-en"><span class="eng">{c['title_en']}</span></p>
+  <p class="dx-desc">{e(c['desc'])}</p>
+  <ul class="dx-list">{lis}</ul>
+  <a class="dx-more" href="cases/?cat={c['slug']}">همه‌ی {num(n)} مطالعه{ic('arrow')}</a>
+</article>"""
+    dims = ''.join(dim_card(c) for c in CATS)
+
+    # شواهد: شش روایت، شش عدد
+    def ev_card(h):
+        c = BYSLUG[h['slug']]
+        cat = BYCAT[c['category']]
+        a1, a2 = h.get('accent', cat['accent']), h.get('accent2', cat['accent2'])
+        if 'text' in h:
+            big = f'<span class="ev-txt">{e(h["text"])}</span>'
+        else:
+            d = h.get('decimals', 0)
+            big = ((f'<span class="ev-pre">{e(h["prefix"])}</span>' if h.get('prefix') else '')
+                   + f'<span class="ev-num" data-to="{h["value"]}" data-dec="{d}">{fa_num(h["value"], d)}</span>'
+                   + f'<span class="ev-suf">{e(h["suffix"])}</span>')
+        warn = h.get('warn')
+        tag = f'{ic("warn")}وقتی نتیجه معکوس شد' if warn else cat['title']
+        return f"""<a class="ev rv{' warn' if warn else ''}" href="cases/{h['slug']}/" style="--c1:{a1};--c2:{a2}">
+  <div class="ev-top"><span class="ev-tag">{tag}</span><span class="ev-c">{ic('pin')}{e(c['country'])}</span></div>
+  <div class="ev-big">{big}</div>
+  <p>{e(h['caption'])}</p>
+  <div class="ev-foot"><b>{e(c['title'])}</b>{ic('arrow')}</div>
+</a>"""
+    evs = ''.join(ev_card(h) for h in HL['stories'])
+
+    # پل به ایران: کمان از هر کشور تا ایران
+    ix, iy = WORLD['iran']
+    arcs, flows, dots = [], [], []
+    for i, c in enumerate(WORLD['countries']):
+        x0, y0 = c['x'], c['y']
+        dist = math.hypot(ix - x0, iy - y0)
+        cx, cy = (x0 + ix) / 2, (y0 + iy) / 2 - dist * .32
+        col = BYCAT[c['cases'][0]['category']]['accent2']
+        d = f'M{x0} {y0}Q{cx:.1f} {cy:.1f} {ix} {iy}'
+        arcs.append(f'<path class="arc" d="{d}" pathLength="1" stroke="{col}" style="--d:{i * .05:.2f}s"/>')
+        flows.append(f'<path class="flow" d="{d}" pathLength="1" style="animation-delay:-{(i * .37) % 3:.2f}s"/>')
+        dots.append(f'<circle cx="{x0}" cy="{y0}" r="3.4" fill="{col}"/>')
+    bridge_svg = (f'<svg class="bridge-arcs" viewBox="0 0 {W} {H}" aria-hidden="true">{"".join(arcs)}{"".join(flows)}'
+                  f'{"".join(dots)}<circle class="iran-ring" cx="{ix}" cy="{iy}" r="9"/>'
+                  f'<circle class="iran-dot" cx="{ix}" cy="{iy}" r="6"/></svg>'
+                  f'<span class="iran-lab" style="left:{ix / W * 100:.2f}%;top:{iy / H * 100:.2f}%">ایران</span>')
 
     body = f"""<main>
-<section class="hero"><div class="wrap">
+<section class="hero"><div class="hero-bg" aria-hidden="true"><div class="aurora"><i></i><i></i><i></i><i></i></div><div class="hero-grid"></div><div class="hero-map"></div></div>
+<div class="wrap hero-in">
   <span class="eyebrow"><i></i>پروژه‌ی «تأثیر داده‌ی باز» گاورلب دانشگاه نیویورک — به فارسی</span>
   <h1>داده‌ی باز <span class="grad">چه چیزی</span> را واقعاً تغییر داد؟</h1>
   <p class="lead">{TAGLINE}. از نبرد با ابولا در سیرالئون تا اقتصاد میلیارد‌دلاری جی‌پی‌اس؛ روایت‌هایی مستند از موفقیت‌ها، شکست‌ها و درس‌هایی که ماند.</p>
   <div class="hero-cta">
     <a class="btn btn-p" href="cases/">{ic('grid')}کاوش در مطالعات موردی</a>
-    <a class="btn btn-g" href="#dims">چهار بُعد تأثیر</a>
+    <a class="btn btn-g" href="#reel" data-reel-present>{ic('play')}تماشای ویدئو در حالت ارائه</a>
   </div>
+  {reel}
 </div></section>
 
-<div class="wrap"><div class="stats rv">
-  <div><b>{num(len(CASES))}</b><span>مطالعه‌ی موردی</span></div>
-  <div><b>{num(len(REPORTS))}</b><span>گزارش فارسی</span></div>
-  <div><b>{num(countries)}</b><span>کشور و قلمرو</span></div>
-  <div><b>{num(len(LAWS['laws']))}</b><span>مفاد قانونی ایران</span></div>
-  <div><b>{num(round(words_total / 1000))} هزار</b><span>واژه‌ی فارسی</span></div>
-</div></div>
+<div class="wrap"><div class="stats rv">{stats_html}</div></div>
 
-<section id="dims"><div class="wrap">
+<section class="ticker" aria-label="عنوان مطالعات موردی">{ticker}</section>
+
+<section class="atlas" id="map"><div class="wrap">
+  <div class="sec-head rv">
+    <span class="sec-kicker">نقشه‌ی روایت‌ها</span>
+    <h2>{num(countries)} کشور، {num(len(CASES))} روایت</h2>
+    <p>از کرایست‌چرچ تا کالیفرنیا؛ روی هر کشور بروید یا بزنید تا مطالعه‌های موردی آن را ببینید. رنگ هر سنجاق، بُعد تأثیر آن مطالعه است.</p>
+  </div>
+  <div class="atlas-map rv">
+    <div class="dots" aria-hidden="true"></div>
+    {''.join(pins)}
+  </div>
+  <div class="atlas-legend rv">{legend}</div>
+</div></section>
+
+<section id="dims" class="dims-sec"><div class="wrap">
   <div class="sec-head rv">
     <span class="sec-kicker">چارچوب تحلیلی</span>
     <h2>داده‌ی باز از چهار مسیر اثر می‌گذارد</h2>
     <p>گاورلب پس از بررسی ده‌ها ابتکار در سراسر جهان، تأثیر داده‌ی باز را در چهار بُعد دسته‌بندی کرد. هر مطالعه‌ی موردی ذیل یکی از این ابعاد قرار می‌گیرد.</p>
   </div>
-  <div class="dims">{dims}</div>
+  <div class="dimx">{dims}</div>
 </div></section>
 
-<section style="background:var(--paper-2);border-block:1px solid var(--line)"><div class="wrap">
+<section class="evidence"><div class="wrap">
   <div class="sec-head rv">
-    <span class="sec-kicker">پیشنهاد سردبیر</span>
-    <h2>از کجا شروع کنیم؟</h2>
-    <p>شش روایت که تصویری کامل از دامنه‌ی کار می‌دهند — از یک کالای عمومی جهانی تا نمونه‌ای که در آن داده‌ی باز به ابزار آزار تبدیل شد.</p>
+    <span class="sec-kicker">از کجا شروع کنیم؟</span>
+    <h2>شواهد، نه شعار</h2>
+    <p>شش روایت و شش عدد؛ از یک کالای عمومی جهانی تا جایی که داده‌ی باز نتیجه‌ی معکوس داد. هر کارت شما را به مطالعه‌ی کامل می‌برد.</p>
   </div>
-  <div class="grid">{feat}</div>
-  <div style="margin-top:34px;text-align:center">
-    <a class="btn btn-p" style="background:var(--ink);color:#fff;box-shadow:var(--shadow-m)" href="cases/">
-      دیدن همه‌ی {num(len(CASES))} مطالعه{ic('arrow')}</a>
+  <div class="evs">{evs}</div>
+  <div class="more-cta rv"><a class="btn btn-ink" href="cases/">دیدن همه‌ی {num(len(CASES))} مطالعه{ic('arrow')}</a></div>
+</div></section>
+
+<section class="bridge-sec"><div class="wrap">
+  <div class="bridge rv">
+    <div class="bridge-text">
+      <span class="sec-kicker">فراتر از مطالعات موردی</span>
+      <h2>از تجربه‌ی جهانی، <span class="grad-warm">تا ایران</span></h2>
+      <p>کنار روایت‌های گاورلب، سه مجموعه‌ی دیگر هم این‌جاست که تجربه‌ی جهانی را به زمینه‌ی ایران وصل می‌کند.</p>
+      <div class="bridge-items">
+        <a class="bi" href="cases/?cat=reports" style="--c1:{REPORT_ACCENT};--c2:{REPORT_ACCENT2}">
+          <span class="ic">{ic('doc')}</span><span class="bt"><b data-to="{len(REPORTS)}">{num(len(REPORTS))}</b><span class="t">گزارش فارسی</span><span class="s">از منشور بین‌المللی داده‌ی باز تا نقد طرح پورتال ملی داده</span></span>{ic('arrow')}
+        </a>
+        <a class="bi" href="laws/" style="--c1:#BE123C;--c2:#FB7185">
+          <span class="ic">{ic('law')}</span><span class="bt"><b data-to="{len(LAWS['laws'])}">{num(len(LAWS['laws']))}</b><span class="t">مفاد قانونی ایران</span><span class="s">از قانون اساسی تا مصوبه‌های هیأت وزیران</span></span>{ic('arrow')}
+        </a>
+        <a class="bi" href="library/" style="--c1:#4338CA;--c2:#A78BFA">
+          <span class="ic">{ic('book')}</span><span class="bt"><b data-to="{len(LIB['items'])}">{num(len(LIB['items']))}</b><span class="t">منبع پژوهشی</span><span class="s">کتاب‌شناسی پشتوانه‌ی این مجموعه، با پیوند به منبع اصلی</span></span>{ic('arrow')}
+        </a>
+      </div>
+    </div>
+    <div class="bridge-map"><div class="dots" aria-hidden="true"></div>{bridge_svg}</div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="sec-head rv">
-    <span class="sec-kicker">فراتر از مطالعات موردی</span>
-    <h2>و اگر بخواهیم از تجربه‌ی جهانی به ایران برسیم؟</h2>
-    <p>کنار روایت‌های گاورلب، سه مجموعه‌ی دیگر هم اینجاست: گزارش‌های فارسیِ تألیفی و ترجمه‌ای،
-      فهرست مفاد قانونی ایران، و کتاب‌شناسیِ منابعی که این کارها روی آن‌ها بنا شده‌اند.</p>
+<section class="finale"><div class="wrap"><div class="finale-in rv">
+  <h2>هر روایت، <span class="grad">یک شاهد</span></h2>
+  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی و {num(len(LIB['items']))} منبع پژوهشی؛ همه در یک‌جا و به فارسی.</p>
+  <div class="hero-cta">
+    <a class="btn btn-p" href="cases/">{ic('grid')}شروع کاوش</a>
+    <a class="btn btn-g" href="about/">درباره‌ی این پروژه</a>
   </div>
-  <div class="dims">
-    <a class="dim rv" href="cases/?cat=reports" style="--c1:{REPORT_ACCENT};--c2:{REPORT_ACCENT2}">
-      <span class="ic"><svg viewBox="0 0 24 24"><path d="M6 4h9l4 4v12H6z"/></svg></span>
-      <h3>گزارش‌های فارسی</h3>
-      <p>از منشور بین‌المللی داده‌ی باز و داده‌ی بازِ بودجه و قرارداد، تا نقد به طرح پورتال ملی داده.</p>
-      <span class="n">{num(len(REPORTS))} گزارش {ic('arrow')}</span>
-    </a>
-    <a class="dim rv" href="laws/" style="--c1:#BE123C;--c2:#FB7185">
-      <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M6 7v13h12V7M9 11v5M15 11v5"/></svg></span>
-      <h3>قوانین ایران</h3>
-      <p>هر مفادی از قانون اساسی تا مصوبه‌های هیأت وزیران که به دسترسی آزاد به اطلاعات مربوط است.</p>
-      <span class="n">{num(len(LAWS['laws']))} مفاد قانونی {ic('arrow')}</span>
-    </a>
-    <a class="dim rv" href="library/" style="--c1:#4338CA;--c2:#A78BFA">
-      <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h6v14H4zM14 5h6v14h-6M4 9h6M14 9h6"/></svg></span>
-      <h3>کتابخانه‌ی منابع</h3>
-      <p>پژوهش‌ها، گزارش‌ها و کتاب‌هایی که پشتوانه‌ی این مجموعه بوده‌اند، با لینک به منبع اصلی.</p>
-      <span class="n">{num(len(LIB['items']))} منبع {ic('arrow')}</span>
-    </a>
-  </div>
-</div></section>
+</div></div></section>
 </main>"""
-    write('index.html', page(body, title=f'{SITE} — {TAGLINE}', desc=TAGLINE, root='', active=''))
+    write('index.html', page(body, title=f'{SITE} — {TAGLINE}', desc=TAGLINE, root='', active='', cls='home',
+                             extra_foot='<script src="assets/js/showreel.js" defer></script>\n'))
 
 
 # ── فهرست مطالعات ─────────────────────────────────────────────────
@@ -266,14 +399,14 @@ def build_index():
     cards = ''.join(card(c, '../') for c in CASES)
     cards += ''.join(card(r, '../', kind='report') for r in REPORTS)
     body = f"""<main>
-<section style="padding-bottom:34px"><div class="wrap">
-  <div class="sec-head" style="margin-bottom:30px">
-    <span class="sec-kicker">کتابخانه</span>
-    <h2>همه‌ی مطالب</h2>
-    <p>هم‌اکنون <b data-count>{num(total)}</b> مطلب در دسترس است: {num(len(CASES))} مطالعه‌ی موردی
-      از گاورلب و {num(len(REPORTS))} گزارش فارسی. بر اساس بُعد تأثیر فیلتر کنید یا نام کشور،
-      سازمان و موضوع را جست‌وجو کنید.</p>
-  </div>
+<section class="case-hero" style="--c1:#6C5CE7;--c2:#0EA5A5;padding:64px 0 70px"><div class="wrap">
+  <div class="crumb"><a href="../">خانه</a>{ic('arrow')}<span>مطالعات موردی و گزارش‌ها</span></div>
+  <h1>همه‌ی مطالب</h1>
+  <p class="sub">هم‌اکنون <b data-count>{num(total)}</b> مطلب در دسترس است: {num(len(CASES))} مطالعه‌ی موردی
+    از گاورلب و {num(len(REPORTS))} گزارش فارسی. بر اساس بُعد تأثیر فیلتر کنید یا نام کشور،
+    سازمان و موضوع را جست‌وجو کنید.</p>
+</div></section>
+<section style="padding:36px 0 34px"><div class="wrap">
   <div class="filters">
     {chips}
     <label class="search">

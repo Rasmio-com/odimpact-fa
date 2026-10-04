@@ -82,6 +82,87 @@
     });
   }
 
+  var reduce = false;
+  try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var FA = '۰۱۲۳۴۵۶۷۸۹';
+  function faNum(v, dec) {
+    var s = v.toFixed(dec || 0).split('.');
+    s[0] = s[0].replace(/\B(?=(\d{3})+(?!\d))/g, '٬');
+    return s.join('٫').replace(/\d/g, function (d) { return FA[d]; });
+  }
+
+  /* شمارنده‌ها: عدد نهایی در HTML هست؛ وقتی دیده شد از صفر بالا می‌رود */
+  var counters = [].slice.call(document.querySelectorAll('[data-to]'));
+  if (counters.length && !reduce && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        cio.unobserve(en.target);
+        var el = en.target, to = parseFloat(el.dataset.to), dec = +(el.dataset.dec || 0);
+        var suf = el.dataset.suffix || '', t0 = null, dur = 1400 + Math.min(900, to * 4);
+        function step(t) {
+          if (t0 === null) t0 = t;
+          var p = Math.min(1, (t - t0) / dur), k = 1 - Math.pow(1 - p, 4);
+          el.textContent = faNum(to * k, dec) + suf;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        el.textContent = faNum(0, dec) + suf;
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* نور زیر نشانگر روی کارت‌ها */
+  document.addEventListener('pointermove', function (e) {
+    var el = e.target.closest && e.target.closest('.card, [data-spot]');
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+
+  /* پلیر ویدئو: با نزدیک‌شدن به وسط صفحه، از حالت مایل صاف می‌شود */
+  var reel = document.querySelector('.reel');
+  if (reel && !reduce) {
+    var ticking = false;
+    var tilt = function () {
+      ticking = false;
+      if (reel.classList.contains('is-fs')) return;
+      var r = reel.getBoundingClientRect(), vh = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.55)));
+      reel.style.setProperty('--tilt', ((1 - p) * 16).toFixed(2) + 'deg');
+      reel.style.setProperty('--sc', (0.93 + 0.07 * p).toFixed(4));
+    };
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(tilt); } }, { passive: true });
+    window.addEventListener('resize', tilt);
+    tilt();
+  }
+
+  /* سنجاق‌های نقشه: با لمس یا کلیک باز و بسته می‌شوند */
+  var pins = [].slice.call(document.querySelectorAll('.pin'));
+  if (pins.length) {
+    var closePins = function (except) {
+      pins.forEach(function (p) {
+        if (p === except) return;
+        p.classList.remove('open');
+        p.querySelector('.pin-dot').setAttribute('aria-expanded', 'false');
+      });
+    };
+    document.addEventListener('click', function (e) {
+      var dot = e.target.closest('.pin-dot');
+      if (dot) {
+        var pin = dot.parentNode, open = !pin.classList.contains('open');
+        closePins(pin);
+        pin.classList.toggle('open', open);
+        dot.setAttribute('aria-expanded', String(open));
+      } else if (!e.target.closest('.pin-pop')) {
+        closePins();
+      }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePins(); });
+  }
+
   /* جست‌وجو و فیلتر فهرست مطالعات */
   var list = document.querySelector('[data-list]');
   if (list) {
