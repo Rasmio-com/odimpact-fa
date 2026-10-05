@@ -126,12 +126,12 @@
   seg('peerMetric', function (b) { peerM = b.dataset.p; B.peer(); });
   seg('peerSort', function (b) { peerO = b.dataset.o; B.peer(); });
   B.slope = function () {
-    var S = [['ایران', 0.6433, 0.6564], ['عربستان', 0.8539, 0.9602], ['ترکیه', 0.7983, 0.8913], ['گرجستان', 0.7501, 0.7792], ['تونس', 0.6530, 0.6935], ['مصر', 0.5895, 0.6699], ['میانگین جهانی', 0.6102, 0.6382]];
+    var S = [['ایران', 0.6433, 0.6564], ['عربستان', 0.8539, 0.9602], ['امارات', 0.9010, 0.9533], ['ترکیه', 0.7983, 0.8913], ['پاکستان', 0.4238, 0.5096], ['گرجستان', 0.7501, 0.7792], ['تونس', 0.6530, 0.6935], ['مصر', 0.5895, 0.6699], ['میانگین جهانی', 0.6102, 0.6382]];
     var ds = S.map(function (s) {
       var c = s[0] === 'ایران' ? css('--iran') : s[0] === 'میانگین جهانی' ? css('--world') : css('--peer');
       return { label: s[0], data: [s[1], s[2]], borderColor: c, backgroundColor: c, borderWidth: s[0] === 'ایران' ? 4.5 : 1.6, borderDash: s[0] === 'میانگین جهانی' ? [6, 4] : [], pointRadius: 4 };
     });
-    var o = base(); o.scales.y.min = 0.55; o.scales.y.max = 1;
+    var o = base(); o.scales.y.min = 0.4; o.scales.y.max = 1;
     mk('cSlope', { type: 'line', data: { labels: ['۲۰۲۲', '۲۰۲۴'], datasets: ds }, options: o });
   };
   B.osi = function () {
