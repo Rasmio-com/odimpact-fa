@@ -14,6 +14,16 @@ def load(name):
     return json.load(open(os.path.join(ROOT, 'data', name), encoding='utf8'))
 
 
+def load_html(name):
+    return open(os.path.join(ROOT, 'data', name), encoding='utf8').read()
+
+
+# بخش «ایران در شاخص‌های جهانی» صفحه‌ی اول؛ خروجی آماده از داده‌ی ۲۴ شاخص
+HOME_INDICES = load_html('home_indices.html')
+HOME_INDICES_META = load_html('home_indices_meta.html')
+LAW_IX = load_html('law_ix.html')
+N_INDICES = 24
+
 DATA = load('cases.json')
 CATS = DATA['categories']
 CASES = DATA['cases']
@@ -54,6 +64,7 @@ ICON = {
     'search': '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
     'grid': '<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>',
     'play': '<path d="M8 5.5v13a1 1 0 001.5.86l11-6.5a1 1 0 000-1.72l-11-6.5A1 1 0 008 5.5z" fill="currentColor" stroke="none"/>',
+    'chart': '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
     'law': '<path d="M4 8h16M6 8v12h12V8M9 12v5M15 12v5M12 3l8 5H4z"/>',
     'book': '<path d="M4 5h6v14H4zM14 5h6v14h-6M4 9h6M14 9h6"/>',
     'warn': '<path d="M12 3l10 18H2L12 3zM12 10v5M12 18h.01"/>',
@@ -66,7 +77,7 @@ def ic(name, cls=''):
 def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cls=''):
     y = num(1404)
     nav_items = [('', 'خانه'), ('cases/', 'مطالعات موردی'), ('laws/', 'قوانین ایران'),
-                 ('library/', 'منابع'), ('about/', 'درباره'), ]
+                 ('indices/', 'ایران در شاخص‌ها'), ('library/', 'منابع'), ('about/', 'درباره'), ]
     links = ''.join(
         f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in nav_items)
     foot_cats = ''.join(
@@ -115,6 +126,7 @@ def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cl
       <li><a href="{root}cases/">همه‌ی مطالعات موردی</a></li>
       <li><a href="{root}cases/?cat=reports">گزارش‌های فارسی</a></li>
       <li><a href="{root}laws/">قوانین داده‌ی باز در ایران</a></li>
+      <li><a href="{root}indices/">ایران در شاخص‌های جهانی</a></li>
       <li><a href="{root}library/">کتابخانه‌ی منابع</a></li>
       <li><a href="{root}about/">درباره‌ی این پروژه</a></li>
       <li><a href="https://odimpact.org" rel="noopener" target="_blank">odimpact.org<span class="eng"> ↗</span></a></li>
@@ -355,13 +367,16 @@ def build_home():
     <div class="bridge-text">
       <span class="sec-kicker">فراتر از مطالعات موردی</span>
       <h2>از تجربه‌ی جهانی، <span class="grad-warm">تا ایران</span></h2>
-      <p>کنار روایت‌های گاورلب، سه مجموعه‌ی دیگر هم این‌جاست که تجربه‌ی جهانی را به زمینه‌ی ایران وصل می‌کند.</p>
+      <p>کنار روایت‌های گاورلب، چهار مجموعه‌ی دیگر هم این‌جاست که تجربه‌ی جهانی را به زمینه‌ی ایران وصل می‌کند.</p>
       <div class="bridge-items">
         <a class="bi" href="cases/?cat=reports" style="--c1:{REPORT_ACCENT};--c2:{REPORT_ACCENT2}">
           <span class="ic">{ic('doc')}</span><span class="bt"><b data-to="{len(REPORTS)}">{num(len(REPORTS))}</b><span class="t">گزارش فارسی</span><span class="s">از منشور بین‌المللی داده‌ی باز تا نقد طرح پورتال ملی داده</span></span>{ic('arrow')}
         </a>
         <a class="bi" href="laws/" style="--c1:#BE123C;--c2:#FB7185">
           <span class="ic">{ic('law')}</span><span class="bt"><b data-to="{len(LAWS['laws'])}">{num(len(LAWS['laws']))}</b><span class="t">مفاد قانونی ایران</span><span class="s">از قانون اساسی تا مصوبه‌های هیأت وزیران</span></span>{ic('arrow')}
+        </a>
+        <a class="bi" href="indices/" style="--c1:#B45309;--c2:#FBBF24">
+          <span class="ic">{ic('chart')}</span><span class="bt"><b data-to="{N_INDICES}">{num(N_INDICES)}</b><span class="t">شاخص جهانی</span><span class="s">ایران در آینه‌ی شاخص‌های داده‌ی باز، دولت الکترونیک و شفافیت</span></span>{ic('arrow')}
         </a>
         <a class="bi" href="library/" style="--c1:#4338CA;--c2:#A78BFA">
           <span class="ic">{ic('book')}</span><span class="bt"><b data-to="{len(LIB['items'])}">{num(len(LIB['items']))}</b><span class="t">منبع پژوهشی</span><span class="s">کتاب‌شناسی پشتوانه‌ی این مجموعه، با پیوند به منبع اصلی</span></span>{ic('arrow')}
@@ -372,9 +387,11 @@ def build_home():
   </div>
 </div></section>
 
+{HOME_INDICES}
+
 <section class="finale"><div class="wrap"><div class="finale-in rv">
   <h2>هر روایت، <span class="grad">یک شاهد</span></h2>
-  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی و {num(len(LIB['items']))} منبع پژوهشی؛ همه در یک‌جا و به فارسی.</p>
+  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی، {num(N_INDICES)} شاخص جهانی و {num(len(LIB['items']))} منبع پژوهشی؛ همه در یک‌جا و به فارسی.</p>
   <div class="hero-cta">
     <a class="btn btn-p" href="cases/">{ic('grid')}شروع کاوش</a>
     <a class="btn btn-g" href="about/">درباره‌ی این پروژه</a>
@@ -382,7 +399,7 @@ def build_home():
 </div></div></section>
 </main>"""
     write('index.html', page(body, title=f'{SITE} — {TAGLINE}', desc=TAGLINE, root='', active='', cls='home',
-                             extra_foot='<script src="assets/js/showreel.js" defer></script>\n'))
+                             extra_foot=HOME_INDICES_META + '<script src="assets/js/showreel.js" defer></script>\n'))
 
 
 # ── فهرست مطالعات ─────────────────────────────────────────────────
@@ -407,6 +424,7 @@ def build_index():
     سازمان و موضوع را جست‌وجو کنید.</p>
 </div></section>
 <section style="padding:36px 0 34px"><div class="wrap">
+  {LAW_IX}
   <div class="filters">
     {chips}
     <label class="search">
@@ -664,7 +682,31 @@ def build_laws():
     write('laws/index.html', page(
         body, title=f'قوانین داده‌ی باز در ایران — {SITE}',
         desc='فهرست مفاد قانونی ایران درباره‌ی دسترسی آزاد به اطلاعات و داده‌ی باز',
-        root='../', active='laws/'))
+        root='../', active='laws/', extra_foot=HOME_INDICES_META))
+
+
+# ── ایران در شاخص‌های جهانی ──────────────────────────────────────
+def build_indices():
+    """داشبورد و صفحه‌ی هر شاخص؛ خروجی آماده در data/indices/ که فقط ریشه‌ی دارایی‌ها در آن‌ها می‌نشیند."""
+    d = os.path.join(ROOT, 'data', 'indices')
+    for fn in sorted(os.listdir(d)):
+        name = fn[:-5]
+        dash = name == 'index'
+        root = '../' if dash else '../../'
+        html = load_html('indices/' + fn)
+        head = (f'<link rel="preload" href="{root}assets/fonts/YekanBakh-Regular.woff2" as="font" type="font/woff2" crossorigin>\n'
+                f'<link rel="preload" href="{root}assets/fonts/YekanBakh-Black.woff2" as="font" type="font/woff2" crossorigin>\n'
+                f'<link rel="stylesheet" href="{root}assets/css/style.css">\n'
+                f'<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">')
+        html = html.replace('<style>%%CSS%%</style>', head)
+        scripts = f'<script src="{root}assets/js/app.js" defer></script>'
+        if dash:
+            scripts += (f'\n<script src="{root}assets/js/chart.min.js" defer></script>'
+                        f'\n<script src="{root}assets/js/indices.js" defer></script>')
+        html = re.sub(r'<script>%%APP%%</script>(\s*<script>%%CHART%%</script>\s*<script>%%IDXJS%%</script>)?',
+                      lambda m: scripts, html)
+        assert '%%' not in html, fn
+        write('indices/index.html' if dash else f'indices/{name}/index.html', html)
 
 
 # ── کتابخانه‌ی منابع ──────────────────────────────────────────────
@@ -794,7 +836,8 @@ def build_extras():
 <circle cx="32" cy="32" r="10" fill="#fff"/></svg>""")
     write('.nojekyll', '')
     write('robots.txt', 'User-agent: *\nAllow: /\n')
-    urls = (['', 'cases/', 'laws/', 'library/', 'about/']
+    urls = (['', 'cases/', 'laws/', 'indices/', 'library/', 'about/']
+            + [f'indices/{n[:-5]}/' for n in sorted(os.listdir(os.path.join(ROOT, 'data', 'indices'))) if n != 'index.html']
             + [f'cases/{c["slug"]}/' for c in CASES]
             + [f'reports/{r["slug"]}/' for r in REPORTS])
     write('sitemap.txt', '\n'.join(urls))
@@ -818,6 +861,7 @@ def main():
         build_report(r, rorder[i - 1] if i else None,
                      rorder[i + 1] if i + 1 < len(rorder) else None)
     build_laws()
+    build_indices()
     build_library()
     build_about()
     build_404()
