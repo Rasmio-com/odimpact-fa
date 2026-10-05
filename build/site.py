@@ -21,6 +21,7 @@ def load_html(name):
 # بخش «ایران در شاخص‌های جهانی» صفحه‌ی اول؛ خروجی آماده از داده‌ی ۲۴ شاخص
 HOME_INDICES = load_html('home_indices.html')
 HOME_INDICES_META = load_html('home_indices_meta.html')
+LAW_IX = load_html('law_ix.html')
 N_INDICES = 24
 
 DATA = load('cases.json')
@@ -423,6 +424,7 @@ def build_index():
     سازمان و موضوع را جست‌وجو کنید.</p>
 </div></section>
 <section style="padding:36px 0 34px"><div class="wrap">
+  {LAW_IX}
   <div class="filters">
     {chips}
     <label class="search">
@@ -680,7 +682,31 @@ def build_laws():
     write('laws/index.html', page(
         body, title=f'قوانین داده‌ی باز در ایران — {SITE}',
         desc='فهرست مفاد قانونی ایران درباره‌ی دسترسی آزاد به اطلاعات و داده‌ی باز',
-        root='../', active='laws/'))
+        root='../', active='laws/', extra_foot=HOME_INDICES_META))
+
+
+# ── ایران در شاخص‌های جهانی ──────────────────────────────────────
+def build_indices():
+    """داشبورد و صفحه‌ی هر شاخص؛ خروجی آماده در data/indices/ که فقط ریشه‌ی دارایی‌ها در آن‌ها می‌نشیند."""
+    d = os.path.join(ROOT, 'data', 'indices')
+    for fn in sorted(os.listdir(d)):
+        name = fn[:-5]
+        dash = name == 'index'
+        root = '../' if dash else '../../'
+        html = load_html('indices/' + fn)
+        head = (f'<link rel="preload" href="{root}assets/fonts/YekanBakh-Regular.woff2" as="font" type="font/woff2" crossorigin>\n'
+                f'<link rel="preload" href="{root}assets/fonts/YekanBakh-Black.woff2" as="font" type="font/woff2" crossorigin>\n'
+                f'<link rel="stylesheet" href="{root}assets/css/style.css">\n'
+                f'<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">')
+        html = html.replace('<style>%%CSS%%</style>', head)
+        scripts = f'<script src="{root}assets/js/app.js" defer></script>'
+        if dash:
+            scripts += (f'\n<script src="{root}assets/js/chart.min.js" defer></script>'
+                        f'\n<script src="{root}assets/js/indices.js" defer></script>')
+        html = re.sub(r'<script>%%APP%%</script>(\s*<script>%%CHART%%</script>\s*<script>%%IDXJS%%</script>)?',
+                      lambda m: scripts, html)
+        assert '%%' not in html, fn
+        write('indices/index.html' if dash else f'indices/{name}/index.html', html)
 
 
 # ── کتابخانه‌ی منابع ──────────────────────────────────────────────
@@ -810,7 +836,8 @@ def build_extras():
 <circle cx="32" cy="32" r="10" fill="#fff"/></svg>""")
     write('.nojekyll', '')
     write('robots.txt', 'User-agent: *\nAllow: /\n')
-    urls = (['', 'cases/', 'laws/', 'library/', 'about/']
+    urls = (['', 'cases/', 'laws/', 'indices/', 'library/', 'about/']
+            + [f'indices/{n[:-5]}/' for n in sorted(os.listdir(os.path.join(ROOT, 'data', 'indices'))) if n != 'index.html']
             + [f'cases/{c["slug"]}/' for c in CASES]
             + [f'reports/{r["slug"]}/' for r in REPORTS])
     write('sitemap.txt', '\n'.join(urls))
@@ -834,6 +861,7 @@ def main():
         build_report(r, rorder[i - 1] if i else None,
                      rorder[i + 1] if i + 1 < len(rorder) else None)
     build_laws()
+    build_indices()
     build_library()
     build_about()
     build_404()
