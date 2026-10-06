@@ -1,0 +1,2927 @@
+{
+ "categories": [
+  {
+   "id": "national_portals",
+   "title": "درگاه‌های ملی و زیرساخت داده‌ی باز",
+   "accent": "#1D4ED8",
+   "order": 1
+  },
+  {
+   "id": "official_stats",
+   "title": "آمار رسمی و دستگاه‌های دولتی",
+   "accent": "#0F766E",
+   "order": 2
+  },
+  {
+   "id": "economy_markets",
+   "title": "اقتصاد، پول و بازار سرمایه",
+   "accent": "#B45309",
+   "order": 3
+  },
+  {
+   "id": "registry_legal",
+   "title": "ثبت، حقوق و شفافیت",
+   "accent": "#BE123C",
+   "order": 4
+  },
+  {
+   "id": "infra_env",
+   "title": "انرژی، حمل‌ونقل و محیط زیست",
+   "accent": "#15803D",
+   "order": 5
+  },
+  {
+   "id": "cities",
+   "title": "داده‌های شهری",
+   "accent": "#7C3AED",
+   "order": 6
+  },
+  {
+   "id": "research_academic",
+   "title": "پژوهش و آرشیوهای دانشگاهی",
+   "accent": "#0E7490",
+   "order": 7
+  },
+  {
+   "id": "persian_nlp",
+   "title": "داده‌های زبان فارسی و هوش مصنوعی",
+   "accent": "#C2410C",
+   "order": 8
+  },
+  {
+   "id": "civil_society",
+   "title": "جامعه‌ی مدنی و فهرست‌ها",
+   "accent": "#A21CAF",
+   "order": 9
+  },
+  {
+   "id": "private_services",
+   "title": "سرویس‌های خصوصی داده",
+   "accent": "#4338CA",
+   "order": 10
+  },
+  {
+   "id": "international",
+   "title": "نهادهای بین‌المللی",
+   "accent": "#475569",
+   "order": 11
+  },
+  {
+   "id": "global_platforms",
+   "title": "پلتفرم‌های جهانی اشتراک داده",
+   "accent": "#0369A1",
+   "order": 12
+  }
+ ],
+ "sectors": [
+  {
+   "id": "government",
+   "title": "دولتی",
+   "accent": "#1D4ED8"
+  },
+  {
+   "id": "academic",
+   "title": "دانشگاهی",
+   "accent": "#0F766E"
+  },
+  {
+   "id": "civil_society",
+   "title": "جامعه‌ی مدنی",
+   "accent": "#A21CAF"
+  },
+  {
+   "id": "private",
+   "title": "بخش خصوصی",
+   "accent": "#B45309"
+  },
+  {
+   "id": "international",
+   "title": "بین‌المللی",
+   "accent": "#475569"
+  },
+  {
+   "id": "community",
+   "title": "جامعه و متن‌باز",
+   "accent": "#15803D"
+  }
+ ],
+ "access": [
+  {
+   "id": "web_ui",
+   "title": "وب",
+   "icon": "search"
+  },
+  {
+   "id": "bulk_download",
+   "title": "دانلود انبوه",
+   "icon": "doc"
+  },
+  {
+   "id": "api",
+   "title": "API",
+   "icon": "net"
+  },
+  {
+   "id": "request_based",
+   "title": "درخواستی",
+   "icon": "pen"
+  },
+  {
+   "id": "registration",
+   "title": "نیازمند ثبت‌نام",
+   "icon": "pin"
+  },
+  {
+   "id": "paid",
+   "title": "پولی",
+   "icon": "spark"
+  },
+  {
+   "id": "free",
+   "title": "رایگان",
+   "icon": "spark"
+  }
+ ],
+ "statuses": [
+  {
+   "id": "active",
+   "title": "فعال",
+   "accent": "#16A34A"
+  },
+  {
+   "id": "unclear",
+   "title": "نامشخص",
+   "accent": "#CA8A04"
+  },
+  {
+   "id": "unverified",
+   "title": "تأیید نشد",
+   "accent": "#6B7280"
+  },
+  {
+   "id": "inactive",
+   "title": "غیرفعال",
+   "accent": "#DC2626"
+  }
+ ],
+ "entries": [
+  {
+   "id": "rasmio",
+   "name_fa": "رسمیو",
+   "name_en": "Rasmio",
+   "url": "https://rasmio.com/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [
+    "ثبت شرکت‌ها",
+    "هیئت‌مدیره",
+    "روزنامه رسمی",
+    "محصولات",
+    "مجوزها",
+    "شبکه ارتباطات"
+   ],
+   "access_methods": [
+    "web_ui",
+    "api",
+    "registration",
+    "paid",
+    "free"
+   ],
+   "formats": [
+    "HTML",
+    "JSON"
+   ],
+   "license": "تجاری؛ دسترسی رایگان محدود",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "خدمت مبتنی بر داده‌ی باز: داده‌های پراکنده‌ی رسمی شرکت‌ها و اشخاص را می‌خواند، به هم وصل می‌کند و قابل‌جست‌وجو عرضه می‌کند؛ ۲۸ پایگاه، بیش از ۱۲٫۵ میلیون پروفایل.",
+   "featured": true,
+   "source_urls": [
+    "https://rasmio.com/",
+    "https://rasmio.com/content/about-api/",
+    "https://rasmio.com/sources/"
+   ],
+   "role": "intermediary",
+   "profile": "rasmio",
+   "uses": [
+    "rrk",
+    "ssaa-sherkat",
+    "irancode",
+    "ntsw",
+    "cbi",
+    "irica-stats",
+    "codal",
+    "mporg-cdb",
+    "setadiran",
+    "shafaf-tehran",
+    "mojavez",
+    "worldbank",
+    "undata"
+   ]
+  },
+  {
+   "id": "data-gov-ir",
+   "name_fa": "درگاه ملی کاتالوگ و مجموعه داده‌های باز و کاربردی",
+   "name_en": "Iran National Open Data Portal",
+   "url": "https://catalog.data.gov.ir/",
+   "category": "national_portals",
+   "sector_type": "government",
+   "data_domains": [
+    "چندموضوعی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "PDF",
+    "XLSX",
+    "SHP"
+   ],
+   "license": "در نمونه: No License Provided",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "درگاه واحد داده‌های باز دولت زیر نظر سازمان فناوری اطلاعات.",
+   "featured": true,
+   "source_urls": [
+    "https://catalog.data.gov.ir/"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iranfoia",
+   "name_fa": "سامانه ملی انتشار و دسترسی آزاد به اطلاعات",
+   "name_en": "Iran FOIA Portal",
+   "url": "https://iranfoia.ir/",
+   "category": "national_portals",
+   "sector_type": "government",
+   "data_domains": [
+    "درخواست اطلاعات",
+    "قوانین دسترسی آزاد"
+   ],
+   "access_methods": [
+    "request_based",
+    "registration",
+    "free"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "ثبت درخواست اطلاعات بر پایه‌ی قانون ۱۳۸۸؛ به گفته‌ی کمیسیون (شفقنا) بیش از ۳۰۰۰ دستگاه عضو و بیش از ۱۸۰ هزار سند منتشرشده.",
+   "featured": false,
+   "source_urls": [
+    "https://iranfoia.ir/web/guest/home"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "amar",
+   "name_fa": "مرکز آمار ایران",
+   "name_en": "Statistical Centre of Iran",
+   "url": "https://amar.org.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [
+    "سرشماری",
+    "سالنامه",
+    "تورم",
+    "بازار کار"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "PDF",
+    "XLSX"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "متولی اصلی آمار رسمی کشور.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "cbi-tsd",
+   "name_fa": "بانک اطلاعات سری‌های زمانی اقتصادی بانک مرکزی",
+   "name_en": "CBI Time Series Database",
+   "url": "https://tsd.cbi.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "حساب‌های ملی",
+    "پول",
+    "قیمت‌ها",
+    "بخش خارجی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "XLSX",
+    "HTML"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "به اعلام بانک مرکزی (مگیران): بیش از هزار متغیر مهم اقتصادی سالانه از ۱۳۳۸ به بعد، با خروجی Excel و HTML.",
+   "featured": false,
+   "source_urls": [
+    "https://eri.atu.ac.ir/fa/page/9005/",
+    "https://www.magiran.com/article/1472945"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mefa-databank",
+   "name_fa": "بانک داده‌های اقتصادی و مالی وزارت اقتصاد",
+   "name_en": "MEFA Economic Databank",
+   "url": "https://databank.mefa.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "اقتصاد ملی و استانی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "XLSX"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unclear",
+   "last_verified": "2026-10-06",
+   "description_fa": "داده‌های اقتصادی ملی و استانی؛ آخرین تازه‌ها مربوط به ۱۴۰۰.",
+   "featured": false,
+   "source_urls": [
+    "https://databank.mefa.ir/"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "irica-stats",
+   "name_fa": "آمار گمرک ایران",
+   "name_en": "IRICA Trade Statistics",
+   "url": "https://irica.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "واردات",
+    "صادرات"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download"
+   ],
+   "formats": [
+    "PDF",
+    "XLSX"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار ماهانه‌ی تجارت غیرنفتی از ۱۳۷۱.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tsetmc",
+   "name_fa": "مدیریت فناوری بورس تهران",
+   "name_en": "TSETMC",
+   "url": "https://www.tsetmc.com/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "قیمت سهام",
+    "معاملات"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "HTML"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "داده‌ی معاملات بورس تهران.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ime",
+   "name_fa": "بورس کالای ایران",
+   "name_en": "Iran Mercantile Exchange",
+   "url": "https://www.ime.co.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "معاملات کالا"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download"
+   ],
+   "formats": [
+    "XLSX",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار معاملات بورس کالا.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "codal",
+   "name_fa": "کدال",
+   "name_en": "Codal",
+   "url": "https://www.codal.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [
+    "صورت‌های مالی ناشران"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "HTML",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "افشای رسمی اطلاعات ناشران بورسی (تأیید نشد).",
+   "featured": false,
+   "source_urls": [],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "rrk",
+   "name_fa": "روزنامه رسمی جمهوری اسلامی ایران",
+   "name_en": "Official Gazette of Iran",
+   "url": "https://www.rrk.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [
+    "آگهی‌های ثبتی",
+    "تغییرات شرکت‌ها",
+    "علائم تجاری"
+   ],
+   "access_methods": [
+    "web_ui",
+    "free"
+   ],
+   "formats": [
+    "HTML",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "روزنامه رسمی جمهوری اسلامی ایران؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ssaa-sherkat",
+   "name_fa": "سامانه ثبت شرکت‌ها",
+   "name_en": "Company Registration (SSAA)",
+   "url": "https://sherkat.ssaa.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [
+    "ثبت شرکت"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "HTML"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "مرجع رسمی ثبت شرکت‌ها.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "irancode",
+   "name_fa": "ایران‌کد",
+   "name_en": "IranCode",
+   "url": "https://www.irancode.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [
+    "شناسه کالا و خدمات"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "HTML"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "نظام ملی طبقه‌بندی و شماره‌گذاری کالا و خدمات.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "dotic",
+   "name_fa": "پایگاه ملی اطلاع‌رسانی قوانین و مقررات",
+   "name_en": "National Laws Portal",
+   "url": "https://dotic.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [
+    "قوانین",
+    "مصوبات"
+   ],
+   "access_methods": [
+    "web_ui",
+    "free"
+   ],
+   "formats": [
+    "Text"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "متن قوانین و مقررات، معاونت حقوقی ریاست جمهوری.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tavanir-stats",
+   "name_fa": "آمار صنعت برق – توانیر",
+   "name_en": "Tavanir Statistics",
+   "url": "https://amar.tavanir.org.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [
+    "برق"
+   ],
+   "access_methods": [
+    "bulk_download"
+   ],
+   "formats": [
+    "XLSX",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار رسمی صنعت برق و پیک مصرف.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "cra-opendata",
+   "name_fa": "داده باز سازمان تنظیم مقررات ارتباطات",
+   "name_en": "CRA Open Data",
+   "url": "https://opendata.cra.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [
+    "تلفن",
+    "اینترنت",
+    "پست"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "Dashboard"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "شاخص‌های فصلی ارتباطات از ۱۳۹۵.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tehran-nama",
+   "name_fa": "تهران‌نما",
+   "name_en": "Tehran Nama",
+   "url": "https://data.tehran.ir/",
+   "category": "cities",
+   "sector_type": "government",
+   "data_domains": [
+    "داده‌های شهر تهران"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "Chart"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "داده‌ها و نمودارهای شهر تهران.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "shafaf-tehran",
+   "name_fa": "سامانه شفافیت شهرداری تهران",
+   "name_en": "Tehran Transparency",
+   "url": "https://shafaf.tehran.ir/",
+   "category": "cities",
+   "sector_type": "government",
+   "data_domains": [
+    "معاملات",
+    "بودجه",
+    "شهرسازی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download"
+   ],
+   "formats": [
+    "XLSX",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "معاملات، بودجه و شهرسازی شهرداری تهران.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iran-data-portal",
+   "name_fa": "درگاه داده‌های علوم اجتماعی ایران (سیراکیوز)",
+   "name_en": "Iran Data Portal (Syracuse)",
+   "url": "https://irandataportal.syr.edu/",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [
+    "اجتماعی-اقتصادی",
+    "انتخابات",
+    "احزاب",
+    "بودجه"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "XLS",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "درگاه دوزبانه از ۲۰۱۱ با اطلس انتخابات ۱۹۸۰ تا ۲۰۱۷؛ طبق صفحه‌ی اصلی خود سایت، پربازدیدترین وب‌سایت داده‌ی علوم اجتماعی ایران با بیش از ۳۵ هزار بازدیدکننده در ماه، با حمایت مالی SSRC، Princeton، Syracuse و Persian Heritage Foundation.",
+   "featured": false,
+   "source_urls": [
+    "https://irandataportal.syr.edu/"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ipums-iran",
+   "name_fa": "ریزداده‌های سرشماری ایران در IPUMS",
+   "name_en": "IPUMS International – Iran",
+   "url": "https://international.ipums.org/international-action/sample_details/country/ir",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [
+    "ریزداده سرشماری ۱۳۸۵ و ۱۳۹۰"
+   ],
+   "access_methods": [
+    "registration",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "CSV",
+    "Stata"
+   ],
+   "license": "قرارداد IPUMS؛ بازتوزیع ممنوع",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "نمونه‌های ۲ درصدی سرشماری ۲۰۰۶ (۱٬۲۹۹٬۸۲۵ نفر) و ۲۰۱۱ (۱٬۴۸۱٬۵۸۶ نفر).",
+   "featured": false,
+   "source_urls": [
+    "https://international.ipums.org/international-action/sample_details"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "majlis-rc",
+   "name_fa": "مرکز پژوهش‌های مجلس",
+   "name_en": "Majlis Research Center",
+   "url": "https://rc.majlis.ir/",
+   "category": "research_academic",
+   "sector_type": "government",
+   "data_domains": [
+    "گزارش‌های سیاستی"
+   ],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "گزارش‌های پژوهشی و سیاستی مجلس.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ganjoor",
+   "name_fa": "گنجور",
+   "name_en": "Ganjoor",
+   "url": "https://ganjoor.net/",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [
+    "شعر کلاسیک فارسی",
+    "خوانش‌ها"
+   ],
+   "access_methods": [
+    "api",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "JSON",
+    "MySQL"
+   ],
+   "license": "کد: GPL-3.0؛ داده: تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "پایگاه شعر فارسی با API عمومی و خروجی git با ۲۳۴ شاعر و ۱۳۲٬۵۹۱ شعر.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/ganjoor/ganjoor-data",
+    "https://github.com/ganjoor/GanjoorService"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "parsinlu",
+   "name_fa": "ParsiNLU",
+   "name_en": "ParsiNLU",
+   "url": "https://github.com/persiannlp/parsinlu",
+   "category": "persian_nlp",
+   "sector_type": "academic",
+   "data_domains": [
+    "درک مطلب",
+    "استلزام",
+    "احساسات",
+    "ترجمه"
+   ],
+   "access_methods": [
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "JSON",
+    "HF"
+   ],
+   "license": "CC BY-NC-SA 4.0",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "طبق مقاله‌ی Khashabi و همکاران (TACL 2021)، نخستین بنچمارک فارسی با بیش از ۱۴٫۵ هزار نمونه در ۶ وظیفه‌ی NLU؛ روی Hugging Face با نام persiannlp.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/persiannlp/parsinlu"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "persianqa",
+   "name_fa": "PersianQA",
+   "name_en": "PersianQA",
+   "url": "https://github.com/sajjjadayobi/PersianQA",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [
+    "پرسش و پاسخ"
+   ],
+   "access_methods": [
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "JSON",
+    "HF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "درک مطلب روی ویکی‌پدیای فارسی؛ طبق README مخزن بیش از ۹٬۰۰۰ نمونه، شامل ۹۰۰ نمونه‌ی آزمون.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/sajjjadayobi/PersianQA"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "farstail",
+   "name_fa": "FarsTail",
+   "name_en": "FarsTail",
+   "url": "https://github.com/dml-qom/FarsTail",
+   "category": "persian_nlp",
+   "sector_type": "academic",
+   "data_domains": [
+    "استنتاج زبان طبیعی"
+   ],
+   "access_methods": [
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "CSV"
+   ],
+   "license": "Apache-2.0 (طبق فهرست Keramatfar)",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "طبق مقاله‌ی arXiv:2009.08820، ۱۰٬۳۶۷ نمونه برای استنتاج زبان فارسی (۷٬۲۶۶ آموزش، ۱٬۵۳۷ اعتبارسنجی، ۱٬۵۶۴ آزمون).",
+   "featured": false,
+   "source_urls": [
+    "https://arxiv.org/pdf/2009.08820"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iranbudget",
+   "name_fa": "ایران بودجه",
+   "name_en": "Iran Budget",
+   "url": "https://iranbudget.org/",
+   "category": "civil_society",
+   "sector_type": "civil_society",
+   "data_domains": [
+    "بودجه"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download"
+   ],
+   "formats": [
+    "CSV"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "نسخه‌ی قابل‌تحلیل بودجه‌ی کشور.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "daghigheh",
+   "name_fa": "دقیقه",
+   "name_en": "Daghigheh",
+   "url": "https://d-learn.ir/",
+   "category": "civil_society",
+   "sector_type": "civil_society",
+   "data_domains": [
+    "آموزش داده",
+    "دیتاست‌های عمومی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download"
+   ],
+   "formats": [
+    "CSV"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "آموزش روزنامه‌نگاری داده، انتشار دیتاست و جایزه‌ی مقاله‌ی داده.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "awesome-iran-opendata",
+   "name_fa": "فهرست Awesome Iran Open Data",
+   "name_en": "awesome-iran-opendata",
+   "url": "https://github.com/alirezach/awesome-iran-opendata",
+   "category": "civil_society",
+   "sector_type": "community",
+   "data_domains": [
+    "فهرست منابع داده ایران"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "Markdown",
+    "CSV"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "کامل‌ترین فهرست متن‌باز منابع داده‌ی ایران.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iranopendata",
+   "name_fa": "مرکز داده‌های باز ایران",
+   "name_en": "Iran Open Data Center",
+   "url": "https://iranopendata.org/fa/",
+   "category": "civil_society",
+   "sector_type": "civil_society",
+   "data_domains": [
+    "چندموضوعی",
+    "اطلس استانی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "bulk_download",
+    "free"
+   ],
+   "formats": [
+    "CSV",
+    "PDF"
+   ],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "طرح روزنامه‌نگاری داده با اطلس استانی؛ برخی تحلیل‌ها رویکرد رسانه‌ای دارد (تحلیل رسانه‌ای).",
+   "featured": false,
+   "source_urls": [
+    "https://iranopendata.org/fa/about/"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "linka",
+   "name_fa": "لینکا",
+   "name_en": "Linka",
+   "url": "https://linka.ir/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [
+    "اطلاعات ثبتی شرکت‌ها",
+    "قراردادهای دولتی"
+   ],
+   "access_methods": [
+    "web_ui",
+    "api",
+    "paid"
+   ],
+   "formats": [
+    "HTML",
+    "JSON"
+   ],
+   "license": "تجاری",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "استعلام شرکت‌ها و اشخاص با API و پوشش از ۱۳۲۰.",
+   "featured": false,
+   "source_urls": [
+    "https://linka.ir/"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "rasmio-mcp",
+   "name_fa": "سرور MCP رسمیو (جامعه)",
+   "name_en": "Rasmio MCP Server",
+   "url": "https://github.com/engboustani/rasmio-mcp",
+   "category": "private_services",
+   "sector_type": "community",
+   "data_domains": [
+    "اتصال LLM به API رسمیو"
+   ],
+   "access_methods": [
+    "api"
+   ],
+   "formats": [
+    "TypeScript"
+   ],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "سرور MCP شخص ثالث برای API رسمیو.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/engboustani/rasmio-mcp"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "worldbank",
+   "name_fa": "بانک جهانی – ایران",
+   "name_en": "World Bank – Iran",
+   "url": "https://data.worldbank.org/country/iran-islamic-rep",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [
+    "توسعه",
+    "اقتصاد کلان"
+   ],
+   "access_methods": [
+    "bulk_download",
+    "api",
+    "free"
+   ],
+   "formats": [
+    "CSV",
+    "XLSX"
+   ],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "شاخص‌های توسعه‌ی جهانی برای ایران.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "opensanctions",
+   "name_fa": "OpenSanctions",
+   "name_en": "OpenSanctions",
+   "url": "https://www.opensanctions.org/",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [
+    "تحریم‌ها",
+    "اشخاص سیاسی"
+   ],
+   "access_methods": [
+    "bulk_download",
+    "api"
+   ],
+   "formats": [
+    "JSON",
+    "CSV"
+   ],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "پایگاه متن‌باز تحریم‌ها، شامل نهادهای ایرانی.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "opencorporates",
+   "name_fa": "OpenCorporates",
+   "name_en": "OpenCorporates",
+   "url": "https://opencorporates.com/",
+   "category": "international",
+   "sector_type": "private",
+   "data_domains": [
+    "ثبت شرکت‌ها (جهانی)"
+   ],
+   "access_methods": [
+    "web_ui",
+    "api",
+    "paid"
+   ],
+   "formats": [
+    "JSON"
+   ],
+   "license": "ODbL",
+   "api_available": true,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "ثبت شرکت‌های جهان؛ پوشش ایران تأیید نشد.",
+   "featured": false,
+   "source_urls": [],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iran-gov-opendata",
+   "name_fa": "صفحه داده باز درگاه دولت هوشمند",
+   "name_en": "",
+   "url": "https://iran.gov.ir/opendata",
+   "category": "national_portals",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "صفحه داده باز درگاه دولت هوشمند؛ در دسته‌ی «درگاه‌های ملی و زیرساخت داده‌ی باز».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "shafaf-ito",
+   "name_fa": "سامانه شفافیت سازمان فناوری اطلاعات",
+   "name_en": "",
+   "url": "https://shafaf.ito.gov.ir/",
+   "category": "national_portals",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "سامانه شفافیت سازمان فناوری اطلاعات؛ در دسته‌ی «درگاه‌های ملی و زیرساخت داده‌ی باز».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mardom",
+   "name_fa": "سامانه مدیریت خدمات دولت",
+   "name_en": "",
+   "url": "https://khadamat.mardom.ir/",
+   "category": "national_portals",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "سامانه مدیریت خدمات دولت؛ در دسته‌ی «درگاه‌های ملی و زیرساخت داده‌ی باز».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "cbi",
+   "name_fa": "بانک مرکزی",
+   "name_en": "",
+   "url": "https://www.cbi.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "تورم، پرداخت",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ice",
+   "name_fa": "مرکز مبادله ارز و طلا",
+   "name_en": "",
+   "url": "https://ice.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "مرکز مبادله ارز و طلا؛ در دسته‌ی «اقتصاد، پول و بازار سرمایه».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ifb",
+   "name_fa": "فرابورس",
+   "name_en": "",
+   "url": "https://www.ifb.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "فرابورس؛ در دسته‌ی «اقتصاد، پول و بازار سرمایه».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "iee",
+   "name_fa": "بورس انرژی",
+   "name_en": "",
+   "url": "https://iee.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "بورس انرژی؛ در دسته‌ی «اقتصاد، پول و بازار سرمایه».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "seo-rdis",
+   "name_fa": "پژوهش سازمان بورس",
+   "name_en": "",
+   "url": "https://rdis.seo.ir/fa/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پژوهش سازمان بورس؛ در دسته‌ی «اقتصاد، پول و بازار سرمایه».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "centinsur",
+   "name_fa": "بیمه مرکزی",
+   "name_en": "",
+   "url": "https://centinsur.ir/",
+   "category": "economy_markets",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "بیمه مرکزی؛ در دسته‌ی «اقتصاد، پول و بازار سرمایه».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mporg-cdb",
+   "name_fa": "پایگاه قراردادهای کشور",
+   "name_en": "",
+   "url": "https://cdb.mporg.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پایگاه قراردادهای کشور؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ntsw",
+   "name_fa": "سامانه جامع تجارت",
+   "name_en": "",
+   "url": "https://www.ntsw.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "سامانه جامع تجارت؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "cfoia-farhang",
+   "name_fa": "شفاف‌سازی وزارت ارشاد",
+   "name_en": "",
+   "url": "https://cfoia.farhang.gov.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "شفاف‌سازی وزارت ارشاد؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "emdad",
+   "name_fa": "شفافیت کمیته امداد",
+   "name_en": "",
+   "url": "https://www.emdad.ir/fa/shafaf",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "شفافیت کمیته امداد؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "qavanin",
+   "name_fa": "قوانین مجلس",
+   "name_en": "",
+   "url": "https://qavanin.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "قوانین مجلس؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "setadiran",
+   "name_fa": "ستاد ایران",
+   "name_en": "",
+   "url": "https://setadiran.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "ستاد ایران؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mojavez",
+   "name_fa": "درگاه ملی مجوزها",
+   "name_en": "",
+   "url": "https://mojavez.ir/",
+   "category": "registry_legal",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "درگاه ملی مجوزها؛ در دسته‌ی «ثبت، حقوق و شفافیت».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "sabteahval",
+   "name_fa": "آمار ثبت احوال",
+   "name_en": "",
+   "url": "https://amar.sabteahval.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار ثبت احوال؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "refahdb",
+   "name_fa": "پایگاه رفاه ایرانیان (نمونه ۲٪)",
+   "name_en": "",
+   "url": "https://refahdb.mcls.gov.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پایگاه رفاه ایرانیان (نمونه ۲٪)؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mcls-ssi",
+   "name_fa": "اطلاعات راهبردی وزارت کار",
+   "name_en": "",
+   "url": "https://ssicenter.mcls.gov.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "اطلاعات راهبردی وزارت کار؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "npo",
+   "name_fa": "داده باز سازمان بهره‌وری",
+   "name_en": "",
+   "url": "https://www.npo.gov.ir/opendata/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "داده باز سازمان بهره‌وری؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tamin",
+   "name_fa": "آمار تأمین اجتماعی",
+   "name_en": "",
+   "url": "https://www.tamin.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار تأمین اجتماعی؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "lmo",
+   "name_fa": "پزشکی قانونی",
+   "name_en": "",
+   "url": "https://www.lmo.ir/",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پزشکی قانونی؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "maj",
+   "name_fa": "آمار جهاد کشاورزی",
+   "name_en": "",
+   "url": "https://new-dpe.maj.ir/amar",
+   "category": "official_stats",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار جهاد کشاورزی؛ در دسته‌ی «آمار رسمی و دستگاه‌های دولتی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "moe-isn",
+   "name_fa": "شبکه آمار وزارت نیرو",
+   "name_en": "",
+   "url": "https://isn.moe.gov.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "شبکه آمار وزارت نیرو؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "igmc",
+   "name_fa": "مدیریت شبکه برق",
+   "name_en": "",
+   "url": "https://www.igmc.ir/statistical-center",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "مدیریت شبکه برق؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "nww",
+   "name_fa": "آمار آب و فاضلاب",
+   "name_en": "",
+   "url": "https://www.nww.ir/stat",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار آب و فاضلاب؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "aqms",
+   "name_fa": "پایش کیفی هوای کشور",
+   "name_en": "",
+   "url": "https://aqms.doe.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پایش کیفی هوای کشور؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ngdir",
+   "name_fa": "پایگاه داده علوم زمین",
+   "name_en": "",
+   "url": "https://www.ngdir.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "پایگاه داده علوم زمین؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "airport",
+   "name_fa": "آمار فرودگاه‌ها",
+   "name_en": "",
+   "url": "https://statistics.airport.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آمار فرودگاه‌ها؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "rmto",
+   "name_fa": "راهداری",
+   "name_en": "",
+   "url": "https://www.rmto.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "راهداری؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "road141",
+   "name_fa": "مرکز مدیریت راه‌ها",
+   "name_en": "",
+   "url": "https://141.ir/",
+   "category": "infra_env",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "مرکز مدیریت راه‌ها؛ در دسته‌ی «انرژی، حمل‌ونقل و محیط زیست».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tehran-yearbook",
+   "name_fa": "سالنامه آماری تهران",
+   "name_en": "",
+   "url": "https://tmicto.tehran.ir/",
+   "category": "cities",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "سالنامه آماری تهران؛ در دسته‌ی «داده‌های شهری».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "airnow-tehran",
+   "name_fa": "کنترل کیفیت هوای تهران",
+   "name_en": "",
+   "url": "https://airnow.tehran.ir/",
+   "category": "cities",
+   "sector_type": "government",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "کنترل کیفیت هوای تهران؛ در دسته‌ی «داده‌های شهری».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "irandoc-nema",
+   "name_fa": "نما (ایرانداک)",
+   "name_en": "",
+   "url": "https://nema.irandoc.ac.ir/",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "نما (ایرانداک)؛ در دسته‌ی «پژوهش و آرشیوهای دانشگاهی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "irandoc-ak",
+   "name_fa": "آک (ایرانداک)",
+   "name_en": "",
+   "url": "https://ak.irandoc.ac.ir/",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "آک (ایرانداک)؛ در دسته‌ی «پژوهش و آرشیوهای دانشگاهی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ispa",
+   "name_fa": "ایسپا",
+   "name_en": "",
+   "url": "https://ispa.ir/",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "ایسپا؛ در دسته‌ی «پژوهش و آرشیوهای دانشگاهی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tccim",
+   "name_fa": "بررسی‌های اقتصادی اتاق تهران",
+   "name_en": "",
+   "url": "https://economy.tccim.ir/",
+   "category": "research_academic",
+   "sector_type": "civil_society",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "بررسی‌های اقتصادی اتاق تهران؛ در دسته‌ی «پژوهش و آرشیوهای دانشگاهی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "stanford2040",
+   "name_fa": "Stanford Iran 2040",
+   "name_en": "Stanford Iran 2040",
+   "url": "https://iranian-studies.stanford.edu/iran-2040-project/home",
+   "category": "research_academic",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "Stanford Iran 2040؛ در دسته‌ی «پژوهش و آرشیوهای دانشگاهی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "wb-microdata",
+   "name_fa": "ریزداده بانک جهانی – ایران",
+   "name_en": "",
+   "url": "https://microdata.worldbank.org/index.php/catalog/6949",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "ریزداده بانک جهانی – ایران؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "hezar",
+   "name_fa": "Hezar",
+   "name_en": "Hezar",
+   "url": "https://github.com/hezarai/hezar",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Hezar؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "awesome-persian-nlp",
+   "name_fa": "awesome-persian-nlp-ir",
+   "name_en": "awesome-persian-nlp-ir",
+   "url": "https://github.com/mhbashari/awesome-persian-nlp-ir",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "awesome-persian-nlp-ir؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "keramatfar",
+   "name_fa": "Persian_NLP_Datasets",
+   "name_en": "Persian_NLP_Datasets",
+   "url": "https://github.com/Keramatfar/Persian_NLP_Datasets",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Persian_NLP_Datasets؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "awesome-persian-llm",
+   "name_fa": "Awesome-Persian-LLM",
+   "name_en": "Awesome-Persian-LLM",
+   "url": "https://github.com/MohammadHeydari/Awesome-Persian-LLM",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Awesome-Persian-LLM؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "farsinlp",
+   "name_fa": "FarsiNLP",
+   "name_en": "FarsiNLP",
+   "url": "https://github.com/farsinlp/farsinlp.github.io",
+   "category": "persian_nlp",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "FarsiNLP؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "common-voice-fa",
+   "name_fa": "Common Voice فارسی",
+   "name_en": "",
+   "url": "https://commonvoice.mozilla.org/fa",
+   "category": "persian_nlp",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "Common Voice فارسی؛ در دسته‌ی «داده‌های زبان فارسی و هوش مصنوعی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "dadeh",
+   "name_fa": "داده",
+   "name_en": "",
+   "url": "https://dadeh.org/fa",
+   "category": "civil_society",
+   "sector_type": "civil_society",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "داده؛ در دسته‌ی «جامعه‌ی مدنی و فهرست‌ها».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "thirtyone",
+   "name_fa": "Thirtyone Land",
+   "name_en": "Thirtyone Land",
+   "url": "https://fa.thirtyone.land/",
+   "category": "civil_society",
+   "sector_type": "civil_society",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "Thirtyone Land؛ در دسته‌ی «جامعه‌ی مدنی و فهرست‌ها».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "osm",
+   "name_fa": "OpenStreetMap",
+   "name_en": "OpenStreetMap",
+   "url": "https://www.openstreetmap.org/",
+   "category": "civil_society",
+   "sector_type": "community",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "ODbL",
+   "api_available": true,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "نقشه‌ی آزاد جهان با داده‌ی مشارکتی و API؛ مجوز ODbL.",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "apieco",
+   "name_fa": "اپی‌کو",
+   "name_en": "",
+   "url": "https://apieco.ir/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "اپی‌کو؛ در دسته‌ی «سرویس‌های خصوصی داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "tgju",
+   "name_fa": "TGJU",
+   "name_en": "TGJU",
+   "url": "https://www.tgju.org/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "TGJU؛ در دسته‌ی «سرویس‌های خصوصی داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "neshan",
+   "name_fa": "نشان",
+   "name_en": "",
+   "url": "https://platform.neshan.org/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "نشان؛ در دسته‌ی «سرویس‌های خصوصی داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "mapir",
+   "name_fa": "Map.ir",
+   "name_en": "Map.ir",
+   "url": "https://map.ir/",
+   "category": "private_services",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "unverified",
+   "last_verified": null,
+   "description_fa": "Map.ir؛ در دسته‌ی «سرویس‌های خصوصی داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "imf",
+   "name_fa": "IMF – ایران",
+   "name_en": "",
+   "url": "https://www.imf.org/en/Countries/IRN",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "IMF – ایران؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "undata",
+   "name_fa": "UNdata",
+   "name_en": "UNdata",
+   "url": "https://data.un.org/",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "UNdata؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "ilostat",
+   "name_fa": "ILOSTAT",
+   "name_en": "ILOSTAT",
+   "url": "https://ilostat.ilo.org/data/",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "ILOSTAT؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "who",
+   "name_fa": "WHO Data",
+   "name_en": "WHO Data",
+   "url": "https://www.who.int/data",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "WHO Data؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "unicef",
+   "name_fa": "UNICEF – ایران",
+   "name_en": "",
+   "url": "https://data.unicef.org/country/irn/",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "UNICEF – ایران؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "wid",
+   "name_fa": "World Inequality Database",
+   "name_en": "World Inequality Database",
+   "url": "https://wid.world/country/iran/",
+   "category": "international",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "World Inequality Database؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "owid",
+   "name_fa": "Our World in Data",
+   "name_en": "Our World in Data",
+   "url": "https://ourworldindata.org/",
+   "category": "international",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Our World in Data؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "wvs",
+   "name_fa": "World Values Survey",
+   "name_en": "World Values Survey",
+   "url": "https://www.worldvaluessurvey.org/",
+   "category": "international",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "World Values Survey؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "copernicus",
+   "name_fa": "Copernicus CDS",
+   "name_en": "Copernicus CDS",
+   "url": "https://cds.climate.copernicus.eu/",
+   "category": "international",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Copernicus CDS؛ در دسته‌ی «نهادهای بین‌المللی».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "data-commons",
+   "name_fa": "Data Commons – ایران",
+   "name_en": "",
+   "url": "https://datacommons.org/place/country/IRN",
+   "category": "global_platforms",
+   "sector_type": "international",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Data Commons – ایران؛ در دسته‌ی «پلتفرم‌های جهانی اشتراک داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "publisher",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "huggingface",
+   "name_fa": "Hugging Face (fa)",
+   "name_en": "Hugging Face (fa)",
+   "url": "https://huggingface.co/datasets?language=language:fa",
+   "category": "global_platforms",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Hugging Face (fa)؛ در دسته‌ی «پلتفرم‌های جهانی اشتراک داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "kaggle",
+   "name_fa": "Kaggle",
+   "name_en": "Kaggle",
+   "url": "https://www.kaggle.com/",
+   "category": "global_platforms",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Kaggle؛ در دسته‌ی «پلتفرم‌های جهانی اشتراک داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "dataverse",
+   "name_fa": "Harvard Dataverse",
+   "name_en": "Harvard Dataverse",
+   "url": "https://dataverse.harvard.edu/",
+   "category": "global_platforms",
+   "sector_type": "academic",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui",
+    "api"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": true,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Harvard Dataverse؛ در دسته‌ی «پلتفرم‌های جهانی اشتراک داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "community",
+   "profile": "",
+   "uses": []
+  },
+  {
+   "id": "dataset-search",
+   "name_fa": "Google Dataset Search",
+   "name_en": "Google Dataset Search",
+   "url": "https://datasetsearch.research.google.com/",
+   "category": "global_platforms",
+   "sector_type": "private",
+   "data_domains": [],
+   "access_methods": [
+    "web_ui"
+   ],
+   "formats": [],
+   "license": "تأیید نشد",
+   "api_available": false,
+   "status": "active",
+   "last_verified": "2026-10-06",
+   "description_fa": "Google Dataset Search؛ در دسته‌ی «پلتفرم‌های جهانی اشتراک داده».",
+   "featured": false,
+   "source_urls": [
+    "https://github.com/alirezach/awesome-iran-opendata"
+   ],
+   "role": "intermediary",
+   "profile": "",
+   "uses": []
+  }
+ ]
+}
