@@ -25,7 +25,10 @@ const write = (rel, s) => {
 const { categories, cases } = read('cases.json');
 const { reports } = read('reports.json');
 const { laws } = read('laws.json');
-const { items: library } = read('library.json');
+const { items: libraryItems } = read('library.json');
+// کنشگران زیست‌بوم داده؛ منبع‌های کتاب‌شناختی‌شان در سایت به کتابخانه افزوده می‌شود
+const { actors } = read('ecosystem.json');
+const library = libraryItems.concat(actors.flatMap((a) => a.refs));
 
 // ── نقشه‌ی نقطه‌ای ────────────────────────────────────────────────
 // خشکی‌ها بدون جنوبگان؛ نقطه‌ها روی شبکه‌ای منظم در فضای تصویر نمونه‌برداری می‌شوند.
@@ -112,6 +115,7 @@ const words = cases.reduce((s, c) => s + c.words, 0) + reports.reduce((s, r) => 
 const data = {
   counts: {
     cases: cases.length, reports: reports.length, laws: laws.length, library: library.length,
+    ecosystem: actors.length,
     countries: countryNames.length, dimensions: categories.length,
     words, figures: cases.reduce((s, c) => s + c.figures, 0) + reports.reduce((s, r) => s + r.figures, 0),
   },

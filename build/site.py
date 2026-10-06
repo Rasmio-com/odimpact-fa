@@ -29,6 +29,19 @@ WORLD = load('world.json')
 # روایت‌های عددی و نمونه‌های هر بُعد؛ همان محتوایی که ویدئوی معرفی نشان می‌دهد
 HL = load('highlights.json')
 BYSLUG = {c['slug']: c for c in CASES}
+# کنشگران زیست‌بوم داده در ایران؛ فایلی دست‌نویس که هیچ تجزیه‌گری روی آن نمی‌نویسد
+ECO = load('ecosystem.json')
+ACTORS = ECO['actors']
+LAW_BY_NO = {lw['no']: lw for lw in LAWS['laws']}
+REPORT_BY_SLUG = {r['slug']: r for r in REPORTS}
+CASE_ACTORS, LAW_ACTORS = {}, {}
+for _a in ACTORS:
+    for _s in _a['related_cases']:
+        CASE_ACTORS.setdefault(_s, []).append(_a)
+    for _n in _a['related_laws']:
+        LAW_ACTORS.setdefault(_n, []).append(_a)
+# منبع‌های کتاب‌شناختی کنشگران، هنگام ساخت به کتابخانه افزوده می‌شود (library.json دست‌نخورده می‌ماند)
+LIB['items'] = LIB['items'] + [r for _a in ACTORS for r in _a['refs']]
 
 REPORT_ACCENT, REPORT_ACCENT2 = '#0F766E', '#5EEAD4'
 
@@ -57,6 +70,7 @@ ICON = {
     'law': '<path d="M4 8h16M6 8v12h12V8M9 12v5M15 12v5M12 3l8 5H4z"/>',
     'book': '<path d="M4 5h6v14H4zM14 5h6v14h-6M4 9h6M14 9h6"/>',
     'warn': '<path d="M12 3l10 18H2L12 3zM12 10v5M12 18h.01"/>',
+    'net': '<circle cx="6" cy="7" r="2.6"/><circle cx="18" cy="7" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M8.3 8.4l2.4 7.2M15.7 8.4l-2.4 7.2M8.6 7h6.8"/>',
 }
 def ic(name, cls=''):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
@@ -65,8 +79,8 @@ def ic(name, cls=''):
 
 def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cls=''):
     y = num(1404)
-    nav_items = [('', 'خانه'), ('cases/', 'مطالعات موردی'), ('laws/', 'قوانین ایران'),
-                 ('library/', 'منابع'), ('about/', 'درباره'), ]
+    nav_items = [('', 'خانه'), ('cases/', 'مطالعات موردی'), ('ecosystem/', 'زیست‌بوم ایران'),
+                 ('laws/', 'قوانین ایران'), ('library/', 'منابع'), ('about/', 'درباره'), ]
     links = ''.join(
         f'<a href="{root}{h}" class="{"on" if active == h else ""}">{t}</a>' for h, t in nav_items)
     foot_cats = ''.join(
@@ -114,6 +128,7 @@ def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cl
     <div><h4>پیوندها</h4><ul>
       <li><a href="{root}cases/">همه‌ی مطالعات موردی</a></li>
       <li><a href="{root}cases/?cat=reports">گزارش‌های فارسی</a></li>
+      <li><a href="{root}ecosystem/">زیست‌بوم داده در ایران</a></li>
       <li><a href="{root}laws/">قوانین داده‌ی باز در ایران</a></li>
       <li><a href="{root}library/">کتابخانه‌ی منابع</a></li>
       <li><a href="{root}about/">درباره‌ی این پروژه</a></li>
@@ -355,10 +370,13 @@ def build_home():
     <div class="bridge-text">
       <span class="sec-kicker">فراتر از مطالعات موردی</span>
       <h2>از تجربه‌ی جهانی، <span class="grad-warm">تا ایران</span></h2>
-      <p>کنار روایت‌های گاورلب، سه مجموعه‌ی دیگر هم این‌جاست که تجربه‌ی جهانی را به زمینه‌ی ایران وصل می‌کند.</p>
+      <p>کنار روایت‌های گاورلب، چهار مجموعه‌ی دیگر هم این‌جاست که تجربه‌ی جهانی را به زمینه‌ی ایران وصل می‌کند.</p>
       <div class="bridge-items">
         <a class="bi" href="cases/?cat=reports" style="--c1:{REPORT_ACCENT};--c2:{REPORT_ACCENT2}">
           <span class="ic">{ic('doc')}</span><span class="bt"><b data-to="{len(REPORTS)}">{num(len(REPORTS))}</b><span class="t">گزارش فارسی</span><span class="s">از منشور بین‌المللی داده‌ی باز تا نقد طرح پورتال ملی داده</span></span>{ic('arrow')}
+        </a>
+        <a class="bi" href="ecosystem/" style="--c1:#1D4ED8;--c2:#60A5FA">
+          <span class="ic">{ic('net')}</span><span class="bt"><b data-to="{len(ACTORS)}">{num(len(ACTORS))}</b><span class="t">کنشگر زیست‌بوم داده</span><span class="s">رسمیو و واسط‌هایی که داده‌ی رسمی را قابل‌استفاده می‌کنند</span></span>{ic('arrow')}
         </a>
         <a class="bi" href="laws/" style="--c1:#BE123C;--c2:#FB7185">
           <span class="ic">{ic('law')}</span><span class="bt"><b data-to="{len(LAWS['laws'])}">{num(len(LAWS['laws']))}</b><span class="t">مفاد قانونی ایران</span><span class="s">از قانون اساسی تا مصوبه‌های هیأت وزیران</span></span>{ic('arrow')}
@@ -374,7 +392,7 @@ def build_home():
 
 <section class="finale"><div class="wrap"><div class="finale-in rv">
   <h2>هر روایت، <span class="grad">یک شاهد</span></h2>
-  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی و {num(len(LIB['items']))} منبع پژوهشی؛ همه در یک‌جا و به فارسی.</p>
+  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی، {num(len(LIB['items']))} منبع پژوهشی و نگاهی به زیست‌بوم داده در ایران؛ همه در یک‌جا و به فارسی.</p>
   <div class="hero-cta">
     <a class="btn btn-p" href="cases/">{ic('grid')}شروع کاوش</a>
     <a class="btn btn-g" href="about/">درباره‌ی این پروژه</a>
@@ -430,7 +448,7 @@ def slugify_head(t, n):
     return 'h-' + str(n)
 
 
-def render_blocks(blocks, root):
+def render_blocks(blocks, root, ctx=None):
     """بلوک‌های متن را به HTML تبدیل می‌کند و فهرست مطالب را برمی‌گرداند."""
     parts, toc, hn = [], [], 0
     for b in blocks:
@@ -450,7 +468,7 @@ def render_blocks(blocks, root):
         elif b['type'] == 'caption':
             parts.append(f'<figcaption style="text-align:right">{e(b["text"])}</figcaption>')
         elif b['type'] == 'callout':
-            inner, _ = render_blocks(b['blocks'], root)
+            inner, _ = render_blocks(b['blocks'], root, ctx)
             parts.append(f'<aside class="callout">{inner}</aside>')
         elif b['type'] == 'table':
             head = ('<thead><tr>' + ''.join(f'<th>{e(x)}</th>' for x in b['head'])
@@ -458,6 +476,10 @@ def render_blocks(blocks, root):
             rows = ''.join('<tr>' + ''.join(f'<td>{e(x)}</td>' for x in r) + '</tr>'
                            for r in b['rows'])
             parts.append(f'<div class="tbl"><table>{head}<tbody>{rows}</tbody></table></div>')
+        elif b['type'] == 'figures' and ctx:
+            parts.append(figures_html(ctx))
+        elif b['type'] == 'dims' and ctx:
+            parts.append(dims_html(ctx))
         elif b['type'] == 'img':
             cap = f'<figcaption>{e(b["caption"])}</figcaption>' if b.get('caption') else ''
             parts.append(f'<figure><img src="{root}{b["src"]}" width="{b["w"]}" height="{b["h"]}" '
@@ -500,6 +522,11 @@ def build_case(c, prev, nxt):
         npv += (f'<a class="np n" href="{root}cases/{nxt["slug"]}/">'
                 f'<span class="l">بعدی{ic("arrow")}</span><b>{e(nxt["title"])}</b></a>')
 
+    actor_note = ''.join(
+        f'<aside class="callout actor-note"><p><b>نمونه‌ی ایرانی: {e(a["name"])}.</b> {e(a["tagline"])}. '
+        f'<a href="{root}ecosystem/{a["slug"]}/">بیشتر بخوانید ←</a></p></aside>'
+        for a in CASE_ACTORS.get(c['slug'], []))
+
     mapart = (f'<img class="case-map" src="{root}{c["map"]}" alt="" aria-hidden="true">'
               if c.get('map') else '')
 
@@ -533,6 +560,7 @@ def build_case(c, prev, nxt):
     {summary}
     {keys}
     {body_html}
+    {actor_note}
   </article>
   {tocbox}
 </div>
@@ -615,6 +643,121 @@ def build_report(r, prev, nxt):
                extra_head=f'<script type="application/ld+json">{ld}</script>\n'))
 
 
+# ── زیست‌بوم داده در ایران ────────────────────────────────────────
+def figures_html(a):
+    cells = ''.join(
+        f'<div class="fig"><div class="fv"><span class="pre">{e(f["prefix"])}</span><b>{e(f["value"])}</b>'
+        f'<span class="unit">{e(f["unit"])}</span></div><p>{e(f["label"])}</p></div>' for f in a['figures'])
+    return (f'<div class="figs">{cells}</div>'
+            f'<p class="fig-src">منبع: {e(a["figures_source"])}</p>'
+            f'<p class="fig-note">{e(a["figures_note"])}</p>')
+
+
+def dims_html(a):
+    out = []
+    for d in a['dims']:
+        cat = BYCAT[d['dimension']]
+        out.append(f'<div class="dimcard" style="--c1:{cat["accent"]};--c2:{cat["accent2"]}">'
+                   f'<span class="dk"><i></i>{cat["title"]}</span><h3>{e(d["title"])}</h3>'
+                   f'<p>{e(d["text"])}</p></div>')
+    return f'<div class="dimcards">{"".join(out)}</div>'
+
+
+def law_label(lw):
+    m = re.match(r'(ماده\s*\(?[۰-۹0-9]+\)?|اصل\s*[۰-۹0-9]+)', lw['text'])
+    return (m.group(1) if m else '') or f'مفاد {num(lw["no"])}'
+
+
+def build_ecosystem_index():
+    intro = ECO['intro']
+    blocks, _ = render_blocks(intro['body'], '../')
+    cards = ''.join(f"""<article class="card actor-card rv" style="--c1:{a['accent']};--c2:{a['accent2']}">
+  <div class="card-top" data-p="2"><span class="yr">از {a['since']}</span><span class="cn">{e(a['name'])}<span class="eng" style="font-weight:400;opacity:.8"> · {e(a['name_en'])}</span></span></div>
+  <div class="card-body"><h3>{e(a['role'])}</h3><p class="sub">{e(a['tagline'])}.</p>
+    <div class="meta"><span class="tag">{num(len(a['dims']))} بُعد تأثیر</span><span class="rt">بخوانید{ic('arrow')}</span></div></div>
+  <a class="stretch" href="{a['slug']}/" aria-label="{e(a['name'])}"></a>
+</article>""" for a in ACTORS)
+    fw = REPORT_BY_SLUG[intro['framework_slug']]
+    body = f"""<main style="--c1:#1D4ED8;--c2:#60A5FA">
+<section class="case-hero" style="padding:64px 0 70px"><div class="wrap">
+  <div class="crumb"><a href="../">خانه</a>{ic('arrow')}<span>زیست‌بوم ایران</span></div>
+  <h1>{e(intro['title'])}</h1>
+  <p class="sub">{e(intro['sub'])}</p>
+</div></section>
+<div class="wrap"><article class="article" style="padding:52px 0 30px;max-width:78ch">
+  <p class="lede">{e(intro['lede'])}</p>
+  {blocks}
+  <p>{e(intro['framework'])} <a href="../reports/{fw['slug']}/" style="color:var(--accent);font-weight:600">{e(fw['title'])} ←</a></p>
+</article>
+<section style="padding:6px 0 84px"><div class="grid actors" data-list>{cards}</div></section>
+</div>
+</main>"""
+    write('ecosystem/index.html', page(
+        body, title=f'{intro["title"]} — {SITE}', desc=intro['sub'], root='../', active='ecosystem/'))
+
+
+def build_actor(a):
+    root = '../../'
+    body_html, toc = render_blocks(a['body'], root, a)
+
+    def rel(href, k, t):
+        return f'<a class="relitem" href="{href}"><span class="k">{e(k)}</span><b>{e(t)}</b></a>'
+
+    extra, n = [], sum(1 for b in a['body'] if b['type'] == 'h2')
+    items = ''.join(rel(f'{root}cases/{s}/', f'{BYCAT[BYSLUG[s]["category"]]["title"]} · {BYSLUG[s]["country"]}',
+                        BYSLUG[s]['title']) for s in a['related_cases'])
+    items += ''.join(rel(f'{root}reports/{s}/', 'گزارش فارسی', REPORT_BY_SLUG[s]['title'])
+                     for s in a['related_reports'])
+    n += 1
+    toc.append(f'<a href="#h-{n}">هم‌ارزهای جهانی</a>')
+    extra.append(f'<h2 id="h-{n}">هم‌ارزهای جهانی</h2><p>مطالعه‌ها و گزارش‌هایی در همین سایت که همین نقش را در جای دیگری '
+                 f'روایت می‌کنند.</p><div class="rel">{items}</div>')
+    laws = ''.join(rel(f'{root}laws/#law-{x}', LAW_BY_NO[x]['title'], f'{law_label(LAW_BY_NO[x])} · {LAW_BY_NO[x]["date"]}')
+                   for x in a['related_laws'])
+    n += 1
+    toc.append(f'<a href="#h-{n}">پشتوانه‌ی قانونی</a>')
+    extra.append(f'<h2 id="h-{n}">پشتوانه‌ی قانونی</h2><p>{e(a["related_laws_note"])}</p><div class="rel">{laws}</div>')
+    refs = ''.join(
+        f'<li>{e("، ".join(r["authors"]) + ". " if r["authors"] else "")}<b>{e(r["title"])}</b>. {e(r["venue"])}'
+        f'{f" ({num(r["year"])})" if r["year"] else ""}'
+        f'{f" <a href={chr(34)}{e(r["url"])}{chr(34)} target=_blank rel=noopener>پیوند ↗</a>" if r["url"] else ""}</li>'
+        for r in a['refs'])
+    n += 1
+    toc.append(f'<a href="#h-{n}">منبع‌ها</a>')
+    extra.append(f'<h2 id="h-{n}">منبع‌ها</h2><ul class="srcs">{refs}</ul>')
+
+    summary = '<div class="summary rv"><span class="t">' + ic('spark') + 'خلاصه‌ی مطلب</span>' + ''.join(
+        f'<p>{e(x)}</p>' for x in a['summary']) + '</div>'
+    keys = ('<div class="keys rv"><div class="t">' + ic('spark') + 'نکات کلیدی</div><ol>'
+            + ''.join(f'<li>{e(k)}</li>' for k in a['key_points']) + '</ol></div>')
+    tocbox = f'<aside class="toc"><div class="t">در این مطلب</div>{"".join(toc)}</aside>'
+    meta = (f'<span>{ic("net")}{e(a["role"])}</span><span>{ic("cal")}فعال از {a["since"]}</span>'
+            f'<span>{ic("arrowr")}<a href="{e(a["url"])}" target="_blank" rel="noopener" class="eng">'
+            f'{e(a["url"].replace("https://", ""))}</a></span>')
+    body = f"""<div class="progress" style="--c1:{a['accent']};--c2:{a['accent2']}"></div>
+<main style="--c1:{a['accent']};--c2:{a['accent2']}">
+<section class="case-hero"><div class="wrap">
+  <div class="crumb"><a href="{root}">خانه</a>{ic('arrow')}<a href="../">زیست‌بوم ایران</a>{ic('arrow')}<span>{e(a['name'])}</span></div>
+  <h1>{e(a['name'])}</h1>
+  <p class="sub">{e(a['tagline'])}</p>
+  <p class="en"><span class="eng">{e(a['name_en'])}</span></p>
+  <div class="case-meta">{meta}</div>
+</div></section>
+<div class="wrap"><div class="layout">
+  <article class="article">
+    {summary}
+    {keys}
+    {body_html}
+    {''.join(extra)}
+  </article>
+  {tocbox}
+</div></div>
+</main>"""
+    write(f'ecosystem/{a["slug"]}/index.html', page(
+        body, title=f'{a["name"]}، {a["role"]} — {SITE}', desc=a['summary'][0][:170],
+        root=root, active='ecosystem/'))
+
+
 # ── قوانین ایران ──────────────────────────────────────────────────
 def build_laws():
     groups, laws = LAWS['groups'], LAWS['laws']
@@ -626,12 +769,16 @@ def build_laws():
         f'{g["title"]} <span class="cnt">{num(cnt[g["slug"]])}</span></button>'
         for g in groups if cnt[g['slug']])
 
-    rows = ''.join(f"""<article class="law rv" data-card="{lw['group']}"
+    def actor_chip(lw):
+        return ''.join(f'<span><a href="../ecosystem/{a["slug"]}/">{ic("net")}کنشگر مرتبط: {e(a["name"])}</a></span>'
+                       for a in LAW_ACTORS.get(lw['no'], []))
+
+    rows = ''.join(f"""<article class="law rv" id="law-{lw['no']}" data-card="{lw['group']}"
  data-k="{e((lw['title'] + ' ' + lw['source'] + ' ' + lw['date'] + ' ' + lw['text']).lower())}">
   <div class="law-head">
     <span class="law-no">{num(lw['no'])}</span>
     <div><h3>{e(lw['title'])}</h3>
-      <div class="law-meta"><span>{ic('cal')}{e(lw['date'])}</span><span>{ic('doc')}{e(lw['source'])}</span></div>
+      <div class="law-meta"><span>{ic('cal')}{e(lw['date'])}</span><span>{ic('doc')}{e(lw['source'])}</span>{actor_chip(lw)}</div>
     </div>
   </div>
   <details><summary>متن مصوبه</summary><p>{e(lw['text'])}</p></details>
@@ -746,6 +893,10 @@ def build_about():
     بین‌المللی داده‌ی باز تا نقد به طرح پورتال ملی داده)،
     <a href="../laws/">{num(len(LAWS['laws']))} مفاد قانونی ایران</a> درباره‌ی دسترسی آزاد به
     اطلاعات، و <a href="../library/">کتاب‌شناسیِ {num(len(LIB['items']))} منبع</a> پژوهشی.</p>
+  <p>بخش چهارم، <a href="../ecosystem/">زیست‌بوم داده در ایران</a>، از سمت دیگر ماجرا می‌آید: به‌جای
+    این‌که فقط از سیاست و قانون بگوید، کنشگرانی را معرفی می‌کند که داده‌ی عمومی را در عمل به
+    خدمت تبدیل کرده‌اند. نخستین آن‌ها <a href="../ecosystem/rasmio/">رسمیو</a> است؛ توضیح می‌دهیم
+    از چه داده‌ای استفاده می‌کند و خدمتش در چهار بُعد تأثیر چه جایی دارد، بی‌آنکه خودِ داده را منتشر کنیم.</p>
   <h2>چهار بُعد تأثیر</h2>
   <p>گاورلب تأثیر داده‌ی باز را در چهار بُعد دسته‌بندی می‌کند. توزیع مطالعات این مجموعه چنین است:</p>
   <div style="overflow-x:auto;margin:1.6em 0">
@@ -794,7 +945,8 @@ def build_extras():
 <circle cx="32" cy="32" r="10" fill="#fff"/></svg>""")
     write('.nojekyll', '')
     write('robots.txt', 'User-agent: *\nAllow: /\n')
-    urls = (['', 'cases/', 'laws/', 'library/', 'about/']
+    urls = (['', 'cases/', 'ecosystem/', 'laws/', 'library/', 'about/']
+            + [f'ecosystem/{a["slug"]}/' for a in ACTORS]
             + [f'cases/{c["slug"]}/' for c in CASES]
             + [f'reports/{r["slug"]}/' for r in REPORTS])
     write('sitemap.txt', '\n'.join(urls))
@@ -817,12 +969,15 @@ def main():
     for i, r in enumerate(rorder):
         build_report(r, rorder[i - 1] if i else None,
                      rorder[i + 1] if i + 1 < len(rorder) else None)
+    build_ecosystem_index()
+    for a in ACTORS:
+        build_actor(a)
     build_laws()
     build_library()
     build_about()
     build_404()
     build_extras()
-    print(f'ساخته شد: {len(order) + len(rorder) + 6} صفحه')
+    print(f'ساخته شد: {len(order) + len(rorder) + len(ACTORS) + 7} صفحه')
 
 
 if __name__ == '__main__':
