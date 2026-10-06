@@ -38,6 +38,7 @@ const CARDS = [
   { n: N.reports, label: 'گزارش فارسی', sub: 'تألیفی و ترجمه‌ای', icon: ICONS.doc, c: C.reports },
   { n: N.laws, label: 'مفاد قانونی ایران', sub: 'از قانون اساسی تا مصوبه‌ها', icon: ICONS.law, c: C.laws },
   { n: N.library, label: 'منبع پژوهشی', sub: 'کتاب‌شناسی کامل', icon: ICONS.book, c: C.library },
+  { n: N.ecosystem, label: 'کنشگر زیست‌بوم', sub: 'رسمیو و واسط‌های داده', icon: ICONS.net, c: C.ecosystem },
 ];
 
 export const Iran: React.FC = () => {
@@ -107,29 +108,27 @@ export const Iran: React.FC = () => {
           <Words segs={['از تجربه‌ی جهانی،', { t: 'تا ایران', grad: 'linear-gradient(97deg,#FBBF24,#FB7185 60%,#E11D62)', mark: true }]} delay={6} stagger={5} />
         </div>
       </div>
-      <div style={{ position: 'absolute', bottom: 46, right: 150, left: 150, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 26 }}>
+      <div style={{ position: 'absolute', bottom: 40, right: 110, left: 110, display: 'grid', gridTemplateColumns: `repeat(${CARDS.length}, 1fr)`, gap: 22 }}>
         {CARDS.map((k, i) => {
           const at = 112 + i * 9;
           const p = spring({ frame: f - at, fps, config: { damping: 15, mass: 0.7 } });
           return (
             <div key={k.label} style={{
-              display: 'flex', alignItems: 'center', gap: 20, padding: '22px 26px', borderRadius: 30,
+              display: 'flex', flexDirection: 'column', gap: 6, padding: '20px 24px 18px', borderRadius: 28,
               background: 'linear-gradient(160deg, rgba(14,18,40,.92), rgba(10,13,30,.82))',
               border: `1.5px solid ${alpha(k.c[1], 0.35)}`, boxShadow: `0 30px 70px -30px ${alpha(k.c[0], 0.8)}`,
               opacity: Math.min(1, p * 1.3), transform: `translate3d(${(1 - p) * 70}px, ${(1 - p) * 30}px, 0)`,
             }}>
-              <div style={{ width: 76, height: 76, borderRadius: 22, flex: 'none', display: 'grid', placeItems: 'center', background: alpha(k.c[0], 0.35) }}>
-                <Icon d={k.icon} size={40} color={k.c[1]} stroke={2} />
-              </div>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, whiteSpace: 'nowrap' }}>
-                  <span style={{ fontSize: 74, fontWeight: 900, lineHeight: 1.1 }}>
-                    <CountUp to={k.n} start={at + 2} dur={36} />
-                  </span>
-                  <span style={{ fontSize: 31, fontWeight: 800 }}>{k.label}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 16, whiteSpace: 'nowrap' }}>
+                <div style={{ width: 58, height: 58, borderRadius: 18, flex: 'none', display: 'grid', placeItems: 'center', background: alpha(k.c[0], 0.35) }}>
+                  <Icon d={k.icon} size={32} color={k.c[1]} stroke={2} />
                 </div>
-                <div style={{ fontSize: 25, fontWeight: 400, color: 'rgba(255,255,255,.6)', whiteSpace: 'nowrap' }}>{k.sub}</div>
+                <span style={{ fontSize: 62, fontWeight: 900, lineHeight: 1.1 }}>
+                  <CountUp to={k.n} start={at + 2} dur={36} />
+                </span>
               </div>
+              <div style={{ fontSize: 28, fontWeight: 800, whiteSpace: 'nowrap', marginTop: 4 }}>{k.label}</div>
+              <div style={{ fontSize: 22, fontWeight: 400, color: 'rgba(255,255,255,.6)', whiteSpace: 'nowrap' }}>{k.sub}</div>
             </div>
           );
         })}

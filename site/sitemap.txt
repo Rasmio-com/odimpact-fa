@@ -1,9 +1,11 @@
 
 cases/
+ecosystem/
 laws/
 indices/
 library/
 about/
+ecosystem/rasmio/
 indices/air/
 indices/bready/
 indices/cpi/
