@@ -1,6 +1,6 @@
 // زمان‌بندی صحنه‌ها؛ هم ترکیب ویدئو و هم فصل‌های پلیر از همین فایل می‌خوانند.
 export type SceneId =
-  | 'hook' | 'title' | 'numbers' | 'map' | 'dimensions' | 'stories' | 'iran' | 'outro';
+  | 'hook' | 'title' | 'numbers' | 'map' | 'dimensions' | 'stories' | 'rasmio' | 'iran' | 'outro';
 
 export type SceneDef = {
   id: SceneId;
@@ -17,6 +17,7 @@ export const SCENES: SceneDef[] = [
   { id: 'map', chapter: 'نقشه', duration: 290 },
   { id: 'dimensions', chapter: 'چهار بُعد', duration: 470 },
   { id: 'stories', chapter: 'روایت‌ها', duration: 470 },
+  { id: 'rasmio', chapter: 'رسمیو', duration: 382 },
   { id: 'iran', chapter: 'تا ایران', duration: 270 },
   { id: 'outro', chapter: 'پایان', duration: 190 },
 ];

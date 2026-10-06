@@ -130,6 +130,10 @@ const data = {
     category: c.category, accent: catBySlug[c.category].accent,
   })),
   reports: reports.map((r) => r.title),
+  // کنشگران زیست‌بوم؛ صحنه‌ی «رسمیو» متن و عددهایش را از همین‌جا می‌خواند
+  actors: actors.map((a) => ({
+    slug: a.slug, name: a.name, figures: a.figures, figuresSource: a.figures_source, video: a.video,
+  })),
 };
 write('video/src/generated/data.json', JSON.stringify(data, null, 1));
 console.log(`نقشه: ${dots.length} نقطه، ${countries.length} کشور`);

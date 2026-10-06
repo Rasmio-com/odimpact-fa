@@ -294,7 +294,7 @@ const App: React.FC<{ host: HTMLElement; poster: string | null }> = ({ host, pos
       const cur = chapterAt(f);
       // e.code به چیدمان صفحه‌کلید وابسته نیست؛ با صفحه‌کلید فارسی هم F و K و ارقام کار می‌کنند
       const code = e.code;
-      const digit = /^(Digit|Numpad)([1-8])$/.exec(code);
+      const digit = /^(Digit|Numpad)([1-9])$/.exec(code);
       if (code === 'Space' || code === 'KeyK') {
         if ((e.target as HTMLElement)?.tagName === 'BUTTON' && code === 'Space') return;
         toggle();
