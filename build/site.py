@@ -42,6 +42,8 @@ BYSLUG = {c['slug']: c for c in CASES}
 # کنشگران زیست‌بوم داده در ایران؛ فایلی دست‌نویس که هیچ تجزیه‌گری روی آن نمی‌نویسد
 ECO = load('ecosystem.json')
 ACTORS = ECO['actors']
+# کاتالوگ فهرست‌شده‌ی بازیگران؛ دست‌نویس
+CATALOG = load('ecosystem_catalog.json')
 LAW_BY_NO = {lw['no']: lw for lw in LAWS['laws']}
 REPORT_BY_SLUG = {r['slug']: r for r in REPORTS}
 CASE_ACTORS, LAW_ACTORS = {}, {}
@@ -135,6 +137,7 @@ def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cl
     <div>
       <div class="brand"><span class="mark"><span></span></span>{SITE}</div>
       <p>روایت فارسی پروژه‌ی «تأثیر داده‌ی باز» گاورلب دانشگاه نیویورک؛ مجموعه‌ای از مطالعات موردی که نشان می‌دهد آزادسازی داده‌های عمومی در عمل چه چیزی را عوض کرده است — و کجا شکست خورده است.</p>
+      {cobrand(root, 'in-foot')}
     </div>
     <div><h4>ابعاد تأثیر</h4><ul>{foot_cats}</ul></div>
     <div><h4>پیوندها</h4><ul>
@@ -145,13 +148,15 @@ def page(body, *, title, desc, root, active='', extra_head='', extra_foot='', cl
       <li><a href="{root}indices/">ایران در شاخص‌های جهانی</a></li>
       <li><a href="{root}library/">کتابخانه‌ی منابع</a></li>
       <li><a href="{root}about/">درباره‌ی این پروژه</a></li>
+      <li><a href="https://rasmio.com" rel="noopener" target="_blank">rasmio.com<span class="eng"> ↗</span></a></li>
+      <li><a href="https://ito.gov.ir" rel="noopener" target="_blank">ito.gov.ir<span class="eng"> ↗</span></a></li>
       <li><a href="https://odimpact.org" rel="noopener" target="_blank">odimpact.org<span class="eng"> ↗</span></a></li>
       <li><a href="https://thegovlab.org" rel="noopener" target="_blank">The GovLab<span class="eng"> ↗</span></a></li>
     </ul></div>
   </div>
   <div class="f-mark" aria-hidden="true">{SITE}</div>
   <div class="f-bot">
-    <span>متن اصلی از گاورلب دانشگاه نیویورک · ترجمه‌ی فارسی</span>
+    <span>متن اصلی از گاورلب دانشگاه نیویورک · ترجمه‌ی فارسی · محصول مشترک رسمیو و سازمان فناوری اطلاعات ایران</span>
     <span>ساخته‌شده با قلم یکان بخ</span>
   </div>
 </div></footer>
@@ -339,6 +344,7 @@ def build_home():
     <a class="btn btn-p" href="cases/">{ic('grid')}کاوش در مطالعات موردی</a>
     <a class="btn btn-g" href="#reel" data-reel-present>{ic('play')}تماشای ویدئو در حالت ارائه</a>
   </div>
+  <div class="cobrand-band">{cobrand('', 'on-dark big')}<p>این سایت را رسمیو و سازمان فناوری اطلاعات ایران با هم ساخته‌اند تا تجربه‌ی جهانی داده‌ی باز در دسترس سیاست‌گذار، توسعه‌دهنده و شهروند ایرانی باشد.</p></div>
   {reel}
 </div></section>
 
@@ -389,7 +395,7 @@ def build_home():
           <span class="ic">{ic('doc')}</span><span class="bt"><b data-to="{len(REPORTS)}">{num(len(REPORTS))}</b><span class="t">گزارش فارسی</span><span class="s">از منشور بین‌المللی داده‌ی باز تا نقد طرح پورتال ملی داده</span></span>{ic('arrow')}
         </a>
         <a class="bi" href="ecosystem/" style="--c1:#1D4ED8;--c2:#60A5FA">
-          <span class="ic">{ic('net')}</span><span class="bt"><b data-to="{len(ACTORS)}">{num(len(ACTORS))}</b><span class="t">کنشگر زیست‌بوم داده</span><span class="s">رسمیو و واسط‌هایی که داده‌ی رسمی را قابل‌استفاده می‌کنند</span></span>{ic('arrow')}
+          <span class="ic">{ic('net')}</span><span class="bt"><b data-to="{N_ECO}">{num(N_ECO)}</b><span class="t">کنشگر زیست‌بوم داده</span><span class="s">منتشرکنندگان، واسط‌ها و جامعه‌ی داده‌ی ایران، با رسمیو در مرکز</span></span>{ic('arrow')}
         </a>
         <a class="bi" href="laws/" style="--c1:#BE123C;--c2:#FB7185">
           <span class="ic">{ic('law')}</span><span class="bt"><b data-to="{len(LAWS['laws'])}">{num(len(LAWS['laws']))}</b><span class="t">مفاد قانونی ایران</span><span class="s">از قانون اساسی تا مصوبه‌های هیأت وزیران</span></span>{ic('arrow')}
@@ -406,11 +412,30 @@ def build_home():
   </div>
 </div></section>
 
+<section class="eco-home" id="ecosystem"><div class="wrap">
+  <div class="eco-home-grid">
+    <div class="eco-home-text">
+      <span class="sec-kicker">زیست‌بوم داده‌ی باز ایران</span>
+      <h2>از انتشار داده <span class="grad">تا خدمت</span></h2>
+      <p>داده‌ی باز وقتی اثر می‌گذارد که کسی آن را بخواند، به داده‌های دیگر وصل کند و به کار بیاورد. {num(N_ECO)} کنشگر ایرانی و جهانی را در یک نقشه‌ی فیلترپذیر کنار هم گذاشته‌ایم، با رسمیو به‌عنوان لایه‌ی اتصال.</p>
+      <div class="eco-stats on-dark">
+        <div><b data-to="{N_ECO}">{num(N_ECO)}</b><span>کنشگر</span></div>
+        <div><b data-to="{len(CATALOG['categories'])}">{num(len(CATALOG['categories']))}</b><span>دسته</span></div>
+        <div><b data-to="{N_ECO_API}">{num(N_ECO_API)}</b><span>دارای API</span></div>
+      </div>
+      <div class="feat feat-ras compact">{rasmio_spot('', count=True)}</div>
+      <div class="hero-cta"><a class="btn btn-p" href="ecosystem/">{ic('net')}کاوش در زیست‌بوم</a>
+        <a class="btn btn-g" href="ecosystem/rasmio/">پروفایل رسمیو</a></div>
+    </div>
+    <div class="eco-home-map">{eco_map('')}{eco_legend()}</div>
+  </div>
+</div></section>
+
 {HOME_INDICES}
 
 <section class="finale"><div class="wrap"><div class="finale-in rv">
   <h2>هر روایت، <span class="grad">یک شاهد</span></h2>
-  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی، {num(N_INDICES)} شاخص جهانی، {num(len(LIB['items']))} منبع پژوهشی و نگاهی به زیست‌بوم داده در ایران؛ همه در یک‌جا و به فارسی.</p>
+  <p>{num(len(CASES))} مطالعه‌ی موردی، {num(len(REPORTS))} گزارش فارسی، {num(len(LAWS['laws']))} مفاد قانونی، {num(N_INDICES)} شاخص جهانی، {num(len(LIB['items']))} منبع پژوهشی و نقشه‌ی {num(N_ECO)} کنشگر زیست‌بوم داده در ایران؛ همه در یک‌جا و به فارسی.</p>
   <div class="hero-cta">
     <a class="btn btn-p" href="cases/">{ic('grid')}شروع کاوش</a>
     <a class="btn btn-g" href="about/">درباره‌ی این پروژه</a>
@@ -418,7 +443,7 @@ def build_home():
 </div></div></section>
 </main>"""
     write('index.html', page(body, title=f'{SITE} — {TAGLINE}', desc=TAGLINE, root='', active='', cls='home',
-                             extra_foot=HOME_INDICES_META + '<script src="assets/js/showreel.js" defer></script>\n'))
+                             extra_foot=HOME_INDICES_META + '<script src="assets/js/showreel.js" defer></script>\n<script src="assets/js/ecosystem.js" defer></script>\n'))
 
 
 # ── فهرست مطالعات ─────────────────────────────────────────────────
@@ -687,32 +712,333 @@ def law_label(lw):
     return (m.group(1) if m else '') or f'مفاد {num(lw["no"])}'
 
 
+JMONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+           'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+
+
+def jalali(iso):
+    """تاریخ میلادی «YYYY-MM-DD» به شمسی، مثل «۱۴ مهر ۱۴۰۵»"""
+    gy, gm, gd = (int(x) for x in iso.split('-'))
+    cum = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    gy2 = gy + 1 if gm > 2 else gy
+    days = (355666 + 365 * gy + (gy2 + 3) // 4 - (gy2 + 99) // 100 + (gy2 + 399) // 400
+            + gd + cum[gm - 1])
+    jy = -1595 + 33 * (days // 12053)
+    days %= 12053
+    jy += 4 * (days // 1461)
+    days %= 1461
+    if days > 365:
+        jy += (days - 1) // 365
+        days = (days - 1) % 365
+    if days < 186:
+        jm, jd = 1 + days // 31, 1 + days % 31
+    else:
+        jm, jd = 7 + (days - 186) // 30, 1 + (days - 186) % 30
+    return f'{num(jd)} {JMONTHS[jm - 1]} {num(jy)}'
+
+
+# کاتالوگ فهرست‌شده‌ی کنشگران؛ دست‌نویس در data/ecosystem_catalog.json
+E_ENT = CATALOG['entries']
+E_CAT = {c['id']: c for c in CATALOG['categories']}
+E_SEC = {s['id']: s for s in CATALOG['sectors']}
+E_ACC = {s['id']: s for s in CATALOG['access']}
+E_ST = {s['id']: s for s in CATALOG['statuses']}
+E_BY = {x['id']: x for x in E_ENT}
+E_SHORT = {'national_portals': 'درگاه‌های ملی', 'official_stats': 'آمار رسمی', 'economy_markets': 'اقتصاد و بازار',
+           'registry_legal': 'ثبت و حقوق', 'infra_env': 'انرژی و محیط‌زیست', 'cities': 'داده‌های شهری',
+           'research_academic': 'پژوهش و دانشگاه', 'persian_nlp': 'زبان فارسی و هوش مصنوعی',
+           'civil_society': 'جامعه‌ی مدنی', 'private_services': 'سرویس‌های خصوصی',
+           'international': 'بین‌المللی', 'global_platforms': 'پلتفرم‌های جهانی'}
+N_ECO = len(E_ENT)
+N_ECO_API = sum(1 for x in E_ENT if x['api_available'])
+LOGO_RASMIO = ('assets/img/brand/rasmio.png', 1164, 360, 'لوگوی رسمیو')
+LOGO_ITO = ('assets/img/brand/ito.png', 404, 247, 'لوگوی سازمان فناوری اطلاعات ایران')
+
+
+def host_of(url):
+    return re.sub(r'^https?://(www\.)?', '', url).split('/')[0]
+
+
+def logo(root, spec, cls=''):
+    p, w, h, alt = spec
+    return f'<img src="{root}{p}" width="{w}" height="{h}" alt="{alt}" loading="lazy" decoding="async"{f" class={cls}" if cls else ""}>'
+
+
+def cobrand(root, cls=''):
+    """نشان محصول مشترک رسمیو و سازمان فناوری اطلاعات ایران"""
+    return (f'<div class="cobrand {cls}"><span class="cb-t">محصول مشترک</span>'
+            f'<a class="cb-logo" href="https://rasmio.com" target="_blank" rel="noopener" aria-label="رسمیو">{logo(root, LOGO_RASMIO)}</a>'
+            f'<span class="cb-x" aria-hidden="true">×</span>'
+            f'<a class="cb-logo" href="https://ito.gov.ir" target="_blank" rel="noopener" aria-label="سازمان فناوری اطلاعات ایران">{logo(root, LOGO_ITO)}</a></div>')
+
+
+def eco_keys(x):
+    return ' '.join([x['name_fa'], x['name_en'], ' '.join(x['data_domains']), x['description_fa'],
+                     ' '.join(x['formats']), E_CAT[x['category']]['title'], E_SEC[x['sector_type']]['title'],
+                     host_of(x['url'])]).lower()
+
+
+def eco_attrs(x):
+    return (f'data-id="{x["id"]}" data-c="{x["category"]}" data-s="{x["sector_type"]}" data-st="{x["status"]}" '
+            f'data-api="{1 if x["api_available"] else 0}" data-acc="{" ".join(x["access_methods"])}" '
+            f'data-k="{e(eco_keys(x))}"')
+
+
+def eco_map(root):
+    """نقشه‌ی زیست‌بوم: دوازده برش برای دسته‌ها، یک نقطه برای هر کنشگر؛ رسمیو در مرکز."""
+    CX, CY = 550, 430
+    pol = lambda r, d: (CX + r * math.cos(math.radians(d)), CY + r * math.sin(math.radians(d)))
+    wedges, labels, links, dots, pos = [], [], [], [], {}
+    for i, c in enumerate(CATALOG['categories']):
+        a0 = -90 + 30 * i
+        (x1, y1), (x2, y2), (x3, y3), (x4, y4) = pol(112, a0 + .7), pol(112, a0 + 29.3), pol(352, a0 + 29.3), pol(352, a0 + .7)
+        wedges.append(f'<path class="wd{" alt" if i % 2 else ""}" data-c="{c["id"]}" style="--cc:{c["accent"]}" '
+                      f'd="M{x1:.1f} {y1:.1f}A112 112 0 0 1 {x2:.1f} {y2:.1f}L{x3:.1f} {y3:.1f}A352 352 0 0 0 {x4:.1f} {y4:.1f}Z"/>')
+        lx, ly = pol(376, a0 + 15)
+        cs = math.cos(math.radians(a0 + 15))
+        anc = 'start' if cs > .25 else 'end' if cs < -.25 else 'middle'
+        labels.append(f'<a class="cl" href="{root}ecosystem/?cat={c["id"]}#catalog" data-cat-link="{c["id"]}" style="--cc:{c["accent"]}">'
+                      f'<text x="{lx:.1f}" y="{ly + 5:.1f}" text-anchor="{anc}">{E_SHORT[c["id"]]}</text></a>')
+        members = [x for x in E_ENT if x['category'] == c['id'] and x['id'] != 'rasmio']
+        n = len(members)
+        for j, x in enumerate(members):
+            ring = j % 3
+            cnt = (n - ring + 2) // 3
+            ang = a0 + 30 * ((j // 3) + .5) / cnt
+            pos[x['id']] = pol(176 + ring * 82, ang)
+    for rid in E_BY['rasmio']['uses']:
+        px, py = pos[rid]
+        qx, qy = CX + (px - CX) * .45, CY + (py - CY) * .45
+        links.append(f'<path class="lk" data-to="{rid}" d="M{CX} {CY}Q{qx + (py - CY) * .12:.1f} {qy - (px - CX) * .12:.1f} {px:.1f} {py:.1f}"/>')
+    for x in E_ENT:
+        if x['id'] not in pos:
+            continue
+        px, py = pos[x['id']]
+        rad = 8.5 if x['api_available'] else 5.8
+        ft = '<circle class="ft" r="14"/>' if x['featured'] else ''
+        dots.append(f'<a class="nd st-{x["status"]}" href="{root}ecosystem/?open={x["id"]}" {eco_attrs(x)} '
+                    f'transform="translate({px:.1f} {py:.1f})" style="--sc:{E_SEC[x["sector_type"]]["accent"]}" '
+                    f'aria-label="{e(x["name_fa"])}">{ft}<circle class="hit" r="14"/><circle class="dt" r="{rad}"/></a>')
+    p, w, h, alt = LOGO_RASMIO
+    hub = (f'<a class="hub" href="{root}ecosystem/rasmio/" aria-label="رسمیو، لایه‌ی اتصال زیست‌بوم" data-id="rasmio">'
+           f'<circle class="hub-r" cx="{CX}" cy="{CY}" r="74"/><circle class="hub-c" cx="{CX}" cy="{CY}" r="62"/>'
+           f'<image href="{root}{p}" x="{CX - 46}" y="{CY - 14}" width="92" height="28.5"/>'
+           f'<text x="{CX}" y="{CY + 36}" text-anchor="middle" class="hub-t">لایه‌ی اتصال</text></a>')
+    return (f'<svg class="eco-map" viewBox="0 0 1100 860" role="group" aria-label="نقشه‌ی زیست‌بوم داده‌ی باز ایران">'
+            f'{"".join(wedges)}<g class="lks">{"".join(links)}</g>{"".join(labels)}{hub}{"".join(dots)}</svg>')
+
+
+def eco_legend():
+    n = {s['id']: sum(1 for x in E_ENT if x['sector_type'] == s['id']) for s in CATALOG['sectors']}
+    items = ''.join(f'<span><i style="background:{s["accent"]}"></i>{s["title"]} <b>{num(n[s["id"]])}</b></span>'
+                    for s in CATALOG['sectors'])
+    return (f'<div class="eco-legend">{items}<span class="lg-api"><i class="lg-big"></i>دارای API</span>'
+            f'<span class="lg-un"><i class="lg-un"></i>تأیید نشد</span></div>')
+
+
+def eco_card(x):
+    cat, sec, st = E_CAT[x['category']], E_SEC[x['sector_type']], E_ST[x['status']]
+    api = '<span class="ec-tag api">API</span>' if x['api_available'] else ''
+    com = '<span class="ec-tag">جامعه</span>' if x['sector_type'] == 'community' else ''
+    fmts = ''.join(f'<span class="ec-tag f eng">{e(f)}</span>' for f in x['formats'][:3])
+    warn = ('<p class="ec-warn">ممکن است از خارج ایران در دسترس نباشد.</p>' if x['status'] == 'unverified' else '')
+    chk = f'<span>آخرین بررسی: {jalali(x["last_verified"])}</span>' if x['last_verified'] else '<span>بررسی نشده</span>'
+    en = f'<p class="ec-en eng">{e(x["name_en"])}</p>' if x['name_en'] and x['name_en'] != x['name_fa'] else ''
+    return f"""<article class="ecard{' ft' if x['featured'] else ''}" {eco_attrs(x)} style="--c1:{cat['accent']};--sc:{sec['accent']}">
+  <div class="ec-top"><span class="ec-cat">{E_SHORT[x['category']]}</span><span class="ec-st" style="--st:{st['accent']}"><i></i>{st['title']}</span></div>
+  <h3>{e(x['name_fa'])}</h3>{en}
+  <p class="ec-d">{e(x['description_fa'])}</p>
+  <div class="ec-tags"><span class="ec-tag sec"><i></i>{sec['title']}</span>{api}{com}{fmts}</div>{warn}
+  <div class="ec-foot">{chk}<a class="ec-go eng" href="{e(x['url'])}" target="_blank" rel="noopener nofollow" aria-label="{e(x['name_fa'])}: رفتن به سایت">{e(host_of(x['url']))} ↗</a></div>
+  <button type="button" class="ec-open" data-open="{x['id']}" aria-label="جزئیات {e(x['name_fa'])}"></button>
+</article>"""
+
+
+def eco_row(x):
+    st = E_ST[x['status']]
+    acc = '، '.join(E_ACC[a]['title'] for a in x['access_methods'])
+    return (f'<tr {eco_attrs(x)} tabindex="0" data-open="{x["id"]}"><th scope="row">{e(x["name_fa"])}'
+            f'<span class="eng">{e(x["name_en"])}</span></th><td>{E_SHORT[x["category"]]}</td>'
+            f'<td>{E_SEC[x["sector_type"]]["title"]}</td><td>{acc}</td>'
+            f'<td><span class="ec-st" style="--st:{st["accent"]}"><i></i>{st["title"]}</span></td>'
+            f'<td>{"●" if x["api_available"] else "—"}</td></tr>')
+
+
+def eco_data_json():
+    out = []
+    for x in E_ENT:
+        d = dict(x)
+        d['jdate'] = jalali(x['last_verified']) if x['last_verified'] else ''
+        d['host'] = host_of(x['url'])
+        out.append(d)
+    meta = {k: {i['id']: i for i in CATALOG[k]} for k in ('categories', 'sectors', 'access', 'statuses')}
+    return json.dumps({'entries': out, 'meta': meta, 'short': E_SHORT}, ensure_ascii=False,
+                      separators=(',', ':')).replace('</', '<\\/')
+
+
+def write_eco_exports():
+    import csv, io
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    w.writerow(['id', 'name_fa', 'name_en', 'url', 'category', 'sector_type', 'role', 'status', 'api_available',
+                'access_methods', 'formats', 'license', 'last_verified', 'description_fa', 'source_urls'])
+    for x in E_ENT:
+        w.writerow([x['id'], x['name_fa'], x['name_en'], x['url'], x['category'], x['sector_type'], x['role'],
+                    x['status'], int(x['api_available']), ' '.join(x['access_methods']), ' '.join(x['formats']),
+                    x['license'], x['last_verified'] or '', x['description_fa'], ' '.join(x['source_urls'])])
+    write('ecosystem/ecosystem.csv', '﻿' + buf.getvalue())
+    write('ecosystem/ecosystem.json', json.dumps(
+        {'categories': CATALOG['categories'], 'sectors': CATALOG['sectors'], 'access': CATALOG['access'],
+         'statuses': CATALOG['statuses'], 'entries': E_ENT}, ensure_ascii=False, indent=1))
+
+
+def rasmio_spot(root, count=False):
+    """کارت ویژه‌ی رسمیو؛ عددها از ecosystem.json می‌آیند و منبع و تاریخشان زیرشان است."""
+    a = ACTORS[0]
+
+    def fnum(s):
+        return float(s.translate(str.maketrans(FA, '0123456789')).replace('٫', '.'))
+    figs = ''
+    for f in a['figures'][:4]:
+        v = fnum(f['value'])
+        dec = 1 if v != int(v) else 0
+        big = (f'<b data-to="{v:g}" data-dec="{dec}">{e(f["value"])}</b>' if count else f'<b>{e(f["value"])}</b>')
+        figs += (f'<div><span class="pre">{e(f["prefix"])}</span>{big}<span class="unit">{e(f["unit"])}</span>'
+                 f'<p>{e(f["label"])}</p></div>')
+    return (f'<div class="rs-logo">{logo(root, LOGO_RASMIO)}</div>'
+            f'<p class="rs-tag">{e(a["tagline"])}.</p><div class="rs-figs">{figs}</div>'
+            f'<p class="rs-src">گزارش خود شرکت · {e(a["figures_source"])}</p>')
+
+
 def build_ecosystem_index():
     intro = ECO['intro']
     blocks, _ = render_blocks(intro['body'], '../')
-    cards = ''.join(f"""<article class="card actor-card rv" style="--c1:{a['accent']};--c2:{a['accent2']}">
-  <div class="card-top" data-p="2"><span class="yr">از {a['since']}</span><span class="cn">{e(a['name'])}<span class="eng" style="font-weight:400;opacity:.8"> · {e(a['name_en'])}</span></span></div>
-  <div class="card-body"><h3>{e(a['role'])}</h3><p class="sub">{e(a['tagline'])}.</p>
-    <div class="meta"><span class="tag">{num(len(a['dims']))} بُعد تأثیر</span><span class="rt">بخوانید{ic('arrow')}</span></div></div>
-  <a class="stretch" href="{a['slug']}/" aria-label="{e(a['name'])}"></a>
-</article>""" for a in ACTORS)
     fw = REPORT_BY_SLUG[intro['framework_slug']]
-    body = f"""<main style="--c1:#1D4ED8;--c2:#60A5FA">
-<section class="case-hero" style="padding:64px 0 70px"><div class="wrap">
+    root = '../'
+    cats = CATALOG['categories']
+    cnt = {c['id']: sum(1 for x in E_ENT if x['category'] == c['id']) for c in cats}
+    chips = (f'<button type="button" class="chip on" data-eco-cat="">همه <span class="cnt">{num(N_ECO)}</span></button>'
+             + ''.join(f'<button type="button" class="chip" data-eco-cat="{c["id"]}" style="--cc:{c["accent"]}"><i></i>'
+                       f'{E_SHORT[c["id"]]} <span class="cnt">{num(cnt[c["id"]])}</span></button>' for c in cats))
+    opt = lambda items, all_: (f'<option value="">{all_}</option>'
+                               + ''.join(f'<option value="{i["id"]}">{i["title"]}</option>' for i in items))
+    groups = ''.join(
+        f'<section class="eco-grp" data-g="{c["id"]}" style="--c1:{c["accent"]}"><h3><i></i>{c["title"]}'
+        f' <span>{num(cnt[c["id"]])}</span></h3><div class="eco-grid">'
+        + ''.join(eco_card(x) for x in E_ENT if x['category'] == c['id']) + '</div></section>' for c in cats)
+    rows = ''.join(eco_row(x) for c in cats for x in E_ENT if x['category'] == c['id'])
+    gov = E_BY['data-gov-ir']
+    ito_card = f"""<article class="feat feat-ito">
+    <span class="feat-k">منتشرکننده</span>
+    <div class="feat-logo plate">{logo(root, LOGO_ITO)}</div>
+    <h3>{e(gov['name_fa'])}</h3>
+    <p>درگاه واحد داده‌های باز دولت، زیر نظر سازمان فناوری اطلاعات ایران. داده‌ی هر دستگاه یک بار این‌جا منتشر می‌شود تا واسط‌ها و کاربران نهایی بتوانند به آن برسند.</p>
+    <div class="feat-act"><a class="btn btn-ink" href="https://catalog.data.gov.ir/" target="_blank" rel="noopener">{ic('arrowr')}درگاه ملی داده‌ی باز</a>
+      <a class="btn btn-line" href="https://iranfoia.ir/" target="_blank" rel="noopener">سامانه‌ی دسترسی آزاد به اطلاعات</a></div>
+  </article>"""
+    ras_card = f"""<article class="feat feat-ras">
+    <span class="feat-k">واسط داده‌ی باز دولتی · از {ACTORS[0]['since']}</span>
+    {rasmio_spot(root, count=False)}
+    <div class="feat-act"><a class="btn btn-p" href="rasmio/">{ic('arrowr')}پروفایل کامل رسمیو</a>
+      <a class="btn btn-g" href="https://rasmio.com" target="_blank" rel="noopener">rasmio.com ↗</a>
+      <a class="btn btn-g" href="https://rasmio.com/content/about-api/" target="_blank" rel="noopener">API</a>
+      <a class="btn btn-g" href="https://github.com/Rasmio-com" target="_blank" rel="noopener">GitHub</a></div>
+  </article>"""
+    flow = f"""<div class="eco-flow" aria-label="مسیر داده از انتشار تا کاربر">
+    <div class="fl-n"><b>منتشرکنندگان</b><span>درگاه ملی، روزنامه‌ی رسمی، ثبت شرکت‌ها، ایران‌کد، گمرک، بانک مرکزی</span></div>
+    <div class="fl-a" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="fl-n fl-mid"><b>لایه‌ی اتصال</b><span>رسمیو؛ خوانش ماشینی، پیوند میان منبع‌ها، API</span></div>
+    <div class="fl-a" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="fl-n"><b>کاربران نهایی</b><span>نهادهای دولتی، بانک‌ها، خبرنگاران، پژوهشگران، کسب‌وکارها</span></div>
+  </div>"""
+    stats = ''.join(f'<div><b data-to="{n}">{num(n)}</b><span>{t}</span></div>' for n, t in
+                    [(N_ECO, 'کنشگر در فهرست'), (len(cats), 'دسته'), (N_ECO_API, 'دارای API'),
+                     (len(CATALOG['sectors']), 'بخش')])
+    ld = json.dumps([
+        {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'زیست‌بوم داده‌ی باز ایران',
+         'numberOfItems': N_ECO,
+         'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': x['name_fa'], 'url': x['url']}
+                             for i, x in enumerate(E_ENT)]},
+        {'@context': 'https://schema.org', '@type': 'Organization', 'name': 'رسمیو', 'alternateName': 'Rasmio',
+         'url': 'https://rasmio.com',
+         'sameAs': ['https://github.com/Rasmio-com', 'https://www.linkedin.com/company/rasmio']}],
+        ensure_ascii=False).replace('</', '<\\/')
+    body = f"""<main class="eco" style="--c1:#1D4ED8;--c2:#60A5FA">
+<section class="case-hero eco-hero"><div class="wrap">
   <div class="crumb"><a href="../">خانه</a>{ic('arrow')}<span>زیست‌بوم ایران</span></div>
-  <h1>{e(intro['title'])}</h1>
+  <h1>زیست‌بوم داده‌ی باز ایران</h1>
   <p class="sub">{e(intro['sub'])}</p>
+  <div class="eco-stats">{stats}</div>
+  {cobrand(root, 'on-dark')}
 </div></section>
-<div class="wrap"><article class="article" style="padding:52px 0 30px;max-width:78ch">
-  <p class="lede">{e(intro['lede'])}</p>
+
+<div class="wrap">
+<section class="eco-feat" aria-label="کنشگران ویژه">
+  <div class="eco-feat-grid">{ito_card}{ras_card}</div>
+  {flow}
+</section>
+
+<section class="eco-mapsec">
+  <div class="sec-head"><span class="sec-kicker">نقشه‌ی زیست‌بوم</span>
+    <h2>{num(N_ECO)} کنشگر در {num(len(cats))} دسته، با رسمیو در مرکز</h2>
+    <p>هر نقطه یک کنشگر است. رنگ نقطه بخش آن را نشان می‌دهد و نقطه‌ی بزرگ‌تر یعنی API دارد. خط‌های آبی نشان می‌دهند رسمیو از کدام منبع‌ها می‌خواند. روی نقطه بروید، یا بزنید تا جزئیاتش باز شود؛ با فیلترهای پایین، نقطه‌هایی که با جست‌وجوی شما نمی‌خوانند کم‌رنگ می‌شوند.</p></div>
+  <div class="eco-map-wrap">{eco_map(root)}</div>
+  {eco_legend()}
+</section>
+
+<section class="eco-cat" id="catalog">
+  <div class="sec-head"><span class="sec-kicker">فهرست کامل</span>
+    <h2>جست‌وجو و فیلتر</h2>
+    <p>بر اساس دسته، بخش، روش دسترسی و وضعیت فیلتر کنید یا در نام، حوزه‌ی داده و توضیح جست‌وجو کنید.</p></div>
+  <div class="eco-bar" data-eco-bar>
+    <div class="eco-bar-row">
+      <label class="search"><input type="search" data-eco-q placeholder="جست‌وجو: نام، حوزه‌ی داده، قالب…" aria-label="جست‌وجو در کنشگران">{ic('search')}</label>
+      <label class="eco-sel"><span class="sr">بخش</span><select data-eco-sector aria-label="فیلتر بخش">{opt(CATALOG['sectors'], 'همه‌ی بخش‌ها')}</select></label>
+      <label class="eco-sel"><span class="sr">روش دسترسی</span><select data-eco-acc aria-label="فیلتر روش دسترسی">{opt(CATALOG['access'], 'هر روش دسترسی')}</select></label>
+      <div class="seg" role="group" aria-label="نمای نتایج"><button type="button" data-eco-v="grid" aria-pressed="true">کارت</button><button type="button" data-eco-v="table" aria-pressed="false">جدول</button></div>
+    </div>
+    <div class="filters eco-chips" role="group" aria-label="فیلتر دسته">{chips}</div>
+    <div class="eco-bar-row eco-bar-foot">
+      <label class="tg"><input type="checkbox" data-eco-api><span>دارای API</span></label>
+      <label class="tg"><input type="checkbox" data-eco-act><span>فقط فعال‌ها</span></label>
+      <label class="tg"><input type="checkbox" data-eco-unv><span>پنهان کردن «تأیید نشد»</span></label>
+      <span class="eco-count" aria-live="polite"><b data-eco-n>{num(N_ECO)}</b> از {num(N_ECO)} کنشگر</span>
+      <button type="button" class="eco-reset" data-eco-reset hidden>پاک کردن فیلترها</button>
+    </div>
+  </div>
+  <div class="eco-groups" data-eco-grid>{groups}</div>
+  <div class="eco-tablewrap" data-eco-table hidden><table class="eco-table"><thead><tr><th scope="col">نام</th><th scope="col">دسته</th><th scope="col">بخش</th><th scope="col">دسترسی</th><th scope="col">وضعیت</th><th scope="col">API</th></tr></thead><tbody>{rows}</tbody></table></div>
+  <div class="empty" data-eco-empty hidden><b>چیزی پیدا نشد</b>فیلترها را سبک‌تر کنید یا واژه‌ی دیگری را امتحان کنید.</div>
+</section>
+
+<section class="eco-about">
+  <article class="article" style="padding:20px 0 30px;max-width:78ch">
   {blocks}
   <p>{e(intro['framework'])} <a href="../reports/{fw['slug']}/" style="color:var(--accent);font-weight:600">{e(fw['title'])} ←</a></p>
-</article>
-<section style="padding:6px 0 84px"><div class="grid actors" data-list>{cards}</div></section>
+  </article>
+  <div class="eco-dl">
+    <a class="btn btn-ink" href="ecosystem.csv" download>{ic('doc')}دریافت فهرست (CSV)</a>
+    <a class="btn btn-line" href="ecosystem.json" download>JSON</a>
+    <a class="btn btn-line" href="https://github.com/Rasmio-com/odimpact-fa/issues/new" target="_blank" rel="noopener">کنشگر یا اصلاحیه پیشنهاد دهید ↗</a>
+  </div>
+  <p class="note">«فعال» یعنی در بررسی اخیر شواهد وجود سامانه دیده شد؛ «تأیید نشد» یعنی فقط از فهرست‌های ثانویه می‌دانیم و آزمون مستقیم نکرده‌ایم. دامنه‌های ‎.ir ممکن است از خارج ایران باز نشوند. حضور در فهرست به معنی تأیید یا ارزیابی کیفیت نیست.</p>
+</section>
 </div>
+
+<div class="eco-ov" data-eco-ov hidden></div>
+<aside class="eco-drawer" data-eco-drawer role="dialog" aria-modal="true" aria-labelledby="eco-dr-t" hidden>
+  <button type="button" class="eco-x" data-eco-close aria-label="بستن">×</button>
+  <div class="eco-dr-in" data-eco-dr></div>
+</aside>
+<script type="application/json" id="eco-data">{eco_data_json()}</script>
 </main>"""
     write('ecosystem/index.html', page(
-        body, title=f'{intro["title"]} — {SITE}', desc=intro['sub'], root='../', active='ecosystem/'))
+        body, title=f'زیست‌بوم داده‌ی باز ایران — {SITE}',
+        desc='کاتالوگ تعاملی و فیلترپذیر کنشگران داده‌ی باز ایران؛ محصول مشترک رسمیو و سازمان فناوری اطلاعات ایران',
+        root=root, active='ecosystem/',
+        extra_head=f'<script type="application/ld+json">{ld}</script>\n',
+        extra_foot='<script src="../assets/js/ecosystem.js" defer></script>\n'))
+    write_eco_exports()
 
 
 def build_actor(a):
@@ -936,10 +1262,17 @@ def build_about():
     بین‌المللی داده‌ی باز تا نقد به طرح پورتال ملی داده)،
     <a href="../laws/">{num(len(LAWS['laws']))} مفاد قانونی ایران</a> درباره‌ی دسترسی آزاد به
     اطلاعات، و <a href="../library/">کتاب‌شناسیِ {num(len(LIB['items']))} منبع</a> پژوهشی.</p>
-  <p>بخش چهارم، <a href="../ecosystem/">زیست‌بوم داده در ایران</a>، از سمت دیگر ماجرا می‌آید: به‌جای
-    این‌که فقط از سیاست و قانون بگوید، کنشگرانی را معرفی می‌کند که داده‌ی عمومی را در عمل به
-    خدمت تبدیل کرده‌اند. نخستین آن‌ها <a href="../ecosystem/rasmio/">رسمیو</a> است؛ توضیح می‌دهیم
+  <p>بخش چهارم، <a href="../ecosystem/">زیست‌بوم داده‌ی باز ایران</a>، از سمت دیگر ماجرا می‌آید: به‌جای
+    این‌که فقط از سیاست و قانون بگوید، {num(N_ECO)} کنشگر را در یک کاتالوگ تعاملی نشان می‌دهد؛ از درگاه‌های
+    ملی و آمار رسمی تا داده‌های فارسی و خدمت‌های خصوصی. <a href="../ecosystem/rasmio/">رسمیو</a> پروفایل کامل دارد:
     از چه داده‌ای استفاده می‌کند و خدمتش در چهار بُعد تأثیر چه جایی دارد، بی‌آنکه خودِ داده را منتشر کنیم.</p>
+  <h2>محصول مشترک</h2>
+  <div style="margin:1.2em 0">{cobrand('../', 'on-light')}</div>
+  <p>این سایت محصول مشترک <a href="https://rasmio.com" target="_blank" rel="noopener">رسمیو</a> و
+    <a href="https://ito.gov.ir" target="_blank" rel="noopener">سازمان فناوری اطلاعات ایران</a> است. سازمان فناوری
+    اطلاعات، که درگاه ملی داده‌ی باز را اداره می‌کند، نگاه حاکمیتیِ انتشار داده را به پروژه می‌آورد و رسمیو
+    تجربه‌ی ساختن خدمت روی داده‌ی رسمی را. متن مطالعات موردی همچنان از گاورلب است و نشان این دو نهاد
+    تأییدی بر محتوای منبع‌های خارجی نیست.</p>
   <h2>چهار بُعد تأثیر</h2>
   <p>گاورلب تأثیر داده‌ی باز را در چهار بُعد دسته‌بندی می‌کند. توزیع مطالعات این مجموعه چنین است:</p>
   <div style="overflow-x:auto;margin:1.6em 0">
