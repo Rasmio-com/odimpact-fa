@@ -9,18 +9,19 @@ import { Numbers } from './scenes/Numbers';
 import { MapScene } from './scenes/MapScene';
 import { Dimensions } from './scenes/Dimensions';
 import { Stories } from './scenes/Stories';
+import { Rasmio } from './scenes/Rasmio';
 import { Iran } from './scenes/Iran';
 import { Outro } from './scenes/Outro';
 import { FONT } from './theme';
 
 const VIEW: Record<SceneId, React.FC> = {
   hook: Hook, title: Title, numbers: Numbers, map: MapScene,
-  dimensions: Dimensions, stories: Stories, iran: Iran, outro: Outro,
+  dimensions: Dimensions, stories: Stories, rasmio: Rasmio, iran: Iran, outro: Outro,
 };
 
 // گذار ورود به هر صحنه
 const ENTER: Partial<Record<SceneId, Kind>> = {
-  title: 'cross', numbers: 'push', map: 'cross', dimensions: 'push', stories: 'push', iran: 'cross', outro: 'cross',
+  title: 'cross', numbers: 'push', map: 'cross', dimensions: 'push', stories: 'push', rasmio: 'cross', iran: 'cross', outro: 'cross',
 };
 
 /** ویدئوی معرفی؛ همه‌ی متن‌ها راست‌به‌چپ و با رقم فارسی */
